@@ -16,14 +16,14 @@ class SplashScreenView extends GetView<SplashScreenController> {
         width: size.width,
         height: size.height,
         decoration: BoxDecoration(
-            color: AppPaintings.themeTextColor,
+            color: AppPaintings.themeGreenColor,
             image: DecorationImage(
                 image: AssetImage(AssetStrings.splashImage),
                 fit: BoxFit.cover)),
         child: Center(
             child: SizedBox(
                 width: size.width * 0.5,
-                child: Image.asset(AppStrings.bildItLogo))),
+                child: Image.asset(AssetStrings.bildItLogo))),
       ),
     );
   }
