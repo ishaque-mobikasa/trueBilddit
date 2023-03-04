@@ -22,7 +22,9 @@ class LongButton extends StatelessWidget {
     return buttonType == ButtonType.elevatedButton
         ? Container(
             constraints: BoxConstraints(
-                maxHeight: size.height * 0.05, maxWidth: size.width * 0.75),
+                minHeight: size.height * 0.053,
+                maxHeight: size.height * 0.8,
+                maxWidth: size.width * 0.75),
             child: ElevatedButton(
                 style: buttonStyle ??
                     ElevatedButton.styleFrom(
@@ -36,24 +38,30 @@ class LongButton extends StatelessWidget {
                       ? MainAxisAlignment.center
                       : MainAxisAlignment.spaceAround,
                   children: [
-                    SizedBox(
-                        height: 20,
-                        width: size.width * 0.12,
-                        child: iconImage == null
-                            ? const SizedBox()
-                            : Image.asset(iconImage!)),
+                    iconImage == null
+                        ? const SizedBox(
+                            height: 0,
+                            width: 0,
+                          )
+                        : SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: Image.asset(iconImage!)),
                     Expanded(
                         child: Text(
                       buttonText,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
+                      textAlign: TextAlign.center,
                     ))
                   ],
                 )),
           )
         : Container(
             constraints: BoxConstraints(
-                maxHeight: size.height * 0.05, maxWidth: size.width * 0.75),
+                minHeight: size.height * 0.053,
+                maxHeight: size.height * 0.8,
+                maxWidth: size.width * 0.75),
             child: OutlinedButton(
                 style: buttonStyle ??
                     ElevatedButton.styleFrom(
@@ -72,16 +80,20 @@ class LongButton extends StatelessWidget {
                       ? MainAxisAlignment.center
                       : MainAxisAlignment.spaceAround,
                   children: [
-                    SizedBox(
-                        height: 20,
-                        width: size.width * 0.12,
-                        child: iconImage == null
-                            ? const SizedBox()
-                            : Image.asset(iconImage!)),
-                    const Expanded(
+                    iconImage == null
+                        ? const SizedBox(
+                            height: 0,
+                            width: 0,
+                          )
+                        : SizedBox(
+                            height: 20,
+                            width: 20,
+                            child: Image.asset(iconImage!)),
+                    Expanded(
                         child: Text(
-                      "YOUR CURRENT LOCATION",
+                      buttonText,
                       overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
                       maxLines: 1,
                     ))
                   ],

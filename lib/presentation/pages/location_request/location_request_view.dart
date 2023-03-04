@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,8 +12,7 @@ class LocationRequestView extends GetView<LocationRequestController> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    log(size.height.toString());
-    log(size.width.toString());
+
     return Scaffold(
         appBar: AppBar(
           backgroundColor: AppPaintings.kWhite,
@@ -85,7 +82,7 @@ class LocationRequestView extends GetView<LocationRequestController> {
               iconImage: AssetStrings.currentLocationIcon,
             ),
             SizedBox(
-              height: size.height * 0.03,
+              height: size.height * 0.025,
             ),
             LongButton(
                 buttonType: ButtonType.outLinedButton,
