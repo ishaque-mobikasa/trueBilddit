@@ -31,6 +31,7 @@ class LongButton extends StatelessWidget {
                         shape: const BeveledRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(2))),
                         splashFactory: NoSplash.splashFactory,
+                        backgroundColor: AppPaintings.themeGreenColor,
                         shadowColor: Colors.transparent),
                 onPressed: onPressed,
                 child: Row(

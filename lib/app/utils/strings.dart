@@ -4,6 +4,10 @@ class AppStrings {
   static String yourCurrentLocation = "YOUR CURRENT LOCATION";
   static String requestPermissionAccess =
       "Please give us access to your location\n to get better experience";
+  static String forgotPassword = "Forgot Your Password?";
+  static String getPasswordLink =
+      "Enter your email address. You will receive an\n email with a link to reset your password";
+  static String needYourLocation = "Need Your Location";
 }
 
 class UrlStrings {}
@@ -17,4 +21,5 @@ class AssetStrings {
   static String splashImage = "assets/images/splash_background.png";
   static String cityImage = "assets/images/city_image.png";
   static String cameraImage = "assets/images/camera_icon.png";
+  static String forgotPasswordImage = "assets/images/forgot_password.png";
 }

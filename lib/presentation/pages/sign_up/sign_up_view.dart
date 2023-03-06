@@ -19,9 +19,15 @@ class SignUpView extends GetView<SignUpController> {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
+            backgroundColor: AppPaintings.kWhite,
+            elevation: 0,
             title: const Text("Sign Up"),
             leading: IconButton(
-                onPressed: () {}, icon: const Icon(CupertinoIcons.back)),
+                onPressed: () {},
+                icon: Icon(
+                  CupertinoIcons.back,
+                  color: AppPaintings.themeLightBlack,
+                )),
             centerTitle: true,
           ),
           body: SingleChildScrollView(

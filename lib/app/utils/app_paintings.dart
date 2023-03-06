@@ -18,8 +18,15 @@ class AppPaintings {
   );
 
   static TextStyle customLargeText = TextStyle(
-    color: AppPaintings.kWhite,
-    fontSize: 40,
+    color: AppPaintings.themeBlack,
+    fontSize: 18,
     overflow: TextOverflow.ellipsis,
+    fontWeight: FontWeight.w800,
+  );
+  static TextStyle customSmallText = TextStyle(
+    color: AppPaintings.themeLightBlack,
+    fontSize: 12,
+    overflow: TextOverflow.ellipsis,
+    fontWeight: FontWeight.w300,
   );
 }

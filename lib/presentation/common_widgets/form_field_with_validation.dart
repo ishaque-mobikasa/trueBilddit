@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/string_extensions.dart';
 
 enum FieldType { eMail, password, normalInputField, phoneNumber }
@@ -27,7 +28,7 @@ class CustomFormField extends StatelessWidget {
       this.autovalidateMode = AutovalidateMode.disabled,
       this.postFixIcon,
       this.validator,
-      this.padding = const EdgeInsets.only(top: 10, left: 10),
+      this.padding = const EdgeInsets.only(top: 10, left: 0),
       this.controller,
       required this.type,
       this.hintText = "",
@@ -80,8 +81,8 @@ class CustomFormField extends StatelessWidget {
               labelText: hintText,
               hintStyle: hintStyle,
               errorStyle: const TextStyle(color: Colors.green),
-              focusedBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.transparent)),
+              focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: AppPaintings.themeGreenColor)),
               enabledBorder: const OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.transparent))),
           validator: autovalidateMode != AutovalidateMode.disabled

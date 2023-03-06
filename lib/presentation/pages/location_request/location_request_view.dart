@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/strings.dart';
-import 'package:truebildit/presentation/pages/location_request/controllers_bindings/locatio_request_controller.dart';
 import 'package:truebildit/presentation/common_widgets/long_button.dart';
+import 'package:truebildit/presentation/pages/location_request/controllers_bindings/locatio_request_controller.dart';
 
 class LocationRequestView extends GetView<LocationRequestController> {
   const LocationRequestView({super.key});
@@ -54,11 +54,8 @@ class LocationRequestView extends GetView<LocationRequestController> {
               constraints: BoxConstraints(
                 maxWidth: size.width,
               ),
-              child: Text("Need Your Location",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w800,
-                      color: AppPaintings.themeBlack)),
+              child: Text(AppStrings.needYourLocation,
+                  style: AppPaintings.customLargeText),
             ),
             Container(
               padding: EdgeInsets.only(top: size.height * 0.03),
@@ -67,10 +64,7 @@ class LocationRequestView extends GetView<LocationRequestController> {
               ),
               child: Text(AppStrings.requestPermissionAccess,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w300,
-                      color: AppPaintings.themeLightBlack)),
+                  style: AppPaintings.customSmallText),
             ),
             SizedBox(
               height: size.height * 0.03,
