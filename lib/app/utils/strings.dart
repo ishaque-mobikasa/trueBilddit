@@ -16,4 +16,5 @@ class AssetStrings {
   static String landMarkIcon = "assets/images/land_mark.png";
   static String splashImage = "assets/images/splash_background.png";
   static String cityImage = "assets/images/city_image.png";
+  static String cameraImage = "assets/images/camera_icon.png";
 }

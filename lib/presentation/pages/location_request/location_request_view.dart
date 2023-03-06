@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/strings.dart';
 import 'package:truebildit/presentation/pages/location_request/controllers_bindings/locatio_request_controller.dart';
-import 'package:truebildit/presentation/pages/location_request/widgets/long_button.dart';
+import 'package:truebildit/presentation/common_widgets/long_button.dart';
 
 class LocationRequestView extends GetView<LocationRequestController> {
   const LocationRequestView({super.key});

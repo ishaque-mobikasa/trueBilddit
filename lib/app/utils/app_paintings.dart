@@ -12,8 +12,8 @@ class AppPaintings {
   static ThemeData appTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
     fontFamily: GoogleFonts.montserrat().fontFamily,
-    textTheme:
-        TextTheme(titleSmall: TextStyle(color: AppPaintings.themeGreenTextColor)),
+    textTheme: TextTheme(
+        titleSmall: TextStyle(color: AppPaintings.themeGreenTextColor)),
     primarySwatch: Colors.green,
   );
 
