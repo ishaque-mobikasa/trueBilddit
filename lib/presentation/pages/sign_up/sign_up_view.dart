@@ -69,6 +69,7 @@ class SignUpView extends GetView<SignUpController> {
                 const CustomFormField(
                     hintText: "E mail*",
                     icon: Icons.ac_unit,
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
                     type: FieldType.eMail),
                 const CustomFormField(
                     hintText: "Mobile Number*",

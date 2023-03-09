@@ -8,6 +8,7 @@ class AppPaintings {
   static Color kWhite = Colors.white;
   static Color themeBlack = const Color(0xff252525);
   static Color themeLightBlack = const Color(0xff565656);
+  static Color hintTextColor = const Color(0xff8F8F8F);
 
   static ThemeData appTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,

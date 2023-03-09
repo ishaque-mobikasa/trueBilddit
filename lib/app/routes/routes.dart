@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:truebildit/presentation/pages/forgot_password/controllers_binding/forgot_password_binding.dart';
 import 'package:truebildit/presentation/pages/forgot_password/forgot_password_view.dart';
+import 'package:truebildit/presentation/pages/home/controller_binding/home_binding.dart';
+import 'package:truebildit/presentation/pages/home/home_view.dart';
 import 'package:truebildit/presentation/pages/location_request/controllers_bindings/location_request_binding.dart';
 import 'package:truebildit/presentation/pages/location_request/location_request_view.dart';
 import 'package:truebildit/presentation/pages/sign_up/controllers_binding/sign_up_binding.dart';
@@ -13,6 +15,7 @@ class Routes {
   static const locationRequestView = '/locationRequestView';
   static const signUpview = "/signUpView";
   static const forgotPasswordView = "/forgotPasswordView";
+  static const homeView = "/homeView";
 }
 
 class AppPages {
@@ -37,5 +40,9 @@ class AppPages {
       page: () => const ForgotPasswordView(),
       binding: ForgotPasswordBinding(),
     ),
+    GetPage(
+        name: Routes.homeView,
+        page: () => const HomeView(),
+        binding: HomeBinding()),
   ];
 }

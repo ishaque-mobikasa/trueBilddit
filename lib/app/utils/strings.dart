@@ -3,11 +3,12 @@ class AppStrings {
   static String enterManualLocation = "ENTER MANUAL LOCATION";
   static String yourCurrentLocation = "YOUR CURRENT LOCATION";
   static String requestPermissionAccess =
-      "Please give us access to your location\n to get better experience";
+      "Please give us access to your location/n to get better experience";
   static String forgotPassword = "Forgot Your Password?";
   static String getPasswordLink =
-      "Enter your email address. You will receive an\n email with a link to reset your password";
+      "Enter your email address. You will receive an/n email with a link to reset your password";
   static String needYourLocation = "Need Your Location";
+  static String searchForProduct = "Search for your product here...";
 }
 
 class UrlStrings {}
@@ -22,4 +23,14 @@ class AssetStrings {
   static String cityImage = "assets/images/city_image.png";
   static String cameraImage = "assets/images/camera_icon.png";
   static String forgotPasswordImage = "assets/images/forgot_password.png";
+  static String electrical = "assets/images/electrical.png";
+  static String plumbing = "assets/images/plumbing.png";
+  static String fixing = "assets/images/fixing.png";
+  static String tools = "assets/images/tools.png";
+  static String sealants = "assets/images/sealant.png";
+  static String paintings = "assets/images/paintings.png";
+  static String ironMongery = "assets/images/ironMongery.png";
+  static String fireAndSecurity = "assets/images/fire.png";
+  static String landMarkIconOutlined = "assets/images/location_icon.png";
+  static String arrowDownIcon = "assets/images/arrow_down_icon.png";
 }

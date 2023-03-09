@@ -80,6 +80,8 @@ class CustomFormField extends StatelessWidget {
               hintText: hintText,
               labelText: hintText,
               hintStyle: hintStyle,
+              focusedErrorBorder: const UnderlineInputBorder(
+                  borderSide: BorderSide(color: Colors.green)),
               errorStyle: const TextStyle(color: Colors.green),
               focusedBorder: UnderlineInputBorder(
                   borderSide: BorderSide(color: AppPaintings.themeGreenColor)),
