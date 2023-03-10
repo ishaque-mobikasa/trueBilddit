@@ -33,4 +33,12 @@ class AssetStrings {
   static String fireAndSecurity = "assets/images/fire.png";
   static String landMarkIconOutlined = "assets/images/location_icon.png";
   static String arrowDownIcon = "assets/images/arrow_down_icon.png";
+  static String homeIconUnSelected = "assets/images/home_icon.png";
+  static String categoriesUnSelected = "assets/images/categories.png";
+  static String myListUnSelected = "assets/images/list_icon.png";
+  static String basketUnSelected = "assets/images/basket_icon.png";
+  static String homeIconSelected = "assets/images/home_icon_selected.png";
+  static String categoriesSelected = "assets/images/category_icon_selected.png";
+  static String myListSelected = "assets/images/list_icon_selected.png";
+  static String basketSelected = "assets/images/basket_Icon_selected.png";
 }

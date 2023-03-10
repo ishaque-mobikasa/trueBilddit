@@ -15,7 +15,7 @@ class CircularCategoryItem extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.only(top: 10),
         constraints: BoxConstraints(
-            maxHeight: size.height * 0.15, maxWidth: size.width * 0.25),
+            maxHeight: size.height * 0.16, maxWidth: size.width * 0.26),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

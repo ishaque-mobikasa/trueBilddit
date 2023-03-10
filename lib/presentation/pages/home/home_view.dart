@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,6 +10,7 @@ import 'package:truebildit/presentation/common_widgets/custom_clipper.dart';
 import 'package:truebildit/presentation/pages/home/controller_binding/home_controller.dart';
 import 'package:truebildit/presentation/pages/home/widgets/circular_category.dart';
 import 'package:truebildit/presentation/pages/home/widgets/location_widget.dart';
+import 'package:truebildit/presentation/pages/home/widgets/modal_bottom_sheet.dart';
 
 import 'widgets/search_widget.dart';
 
@@ -69,7 +71,7 @@ class HomeView extends GetView<HomeController> {
                           LocationWidget(
                               locationName: "Manchester",
                               onTap: () {
-                                log("Tapped on Location");
+                                Get.bottomSheet(const LocationModalSheet());
                               }),
                           Container(
                             width: size.width,
@@ -176,6 +178,59 @@ class HomeView extends GetView<HomeController> {
                     hintText: AppStrings.searchForProduct,
                   ))
             ],
+          ),
+        ),
+        bottomNavigationBar: Obx(
+          () => ClipRRect(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
+            ),
+            child: CustomNavigationBar(
+                selectedColor: AppPaintings.themeGreenColor,
+                onTap: (index) {
+                  controller.setIndex(index);
+                },
+                currentIndex: controller.selectedIndex.value,
+                elevation: 10,
+                items: [
+                  CustomNavigationBarItem(
+                      selectedTitle: Text(
+                        "Home",
+                        style: TextStyle(color: AppPaintings.themeGreenColor),
+                      ),
+                      selectedIcon:
+                          ImageIcon(AssetImage(AssetStrings.homeIconSelected)),
+                      icon: ImageIcon(
+                          AssetImage(AssetStrings.homeIconUnSelected)),
+                      title: const Text("Home")),
+                  CustomNavigationBarItem(
+                      selectedTitle: Text(
+                        "Categories",
+                        style: TextStyle(color: AppPaintings.themeGreenColor),
+                      ),
+                      selectedIcon: ImageIcon(
+                          AssetImage(AssetStrings.categoriesSelected)),
+                      icon: ImageIcon(
+                          AssetImage(AssetStrings.categoriesUnSelected)),
+                      title: const Text("Categories")),
+                  CustomNavigationBarItem(
+                      selectedTitle: Text(
+                        "My List",
+                        style: TextStyle(color: AppPaintings.themeGreenColor),
+                      ),
+                      selectedIcon:
+                          ImageIcon(AssetImage(AssetStrings.myListSelected)),
+                      icon: ImageIcon(AssetImage(AssetStrings.myListSelected)),
+                      title: const Text("My List")),
+                  CustomNavigationBarItem(
+                      selectedTitle: Text(
+                        "Basket",
+                        style: TextStyle(color: AppPaintings.themeGreenColor),
+                      ),
+                      icon: ImageIcon(AssetImage(AssetStrings.basketSelected)),
+                      title: const Text("Basket"))
+                ]),
           ),
         ),
       ),
