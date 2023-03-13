@@ -11,6 +11,7 @@ import 'package:truebildit/presentation/pages/home/controller_binding/home_contr
 import 'package:truebildit/presentation/pages/home/widgets/circular_category.dart';
 import 'package:truebildit/presentation/pages/home/widgets/location_widget.dart';
 import 'package:truebildit/presentation/pages/home/widgets/modal_bottom_sheet.dart';
+import 'package:truebildit/presentation/pages/home/widgets/two_part_container.dart';
 
 import 'widgets/search_widget.dart';
 
@@ -40,12 +41,12 @@ class HomeView extends GetView<HomeController> {
                             alignment: Alignment.topCenter,
                             child: Row(
                               children: [
+                                const Spacer(),
                                 Expanded(
-                                  flex: 2,
                                   child: SizedBox(
                                     height: size.height * 0.08,
                                     child: Align(
-                                        alignment: Alignment.centerRight,
+                                        alignment: Alignment.center,
                                         child: Image.asset(
                                           AssetStrings.bildItLogo,
                                           width: size.width * 0.3,
@@ -156,20 +157,21 @@ class HomeView extends GetView<HomeController> {
                           ),
                           CircularCategoryItem(
                             image: AssetStrings.ironMongery,
-                            title: "Ironmongery",
+                            title: "Ironmongery\n",
                           ),
                           const SizedBox(
                             width: 20,
                           ),
                           CircularCategoryItem(
                             image: AssetStrings.fireAndSecurity,
-                            title: "Fire&Security",
+                            title: "Fire&Security\n",
                             onTap: () => log("Tapped"),
                           ),
                         ],
                       )
                     ],
                   ),
+                  const TwoPartContainer()
                 ],
               ),
               Positioned(
@@ -197,39 +199,57 @@ class HomeView extends GetView<HomeController> {
                   CustomNavigationBarItem(
                       selectedTitle: Text(
                         "Home",
-                        style: TextStyle(color: AppPaintings.themeGreenColor),
+                        style: TextStyle(
+                            color: AppPaintings.themeGreenColor,
+                            overflow: TextOverflow.ellipsis),
                       ),
                       selectedIcon:
                           ImageIcon(AssetImage(AssetStrings.homeIconSelected)),
                       icon: ImageIcon(
                           AssetImage(AssetStrings.homeIconUnSelected)),
-                      title: const Text("Home")),
+                      title: const Text(
+                        "Home",
+                        style: TextStyle(overflow: TextOverflow.ellipsis),
+                      )),
                   CustomNavigationBarItem(
                       selectedTitle: Text(
                         "Categories",
-                        style: TextStyle(color: AppPaintings.themeGreenColor),
+                        style: TextStyle(
+                            color: AppPaintings.themeGreenColor,
+                            overflow: TextOverflow.ellipsis),
                       ),
                       selectedIcon: ImageIcon(
                           AssetImage(AssetStrings.categoriesSelected)),
                       icon: ImageIcon(
                           AssetImage(AssetStrings.categoriesUnSelected)),
-                      title: const Text("Categories")),
+                      title: const Text(
+                        "Categories",
+                        overflow: TextOverflow.ellipsis,
+                      )),
                   CustomNavigationBarItem(
                       selectedTitle: Text(
                         "My List",
-                        style: TextStyle(color: AppPaintings.themeGreenColor),
+                        style: TextStyle(
+                            color: AppPaintings.themeGreenColor,
+                            overflow: TextOverflow.ellipsis),
                       ),
                       selectedIcon:
                           ImageIcon(AssetImage(AssetStrings.myListSelected)),
                       icon: ImageIcon(AssetImage(AssetStrings.myListSelected)),
-                      title: const Text("My List")),
+                      title: const Text(
+                        "My List",
+                        style: TextStyle(overflow: TextOverflow.ellipsis),
+                      )),
                   CustomNavigationBarItem(
                       selectedTitle: Text(
                         "Basket",
                         style: TextStyle(color: AppPaintings.themeGreenColor),
                       ),
                       icon: ImageIcon(AssetImage(AssetStrings.basketSelected)),
-                      title: const Text("Basket"))
+                      title: const Text(
+                        "Basket",
+                        overflow: TextOverflow.ellipsis,
+                      ))
                 ]),
           ),
         ),

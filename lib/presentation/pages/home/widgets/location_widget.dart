@@ -36,6 +36,7 @@ class LocationWidget extends StatelessWidget {
                       maxLines: 2,
                       style: TextStyle(
                           overflow: TextOverflow.ellipsis,
+                          fontSize: 12,
                           color: AppPaintings.kWhite),
                     )),
                 Flexible(
