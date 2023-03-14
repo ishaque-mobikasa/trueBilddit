@@ -22,6 +22,7 @@ class DashBoardView extends GetView<DashBoardController> {
               topRight: Radius.circular(30),
             ),
             child: CustomNavigationBar(
+                strokeColor: AppPaintings.themeGreenColor,
                 selectedColor: AppPaintings.themeGreenColor,
                 onTap: (index) {
                   controller.setIndex(index);
