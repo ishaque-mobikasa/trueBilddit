@@ -1,8 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:truebildit/app/utility_functions/dummy_list.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/strings.dart';
 import 'package:truebildit/presentation/common_widgets/custom_clipper.dart';
@@ -21,6 +20,7 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return SingleChildScrollView(
+      physics: const NeverScrollableScrollPhysics(),
       child: Stack(
         children: [
           Column(
@@ -108,63 +108,16 @@ class HomeView extends GetView<HomeController> {
                   ),
                 ),
               ),
-              Wrap(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      CircularCategoryItem(
-                        image: AssetStrings.electrical,
-                        title: "Electrical& Lighting",
-                      ),
-                      CircularCategoryItem(
-                        image: AssetStrings.plumbing,
-                        title: "Plumbing& Heating",
-                      ),
-                      CircularCategoryItem(
-                        image: AssetStrings.fixing,
-                        title: "Fixings& Support",
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      CircularCategoryItem(
-                        image: AssetStrings.tools,
-                        title: "Tools& Equipment",
-                      ),
-                      CircularCategoryItem(
-                        image: AssetStrings.sealants,
-                        title: "Sealants& Adhesives",
-                      ),
-                      CircularCategoryItem(
-                        image: AssetStrings.paintings,
-                        title: "Painting &Decorating",
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      CircularCategoryItem(
-                        image: AssetStrings.ironMongery,
-                        title: "Ironmongery\n",
-                      ),
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      CircularCategoryItem(
-                        image: AssetStrings.fireAndSecurity,
-                        title: "Fire&Security\n",
-                        onTap: () => log("Tapped"),
-                      ),
-                    ],
-                  )
-                ],
+              SizedBox(
+                height: Get.height * 0.47,
+                child: GridView.builder(
+                  physics: const BouncingScrollPhysics(),
+                  itemCount: homeItems.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisSpacing: 20, crossAxisCount: 3),
+                  itemBuilder: (context, index) =>
+                      CircularCategoryItem(circularItem: homeItems[index]),
+                ),
               ),
               const TwoPartContainer()
             ],

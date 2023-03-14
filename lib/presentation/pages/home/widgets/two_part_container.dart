@@ -10,7 +10,10 @@ class TwoPartContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      padding: const EdgeInsets.only(
+        left: 8,
+        right: 8,
+      ),
       child: Stack(
         children: [
           Align(
@@ -22,7 +25,7 @@ class TwoPartContainer extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               alignment: Alignment.centerRight,
               width: Get.width,
-              height: Get.height * 0.12,
+              height: Get.height * 0.1,
               child: SizedBox(
                 width: Get.width * 0.35,
                 child: Column(
@@ -67,7 +70,7 @@ class TwoPartContainer extends StatelessWidget {
             ),
           ),
           Container(
-              height: Get.height * 0.12,
+              height: Get.height * 0.1,
               width: Get.width * 0.56,
               decoration: const BoxDecoration(
                   color: Color(0xff64BD3C),

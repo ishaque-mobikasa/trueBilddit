@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:truebildit/data/models/circular_item_model.dart';
 
 class CircularCategoryItem extends StatelessWidget {
-  final String image;
+  final CircularItemModel circularItem;
   const CircularCategoryItem(
-      {super.key, required this.image, required this.title, this.onTap});
-  final String title;
+      {super.key, required,required this.circularItem, this.onTap});
+
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
@@ -28,14 +29,14 @@ class CircularCategoryItem extends StatelessWidget {
                     color: Colors.white,
                   ),
                   child: Image.asset(
-                    image,
+                    circularItem.image,
                     width: size.width * 0.25,
                   ),
                 ),
               ),
               Flexible(
                   child: Text(
-                title,
+                circularItem.title,
                 style: const TextStyle(fontSize: 12),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,

@@ -59,7 +59,7 @@ class SearchResultsView extends GetView<SearchController> {
               ),
               ProductCard(
                   icon: Icons.star_border,
-                  onStarButtonClick: () => log("Clicked on star button"),
+                  onStarButtonClick: () => log("Clicked on Right icon button"),
                   product: ProductModel(
                       id: "1",
                       title: "Yellow Armoured Cable MC Wire",
