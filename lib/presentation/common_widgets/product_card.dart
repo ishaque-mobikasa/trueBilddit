@@ -3,23 +3,24 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:truebildit/data/models/product_model.dart';
 import 'package:truebildit/presentation/common_widgets/add_substract_button.dart';
+import 'package:truebildit/presentation/common_widgets/long_button.dart';
 import 'package:truebildit/presentation/common_widgets/short_button.dart';
 
-class MyCustomWidget extends StatelessWidget {
+class ProductCard extends StatelessWidget {
   final ProductModel product;
   final IconData? icon;
-  const MyCustomWidget({super.key, required this.product, this.icon});
+  final void Function()? onStarButtonClick;
+  const ProductCard(
+      {super.key, required this.product, this.icon, this.onStarButtonClick});
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return SafeArea(
-        child: Scaffold(
-            body: Card(
-      elevation: 0.5,
+    return Card(
+      elevation: 1,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Container(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(5),
         alignment: Alignment.center,
         decoration: BoxDecoration(
             border: const Border(),
@@ -41,8 +42,8 @@ class MyCustomWidget extends StatelessWidget {
                       child: Center(
                         child: Image.asset(
                           product.image,
-                          height: 80,
-                          width: 80,
+                          height: 60,
+                          width: 60,
                         ),
                       ),
                     )
@@ -61,7 +62,8 @@ class MyCustomWidget extends StatelessWidget {
                         child: Text(
                           product.title,
                           maxLines: 2,
-                          style: const TextStyle(fontSize: 14),
+                          style: const TextStyle(
+                              fontSize: 12, fontWeight: FontWeight.w300),
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
@@ -77,6 +79,7 @@ class MyCustomWidget extends StatelessWidget {
                             width: 10,
                           ),
                           ShortButton(
+                              buttonType: ButtonType.elevatedButton,
                               buttonText: "ADD",
                               onPressed: () {
                                 log("Added to Cart");
@@ -92,9 +95,12 @@ class MyCustomWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 icon != null
-                    ? Icon(
-                        icon,
-                        size: 17,
+                    ? GestureDetector(
+                        onTap: onStarButtonClick,
+                        child: Icon(
+                          icon,
+                          size: 17,
+                        ),
                       )
                     : const SizedBox(
                         height: 17,
@@ -104,7 +110,8 @@ class MyCustomWidget extends StatelessWidget {
                   children: [
                     Text(
                       "\u00A3${product.price.toString()}",
-                      style: const TextStyle(fontSize: 12),
+                      style: const TextStyle(
+                          fontSize: 12, fontWeight: FontWeight.w500),
                       overflow: TextOverflow.ellipsis,
                     ),
                     const Text(
@@ -119,6 +126,6 @@ class MyCustomWidget extends StatelessWidget {
           ],
         ),
       ),
-    )));
+    );
   }
 }

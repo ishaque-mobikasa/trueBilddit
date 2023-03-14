@@ -18,7 +18,7 @@ class AddSubstractButton extends StatelessWidget {
     return Container(
       constraints: BoxConstraints(
         maxWidth: size.width * 0.25,
-        maxHeight: size.height * 0.045,
+        maxHeight: size.height * 0.04,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -76,7 +76,7 @@ class LocationRequestView extends GetView<LocationRequestController> {
               iconImage: AssetStrings.currentLocationIcon,
             ),
             SizedBox(
-              height: size.height * 0.025,
+              height: size.height * 0.015,
             ),
             LongButton(
                 buttonType: ButtonType.outLinedButton,
