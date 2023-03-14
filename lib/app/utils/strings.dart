@@ -3,10 +3,10 @@ class AppStrings {
   static String enterManualLocation = "ENTER MANUAL LOCATION";
   static String yourCurrentLocation = "YOUR CURRENT LOCATION";
   static String requestPermissionAccess =
-      "Please give us access to your location/n to get better experience";
+      "Please give us access to your location \n to get better experience";
   static String forgotPassword = "Forgot Your Password?";
   static String getPasswordLink =
-      "Enter your email address. You will receive an/n email with a link to reset your password";
+      "Enter your email address. You will receive an\n email with a link to reset your password";
   static String needYourLocation = "Need Your Location";
   static String searchForProduct = "Search for your product here...";
 }

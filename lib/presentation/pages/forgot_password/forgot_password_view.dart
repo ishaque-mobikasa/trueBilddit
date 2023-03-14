@@ -30,7 +30,7 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
         child: Column(
           children: [
             Container(
-                height: size.height * 0.3,
+                height: size.height * 0.25,
                 alignment: Alignment.bottomCenter,
                 child: Image.asset(
                   AssetStrings.forgotPasswordImage,
@@ -44,7 +44,7 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
               style: AppPaintings.customLargeText,
             ),
             const SizedBox(
-              height: 20,
+              height: 30,
             ),
             SizedBox(
               width: size.width * 0.8,
@@ -54,6 +54,9 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
                 maxLines: 2,
                 textAlign: TextAlign.center,
               ),
+            ),
+            const SizedBox(
+              height: 20,
             ),
             Container(
               constraints: BoxConstraints(maxWidth: size.width * 0.82),

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -114,9 +116,14 @@ class HomeView extends GetView<HomeController> {
                   physics: const BouncingScrollPhysics(),
                   itemCount: homeItems.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisSpacing: 20, crossAxisCount: 3),
-                  itemBuilder: (context, index) =>
-                      CircularCategoryItem(circularItem: homeItems[index]),
+                      mainAxisSpacing: 0,
+                      crossAxisSpacing: 0,
+                      childAspectRatio: 1.05,
+                      crossAxisCount: 3),
+                  itemBuilder: (context, index) => CircularCategoryItem(
+                    circularItem: homeItems[index],
+                    onTap: () => log("Clicked on circular item"),
+                  ),
                 ),
               ),
               const TwoPartContainer()

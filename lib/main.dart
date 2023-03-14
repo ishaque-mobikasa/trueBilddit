@@ -16,11 +16,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-        title: 'TrueBuildIt',
-        defaultTransition: Transition.cupertino,
-        debugShowCheckedModeBanner: false,
-        theme: AppPaintings.appTheme,
-        getPages: AppPages.pages,
-        initialRoute: Routes.dashBoardView);
+      title: 'TrueBuildIt',
+      defaultTransition: Transition.cupertino,
+      debugShowCheckedModeBanner: false,
+      theme: AppPaintings.appTheme,
+      getPages: AppPages.pages,
+      initialRoute: Routes.dashBoardView,
+    );
   }
 }

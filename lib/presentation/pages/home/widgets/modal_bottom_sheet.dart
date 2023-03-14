@@ -73,7 +73,7 @@ class LocationModalSheet extends StatelessWidget {
               iconImage: AssetStrings.currentLocationIcon,
             ),
             SizedBox(
-              height: size.height * 0.025,
+              height: size.height * 0.01,
             ),
             LongButton(
                 buttonType: ButtonType.outLinedButton,

@@ -60,10 +60,11 @@ class LocationRequestView extends GetView<LocationRequestController> {
             Container(
               padding: EdgeInsets.only(top: size.height * 0.03),
               constraints: BoxConstraints(
-                maxWidth: size.width,
+                maxWidth: size.width * 0.75,
               ),
               child: Text(AppStrings.requestPermissionAccess,
                   textAlign: TextAlign.center,
+                  maxLines: 2,
                   style: AppPaintings.customSmallText),
             ),
             SizedBox(

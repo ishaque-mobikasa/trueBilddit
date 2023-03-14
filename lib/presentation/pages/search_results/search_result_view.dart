@@ -20,6 +20,7 @@ class SearchResultsView extends GetView<SearchController> {
     return Stack(
       children: [
         SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               Container(
@@ -114,6 +115,7 @@ class SearchResultsView extends GetView<SearchController> {
             height: Get.height * 0.12,
             child: AppBar(
               centerTitle: true,
+              backgroundColor: AppPaintings.themeGreenColor,
               title: ImageIcon(
                 AssetImage(AssetStrings.bildItLogo),
                 size: 100,
