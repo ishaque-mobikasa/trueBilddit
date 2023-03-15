@@ -7,6 +7,8 @@ import 'package:truebildit/presentation/pages/home/controller_binding/home_bindi
 import 'package:truebildit/presentation/pages/home/home_view.dart';
 import 'package:truebildit/presentation/pages/location_request/controllers_bindings/location_request_binding.dart';
 import 'package:truebildit/presentation/pages/location_request/location_request_view.dart';
+import 'package:truebildit/presentation/pages/profilew/controllers_bindings/profile_binding.dart';
+import 'package:truebildit/presentation/pages/profilew/profile_view.dart';
 import 'package:truebildit/presentation/pages/search_results/controllers_bindings/search_binding.dart';
 import 'package:truebildit/presentation/pages/search_results/search_result_view.dart';
 import 'package:truebildit/presentation/pages/sign_up/controllers_binding/sign_up_binding.dart';
@@ -21,7 +23,8 @@ class Routes {
   static const forgotPasswordView = "/forgotPasswordView";
   static const homeView = "/homeView";
   static const searchView = "/searchView";
-   static const dashBoardView = "/dashBoardView";
+  static const dashBoardView = "/dashBoardView";
+  static const profileView = "/profileView";
 }
 
 class AppPages {
@@ -53,9 +56,14 @@ class AppPages {
     GetPage(
         name: Routes.searchView,
         page: () => const SearchResultsView(),
-        binding: SearchBinding()), GetPage(
+        binding: SearchBinding()),
+    GetPage(
         name: Routes.dashBoardView,
         page: () => const DashBoardView(),
         binding: DashBoardBinding()),
+    GetPage(
+        name: Routes.profileView,
+        page: () => const ProfileView(),
+        binding: ProfileBinding()),
   ];
 }

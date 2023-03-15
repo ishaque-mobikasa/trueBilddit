@@ -19,8 +19,10 @@ class CustomFormField extends StatelessWidget {
   final TextEditingController? controller;
   final VoidCallback? toggleVisibility;
   final AutovalidateMode? autovalidateMode;
+  final dynamic initialValue;
   const CustomFormField(
       {this.obscureText,
+      this.initialValue,
       this.margin = const EdgeInsets.symmetric(horizontal: 15),
       this.borderRadius,
       this.hintStyle = const TextStyle(color: Colors.grey),
@@ -42,6 +44,7 @@ class CustomFormField extends StatelessWidget {
           border: Border(bottom: BorderSide(color: Color(0xffECECEC)))),
       padding: padding,
       child: TextFormField(
+          initialValue: initialValue ?? "",
           autovalidateMode: autovalidateMode,
           controller: controller,
           inputFormatters: [
