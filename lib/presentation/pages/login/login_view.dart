@@ -43,7 +43,7 @@ class LoginView extends GetView<LoginController> {
             width: Get.width * 0.8,
             child: Text(
               "Welcome!",
-              textAlign: TextAlign.start,
+              textAlign: TextAlign.center,
               style: AppPaintings.customLargeText
                   .copyWith(fontSize: 30, fontWeight: FontWeight.w500),
             ),
@@ -55,6 +55,7 @@ class LoginView extends GetView<LoginController> {
             width: Get.width * 0.8,
             height: Get.height * 0.05,
             child: Text(
+              textAlign: TextAlign.center,
               "Sign in to continue",
               style: AppPaintings.customSmallText
                   .copyWith(fontSize: 14, fontWeight: FontWeight.w400),
@@ -63,7 +64,7 @@ class LoginView extends GetView<LoginController> {
           CustomFormField(
             initialValue: "+44 7911 123456",
             type: FieldType.eMail,
-            hintText: "Email / Mobile Number",
+            hintText: "Mobile Number",
             margin: EdgeInsets.symmetric(horizontal: Get.width * 0.1),
           ),
           SizedBox(
@@ -106,13 +107,27 @@ class LoginView extends GetView<LoginController> {
                 isSocialButton: true,
                 outlinedButtonBorderColor: AppPaintings.loginButtonBorderColor,
                 buttonType: ButtonType.outLinedButton,
+                buttonText: "  Sign In With Email",
+                iconImage: AssetStrings.emailIcon,
+                buttonTextStyle: TextStyle(color: AppPaintings.themeBlack),
+                onPressed: () {}),
+          ),
+          SizedBox(
+            height: Get.height * 0.02,
+          ),
+          SizedBox(
+            width: Get.width * 0.8,
+            child: LongButton(
+                isSocialButton: true,
+                outlinedButtonBorderColor: AppPaintings.loginButtonBorderColor,
+                buttonType: ButtonType.outLinedButton,
                 buttonText: "Sign In With Google",
                 iconImage: AssetStrings.googleIcon,
                 buttonTextStyle: TextStyle(color: AppPaintings.themeBlack),
                 onPressed: () {}),
           ),
           SizedBox(
-            height: Get.height * 0.02,
+            height: Get.height * 0.03,
           ),
           SizedBox(
             width: Get.width * 0.8,

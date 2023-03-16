@@ -10,8 +10,10 @@ List<CircularItemModel> homeItems = [
   CircularItemModel(image: AssetStrings.sealants, title: "Sealants& Adhesives"),
   CircularItemModel(
       image: AssetStrings.paintings, title: "Painting &Decorating"),
-  CircularItemModel(image: AssetStrings.ironMongery, title: "Ironmongery"),
+  CircularItemModel(
+      image: AssetStrings.ironMongery, title: "General Construction"),
   CircularItemModel(
       image: AssetStrings.fireAndSecurity, title: "Fire&Security"),
-      
+  CircularItemModel(
+      image: AssetStrings.gardeningIcon, title: "Outdoor & Gardening"),
 ];
