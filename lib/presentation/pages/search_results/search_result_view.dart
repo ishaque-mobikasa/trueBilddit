@@ -31,29 +31,36 @@ class SearchResultsView extends GetView<SearchController> {
               const SizedBox(
                 height: 20,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  SizedBox(
-                    height: Get.height * 0.06,
-                    child: ShortButton(
-                        buttonType: ButtonType.outLinedButton,
-                        maxWidth: Get.width * 0.45,
-                        buttonText: "Filter By",
-                        iconImage: "assets/images/filter_icon.png",
-                        onPressed: () {}),
-                  ),
-                  SizedBox(
-                    height: Get.height * 0.06,
-                    child: ShortButton(
-                        buttonType: ButtonType.outLinedButton,
-                        maxWidth: Get.width * 0.45,
-                        outlineButtonBorderColor: AppPaintings.kWhite,
-                        buttonText: "Sort",
-                        iconImage: "assets/images/sort_icon.png",
-                        onPressed: () {}),
-                  ),
-                ],
+              Obx(
+                () => Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(
+                      height: Get.height * 0.06,
+                      child: ShortButton(
+                          buttonType: ButtonType.outLinedButton,
+                          maxWidth: Get.width * 0.45,
+                          outlineButtonBorderColor: controller.isSelected
+                              ? AppPaintings.themeGreenColor
+                              : AppPaintings.kWhite,
+                          buttonText: "Filter By",
+                          iconImage: "assets/images/filter_icon.png",
+                          onPressed: () => controller.onClick(true)),
+                    ),
+                    SizedBox(
+                      height: Get.height * 0.06,
+                      child: ShortButton(
+                          buttonType: ButtonType.outLinedButton,
+                          maxWidth: Get.width * 0.45,
+                          outlineButtonBorderColor: controller.isSelected
+                              ? AppPaintings.kWhite
+                              : AppPaintings.themeGreenColor,
+                          buttonText: "Sort",
+                          iconImage: "assets/images/sort_icon.png",
+                          onPressed: () => controller.onClick(false)),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 20,

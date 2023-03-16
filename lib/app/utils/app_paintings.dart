@@ -9,6 +9,7 @@ class AppPaintings {
   static Color themeBlack = const Color(0xff252525);
   static Color themeLightBlack = const Color(0xff565656);
   static Color hintTextColor = const Color(0xff8F8F8F);
+  static Color disabledColor = const Color(0xffF3F3F3);
 
   static ThemeData appTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,

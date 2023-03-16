@@ -19,6 +19,8 @@ class SignUpView extends GetView<SignUpController> {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
+            titleTextStyle: AppPaintings.customLargeText
+                .copyWith(fontWeight: FontWeight.w500),
             backgroundColor: AppPaintings.kWhite,
             elevation: 0,
             title: const Text("Sign Up"),

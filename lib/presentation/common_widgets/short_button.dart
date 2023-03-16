@@ -6,17 +6,21 @@ class ShortButton extends StatelessWidget {
   const ShortButton(
       {super.key,
       this.buttonStyle,
+      this.backGroundColor = Colors.white,
       this.outlineButtonBorderColor,
       this.maxWidth,
-      this.textColor,
+      this.buttonTextStyle,
+      this.iconColor,
       this.maxheight,
       required this.buttonType,
       required this.buttonText,
-      required this.onPressed,
+      required this.onPressed(),
       this.iconImage});
   final double? maxWidth;
   final double? maxheight;
-  final Color? textColor;
+  final Color? iconColor;
+  final TextStyle? buttonTextStyle;
+  final Color? backGroundColor;
   final Color? outlineButtonBorderColor;
   final ButtonStyle? buttonStyle;
   final void Function()? onPressed;
@@ -33,7 +37,7 @@ class ShortButton extends StatelessWidget {
         maxHeight: maxheight ?? size.height * 0.04,
       ),
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(10)),
+          color: backGroundColor, borderRadius: BorderRadius.circular(10)),
       child: buttonType == ButtonType.elevatedButton
           ? ElevatedButton(
               style: buttonStyle ??
@@ -61,10 +65,11 @@ class ShortButton extends StatelessWidget {
                   Expanded(
                       child: Text(
                     buttonText,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: textColor ?? AppPaintings.kWhite,
-                    ),
+                    style: buttonTextStyle ??
+                        TextStyle(
+                          fontWeight: FontWeight.w500,
+                          color: AppPaintings.kWhite,
+                        ),
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     textAlign: TextAlign.center,
@@ -94,7 +99,7 @@ class ShortButton extends StatelessWidget {
                       : Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 4.0),
                           child: ImageIcon(
-                            color: textColor ?? AppPaintings.themeBlack,
+                            color: iconColor ?? AppPaintings.themeBlack,
                             AssetImage(iconImage!),
                             size: 14,
                           ),
@@ -102,10 +107,11 @@ class ShortButton extends StatelessWidget {
                   Flexible(
                       child: Text(
                     buttonText,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: textColor ?? AppPaintings.themeBlack,
-                    ),
+                    style: buttonTextStyle ??
+                        TextStyle(
+                          fontWeight: FontWeight.w500,
+                          color: AppPaintings.themeBlack,
+                        ),
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     textAlign: TextAlign.center,

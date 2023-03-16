@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:truebildit/presentation/pages/address/address_view.dart';
+import 'package:truebildit/presentation/pages/address/controllers_binding/address_binding.dart';
 import 'package:truebildit/presentation/pages/dash_board/controllers_binding/dash_board_binding.dart';
 import 'package:truebildit/presentation/pages/dash_board/dash_board_view.dart';
 import 'package:truebildit/presentation/pages/forgot_password/controllers_binding/forgot_password_binding.dart';
@@ -25,6 +27,7 @@ class Routes {
   static const searchView = "/searchView";
   static const dashBoardView = "/dashBoardView";
   static const profileView = "/profileView";
+  static const addressView = "/addressView";
 }
 
 class AppPages {
@@ -65,5 +68,9 @@ class AppPages {
         name: Routes.profileView,
         page: () => const ProfileView(),
         binding: ProfileBinding()),
+    GetPage(
+        name: Routes.addressView,
+        page: () => const AddressView(),
+        binding: AddressBinding()),
   ];
 }

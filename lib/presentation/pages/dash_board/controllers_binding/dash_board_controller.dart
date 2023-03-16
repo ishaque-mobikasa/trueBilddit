@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:truebildit/presentation/pages/address/address_view.dart';
 import 'package:truebildit/presentation/pages/home/home_view.dart';
-import 'package:truebildit/presentation/pages/profilew/profile_view.dart';
 import 'package:truebildit/presentation/pages/search_results/search_result_view.dart';
 import 'package:truebildit/presentation/pages/sign_up/sign_up_view.dart';
 
@@ -11,8 +11,8 @@ class DashBoardController extends GetxController {
   List<Widget> pages = [
     const HomeView(),
     const SignUpView(),
-    const ProfileView(),
-    const SearchResultsView()
+    const SearchResultsView(),
+    const AddressView()
   ];
   Color getScaffoldColor() => _scaffoldBackground.value;
 
@@ -20,7 +20,7 @@ class DashBoardController extends GetxController {
   setIndex(index) {
     if (index != selectedIndex.value) {
       selectedIndex.value = index;
-      if (index == 0 || index == 3) {
+      if (index == 0 || index == 2 || index == 3) {
         setWhiteBackground = Colors.white.withAlpha(245);
       } else {
         setWhiteBackground = Colors.white;
