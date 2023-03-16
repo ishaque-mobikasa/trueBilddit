@@ -41,4 +41,6 @@ class AssetStrings {
   static String categoriesSelected = "assets/images/category_icon_selected.png";
   static String myListSelected = "assets/images/list_icon_selected.png";
   static String basketSelected = "assets/images/basket_Icon_selected.png";
+  static String googleIcon = "assets/images/google_icon.png";
+  static String facebookIcon = "assets/images/facebook_icon.png";
 }

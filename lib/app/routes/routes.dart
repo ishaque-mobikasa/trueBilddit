@@ -9,6 +9,8 @@ import 'package:truebildit/presentation/pages/home/controller_binding/home_bindi
 import 'package:truebildit/presentation/pages/home/home_view.dart';
 import 'package:truebildit/presentation/pages/location_request/controllers_bindings/location_request_binding.dart';
 import 'package:truebildit/presentation/pages/location_request/location_request_view.dart';
+import 'package:truebildit/presentation/pages/login/controller_binding/login_binding.dart';
+import 'package:truebildit/presentation/pages/login/login_view.dart';
 import 'package:truebildit/presentation/pages/profilew/controllers_bindings/profile_binding.dart';
 import 'package:truebildit/presentation/pages/profilew/profile_view.dart';
 import 'package:truebildit/presentation/pages/search_results/controllers_bindings/search_binding.dart';
@@ -28,6 +30,7 @@ class Routes {
   static const dashBoardView = "/dashBoardView";
   static const profileView = "/profileView";
   static const addressView = "/addressView";
+  static const loginView = "/loginView";
 }
 
 class AppPages {
@@ -72,5 +75,9 @@ class AppPages {
         name: Routes.addressView,
         page: () => const AddressView(),
         binding: AddressBinding()),
+    GetPage(
+        name: Routes.loginView,
+        page: () => const LoginView(),
+        binding: LoginBinding()),
   ];
 }
