@@ -1,11 +1,9 @@
-import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
-import 'package:truebildit/app/utils/strings.dart';
+import 'package:truebildit/presentation/common_widgets/circled_profile_image.dart';
 import 'package:truebildit/presentation/common_widgets/form_field_with_validation.dart';
 import 'package:truebildit/presentation/common_widgets/long_button.dart';
 import 'package:truebildit/presentation/pages/sign_up/controllers_binding/sign_up_controller.dart';
@@ -36,30 +34,17 @@ class SignUpView extends GetView<SignUpController> {
             child: Column(
               children: [
                 Container(
-                  padding: const EdgeInsets.only(top: 10),
-                  constraints: BoxConstraints(maxHeight: size.height * 0.2),
-                  child: GestureDetector(
-                    onTap: controller.onImagePickButtonClick,
-                    child: Stack(
-                      children: [
-                        Obx(
-                          () => CircleAvatar(
-                              radius: 50,
-                              backgroundImage: MemoryImage(const Base64Decoder()
-                                  .convert(controller.pickedImage.value))),
-                        ),
-                        Positioned(
-                            bottom: 1,
-                            right: 1,
-                            child: CircleAvatar(
-                              radius: 20,
-                              backgroundImage:
-                                  AssetImage(AssetStrings.cameraImage),
-                            ))
-                      ],
-                    ),
-                  ),
-                ),
+                    padding: const EdgeInsets.only(top: 10),
+                    constraints: BoxConstraints(maxHeight: size.height * 0.2),
+                    child: Obx(
+                      () => CircledProfileImage(
+                        isCameraIconed: true,
+                        image: controller.pickedImage.value,
+                        backGroundCameraAvatarColor:
+                            AppPaintings.themeGreenColor,
+                        onTap: () => controller.onImagePickButtonClick(),
+                      ),
+                    )),
                 const CustomFormField(
                     hintText: "Full Name",
                     icon: Icons.ac_unit,

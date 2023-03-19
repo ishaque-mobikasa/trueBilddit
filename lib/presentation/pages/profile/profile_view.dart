@@ -1,14 +1,13 @@
-import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
-import 'package:truebildit/app/utils/strings.dart';
+import 'package:truebildit/presentation/common_widgets/circled_profile_image.dart';
 import 'package:truebildit/presentation/common_widgets/form_field_with_validation.dart';
 import 'package:truebildit/presentation/common_widgets/long_button.dart';
-import 'package:truebildit/presentation/pages/profilew/controllers_bindings/profile_controller.dart';
+import 'package:truebildit/presentation/pages/profile/controllers_bindings/profile_controller.dart';
 
 class ProfileView extends GetView<ProfileController> {
   const ProfileView({super.key});
@@ -90,27 +89,12 @@ class ProfileView extends GetView<ProfileController> {
                   child: Stack(
                     children: [
                       Obx(
-                        () => CircleAvatar(
-                          radius: 52,
-                          backgroundColor: Colors.white,
-                          child: CircleAvatar(
-                              radius: 50,
-                              backgroundImage: MemoryImage(const Base64Decoder()
-                                  .convert(controller.pickedImage.value))),
+                        () => CircledProfileImage(
+                          isCameraIconed: true,
+                          backGroundCameraAvatarColor: AppPaintings.kWhite,
+                          image: controller.pickedImage.value,
                         ),
-                      ),
-                      Positioned(
-                          bottom: 1,
-                          right: 1,
-                          child: CircleAvatar(
-                            radius: 21.5,
-                            backgroundColor: AppPaintings.kWhite,
-                            child: CircleAvatar(
-                              radius: 20,
-                              backgroundImage:
-                                  AssetImage(AssetStrings.cameraImage),
-                            ),
-                          ))
+                      )
                     ],
                   ),
                 ),

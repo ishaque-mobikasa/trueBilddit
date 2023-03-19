@@ -13,8 +13,10 @@ import 'package:truebildit/presentation/pages/location_request/controllers_bindi
 import 'package:truebildit/presentation/pages/location_request/location_request_view.dart';
 import 'package:truebildit/presentation/pages/login/controller_binding/login_binding.dart';
 import 'package:truebildit/presentation/pages/login/login_view.dart';
-import 'package:truebildit/presentation/pages/profilew/controllers_bindings/profile_binding.dart';
-import 'package:truebildit/presentation/pages/profilew/profile_view.dart';
+import 'package:truebildit/presentation/pages/my_account/controllers_binding/my_account_binding.dart';
+import 'package:truebildit/presentation/pages/my_account/my_account_view.dart';
+import 'package:truebildit/presentation/pages/profile/controllers_bindings/profile_binding.dart';
+import 'package:truebildit/presentation/pages/profile/profile_view.dart';
 import 'package:truebildit/presentation/pages/search_results/controllers_bindings/search_binding.dart';
 import 'package:truebildit/presentation/pages/search_results/search_result_view.dart';
 import 'package:truebildit/presentation/pages/sign_up/controllers_binding/sign_up_binding.dart';
@@ -34,6 +36,7 @@ class Routes {
   static const addressView = "/addressView";
   static const loginView = "/loginView";
   static const addNewAddress = "/addNewAddress";
+  static const myAccountView = "/myAccountView";
 }
 
 class AppPages {
@@ -86,5 +89,9 @@ class AppPages {
         name: Routes.addNewAddress,
         page: () => const AddNewAddressView(),
         binding: AddNewAddressBinding()),
+          GetPage(
+        name: Routes.myAccountView,
+        page: () => const MyAccountView(),
+        binding: MyAccountBinding()),
   ];
 }

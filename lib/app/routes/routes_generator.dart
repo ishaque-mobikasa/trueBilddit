@@ -16,8 +16,8 @@ import 'package:truebildit/presentation/pages/location_request/controllers_bindi
 import 'package:truebildit/presentation/pages/location_request/location_request_view.dart';
 import 'package:truebildit/presentation/pages/login/controller_binding/login_binding.dart';
 import 'package:truebildit/presentation/pages/login/login_view.dart';
-import 'package:truebildit/presentation/pages/profilew/controllers_bindings/profile_binding.dart';
-import 'package:truebildit/presentation/pages/profilew/profile_view.dart';
+import 'package:truebildit/presentation/pages/profile/controllers_bindings/profile_binding.dart';
+import 'package:truebildit/presentation/pages/profile/profile_view.dart';
 import 'package:truebildit/presentation/pages/search_results/controllers_bindings/search_binding.dart';
 import 'package:truebildit/presentation/pages/search_results/search_result_view.dart';
 import 'package:truebildit/presentation/pages/sign_up/controllers_binding/sign_up_binding.dart';

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:truebildit/presentation/pages/address/add_address_page/add_address_view.dart';
 import 'package:truebildit/presentation/pages/home/home_view.dart';
-import 'package:truebildit/presentation/pages/login/login_view.dart';
+import 'package:truebildit/presentation/pages/my_account/my_account_view.dart';
+import 'package:truebildit/presentation/pages/profile/profile_view.dart';
 import 'package:truebildit/presentation/pages/sign_up/sign_up_view.dart';
 
 class DashBoardController extends GetxController {
@@ -10,9 +10,9 @@ class DashBoardController extends GetxController {
   RxInt selectedIndex = 0.obs;
   List<Widget> pages = [
     const HomeView(),
+    const ProfileView(),
     const SignUpView(),
-    const LoginView(),
-    const AddNewAddressView()
+    const MyAccountView()
   ];
   Color getScaffoldColor() => _scaffoldBackground.value;
 
