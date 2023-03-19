@@ -5,11 +5,11 @@ import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/presentation/common_widgets/long_button.dart';
 import 'package:truebildit/presentation/common_widgets/short_button.dart';
-import 'package:truebildit/presentation/pages/address/controllers_binding/address_controller.dart';
-import 'package:truebildit/presentation/pages/address/widgets/address_card.dart';
+import 'package:truebildit/presentation/pages/address/view_all_address/controllers_binding/address_controller.dart';
+import 'package:truebildit/presentation/pages/address/view_all_address/widgets/address_card.dart';
 
-class AddressView extends GetView<AddressController> {
-  const AddressView({super.key});
+class ViewAllAddressView extends GetView<ViewAllAddressController> {
+  const ViewAllAddressView({super.key});
 
   @override
   Widget build(BuildContext context) {

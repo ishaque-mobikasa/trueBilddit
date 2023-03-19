@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
-import 'package:truebildit/presentation/pages/address/address_view.dart';
-import 'package:truebildit/presentation/pages/address/controllers_binding/address_binding.dart';
+import 'package:truebildit/presentation/pages/address/add_address_page/add_address_view.dart';
+import 'package:truebildit/presentation/pages/address/add_address_page/controllers_binding/add_new_address_binding.dart';
+import 'package:truebildit/presentation/pages/address/view_all_address/address_view.dart';
+import 'package:truebildit/presentation/pages/address/view_all_address/controllers_binding/address_binding.dart';
 import 'package:truebildit/presentation/pages/dash_board/controllers_binding/dash_board_binding.dart';
 import 'package:truebildit/presentation/pages/dash_board/dash_board_view.dart';
 import 'package:truebildit/presentation/pages/forgot_password/controllers_binding/forgot_password_binding.dart';
@@ -31,6 +33,7 @@ class Routes {
   static const profileView = "/profileView";
   static const addressView = "/addressView";
   static const loginView = "/loginView";
+  static const addNewAddress = "/addNewAddress";
 }
 
 class AppPages {
@@ -73,11 +76,15 @@ class AppPages {
         binding: ProfileBinding()),
     GetPage(
         name: Routes.addressView,
-        page: () => const AddressView(),
-        binding: AddressBinding()),
+        page: () => const ViewAllAddressView(),
+        binding: ViewAllAddressBinding()),
     GetPage(
         name: Routes.loginView,
         page: () => const LoginView(),
         binding: LoginBinding()),
+         GetPage(
+        name: Routes.addNewAddress,
+        page: () => const AddNewAddressView(),
+        binding: AddNewAddressBinding()),
   ];
 }

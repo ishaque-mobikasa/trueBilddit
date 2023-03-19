@@ -19,10 +19,12 @@ class CustomFormField extends StatelessWidget {
   final TextEditingController? controller;
   final VoidCallback? toggleVisibility;
   final AutovalidateMode? autovalidateMode;
+  final TextStyle? labelStyle;
   final dynamic initialValue;
   const CustomFormField(
       {this.obscureText,
       this.initialValue,
+      this.labelStyle,
       this.margin = const EdgeInsets.symmetric(horizontal: 15),
       this.borderRadius,
       this.hintStyle = const TextStyle(color: Colors.grey),
@@ -83,6 +85,7 @@ class CustomFormField extends StatelessWidget {
               hintText: hintText,
               labelText: hintText,
               hintStyle: hintStyle,
+              labelStyle: labelStyle,
               focusedErrorBorder: const UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.green)),
               errorStyle: const TextStyle(color: Colors.green),
