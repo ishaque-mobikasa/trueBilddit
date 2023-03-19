@@ -11,6 +11,7 @@ class AppPaintings {
   static Color hintTextColor = const Color(0xff8F8F8F);
   static Color disabledColor = const Color(0xffF3F3F3);
   static Color dimWhite = const Color(0xffECECEC);
+
   static Color loginButtonBorderColor = const Color(0xffD9D9D9);
 
   static ThemeData appTheme = ThemeData(

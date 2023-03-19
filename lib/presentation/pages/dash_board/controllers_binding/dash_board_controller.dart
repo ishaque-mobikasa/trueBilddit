@@ -20,7 +20,7 @@ class DashBoardController extends GetxController {
   setIndex(index) {
     if (index != selectedIndex.value) {
       selectedIndex.value = index;
-      if (index == 0) {
+      if (index == 0 || index == 3) {
         setWhiteBackground = Colors.white.withAlpha(245);
       } else {
         setWhiteBackground = Colors.white;
