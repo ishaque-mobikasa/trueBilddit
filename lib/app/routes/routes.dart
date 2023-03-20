@@ -27,6 +27,8 @@ import 'package:truebildit/presentation/pages/sign_up/controllers_binding/sign_u
 import 'package:truebildit/presentation/pages/sign_up/sign_up_view.dart';
 import 'package:truebildit/presentation/pages/splash_screen/controllers_bindings/splash_screen_bindings.dart';
 import 'package:truebildit/presentation/pages/splash_screen/splash_screen_view.dart';
+import 'package:truebildit/presentation/pages/sub_category_listing/controllers_bindings/sub_category_binding.dart';
+import 'package:truebildit/presentation/pages/sub_category_listing/sub_category_view.dart';
 
 class Routes {
   static const splashScreenView = '/splashScreenView';
@@ -43,6 +45,7 @@ class Routes {
   static const myAccountView = "/myAccountView";
   static const changePasswordView = "/changePasswordView";
   static const emailLoginView = "/emailLoginView";
+  static const subCategoryView = "/subCategoryView";
 }
 
 class AppPages {
@@ -107,5 +110,9 @@ class AppPages {
         name: Routes.emailLoginView,
         page: () => const EmailLoginView(),
         binding: EmailLoginBinding()),
+    GetPage(
+        name: Routes.subCategoryView,
+        page: () => const SubCategoryView(),
+        binding: SubCategoryBinding()),
   ];
 }

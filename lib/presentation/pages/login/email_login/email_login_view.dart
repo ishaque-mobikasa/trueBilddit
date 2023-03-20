@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +23,13 @@ class EmailLoginView extends GetView<EmailLoginController> {
           AppBar(
             elevation: 0,
             backgroundColor: AppPaintings.kWhite,
+            leading: IconButton(
+              icon: Icon(
+                Icons.arrow_back_ios,
+                color: AppPaintings.themeLightBlack,
+              ),
+              onPressed: () {},
+            ),
             actions: [
               CupertinoButton(
                   child: Text(
@@ -86,6 +95,21 @@ class EmailLoginView extends GetView<EmailLoginController> {
                 buttonType: ButtonType.elevatedButton,
                 buttonText: "LOGIN",
                 onPressed: () {}),
+          ),
+          SizedBox(
+            height: Get.height * 0.02,
+          ),
+          Text.rich(
+            TextSpan(
+              text: 'Forgot Password?',
+              style: TextStyle(
+                color: AppPaintings.themeGreenColor,
+              ),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () {
+                  log("clicked on forgot password");
+                },
+            ),
           ),
           SizedBox(
             height: Get.height * 0.02,
@@ -164,7 +188,7 @@ class EmailLoginView extends GetView<EmailLoginController> {
                   ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      // handle sign in tap
+                      log("clicked on SignUp");
                     },
                 ),
               ],
