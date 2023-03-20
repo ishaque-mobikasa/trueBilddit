@@ -85,10 +85,20 @@ class MyAccountView extends GetView<MyAccountController> {
           Column(
               children: List.generate(
                   listOfMyAccount.length,
-                  (index) => MyaccountItem(
-                        title: listOfMyAccount[index],
+                  (index) => Container(
                         margin:
                             EdgeInsets.symmetric(horizontal: Get.width * 0.05),
+                        child: MyaccountItem(
+                            title: listOfMyAccount[index],
+                            borderRadius: index == 0
+                                ? const BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    topRight: Radius.circular(10))
+                                : index == listOfMyAccount.length - 1
+                                    ? const BorderRadius.only(
+                                        bottomLeft: Radius.circular(10),
+                                        bottomRight: Radius.circular(10))
+                                    : null),
                       ))),
         ],
       ),
