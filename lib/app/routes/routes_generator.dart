@@ -14,8 +14,8 @@ import 'package:truebildit/presentation/pages/forgot_password/forgot_password_vi
 import 'package:truebildit/presentation/pages/home/controller_binding/home_binding.dart';
 import 'package:truebildit/presentation/pages/location_request/controllers_bindings/location_request_binding.dart';
 import 'package:truebildit/presentation/pages/location_request/location_request_view.dart';
-import 'package:truebildit/presentation/pages/login/controller_binding/login_binding.dart';
-import 'package:truebildit/presentation/pages/login/login_view.dart';
+import 'package:truebildit/presentation/pages/login/otp_login/controller_binding/otp_login_binding.dart';
+import 'package:truebildit/presentation/pages/login/otp_login/otp_login_view.dart';
 import 'package:truebildit/presentation/pages/profile/controllers_bindings/profile_binding.dart';
 import 'package:truebildit/presentation/pages/profile/profile_view.dart';
 import 'package:truebildit/presentation/pages/search_results/controllers_bindings/search_binding.dart';
@@ -78,11 +78,11 @@ class RoutesGenerator {
             routeName: Routes.addressView,
             page: () => const ViewAllAddressView(),
             binding: ViewAllAddressBinding());
-      case Routes.loginView:
+      case Routes.otpLoginView:
         return GetPageRoute(
-            routeName: Routes.loginView,
-            page: () => const LoginView(),
-            binding: LoginBinding());
+            routeName: Routes.otpLoginView,
+            page: () => const OTPLoginView(),
+            binding: OTPLoginBinding());
       case Routes.addNewAddress:
         return GetPageRoute(
             routeName: Routes.addNewAddress,

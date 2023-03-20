@@ -45,4 +45,5 @@ class AssetStrings {
   static String facebookIcon = "assets/images/facebook_icon.png";
   static String emailIcon = "assets/images/mail_icon.png";
   static String gardeningIcon = "assets/images/gardening.png";
+  static String changePassword = "assets/images/change_password.png";
 }

@@ -3,6 +3,8 @@ import 'package:truebildit/presentation/pages/address/add_address_page/add_addre
 import 'package:truebildit/presentation/pages/address/add_address_page/controllers_binding/add_new_address_binding.dart';
 import 'package:truebildit/presentation/pages/address/view_all_address/address_view.dart';
 import 'package:truebildit/presentation/pages/address/view_all_address/controllers_binding/address_binding.dart';
+import 'package:truebildit/presentation/pages/change_password/change_password_view.dart';
+import 'package:truebildit/presentation/pages/change_password/controllers_binding/change_password_binding.dart';
 import 'package:truebildit/presentation/pages/dash_board/controllers_binding/dash_board_binding.dart';
 import 'package:truebildit/presentation/pages/dash_board/dash_board_view.dart';
 import 'package:truebildit/presentation/pages/forgot_password/controllers_binding/forgot_password_binding.dart';
@@ -11,8 +13,10 @@ import 'package:truebildit/presentation/pages/home/controller_binding/home_bindi
 import 'package:truebildit/presentation/pages/home/home_view.dart';
 import 'package:truebildit/presentation/pages/location_request/controllers_bindings/location_request_binding.dart';
 import 'package:truebildit/presentation/pages/location_request/location_request_view.dart';
-import 'package:truebildit/presentation/pages/login/controller_binding/login_binding.dart';
-import 'package:truebildit/presentation/pages/login/login_view.dart';
+import 'package:truebildit/presentation/pages/login/email_login/controller_binding/email_login_binding.dart';
+import 'package:truebildit/presentation/pages/login/email_login/email_login_view.dart';
+import 'package:truebildit/presentation/pages/login/otp_login/controller_binding/otp_login_binding.dart';
+import 'package:truebildit/presentation/pages/login/otp_login/otp_login_view.dart';
 import 'package:truebildit/presentation/pages/my_account/controllers_binding/my_account_binding.dart';
 import 'package:truebildit/presentation/pages/my_account/my_account_view.dart';
 import 'package:truebildit/presentation/pages/profile/controllers_bindings/profile_binding.dart';
@@ -34,9 +38,11 @@ class Routes {
   static const dashBoardView = "/dashBoardView";
   static const profileView = "/profileView";
   static const addressView = "/addressView";
-  static const loginView = "/loginView";
+  static const otpLoginView = "/otpLoginView";
   static const addNewAddress = "/addNewAddress";
   static const myAccountView = "/myAccountView";
+  static const changePasswordView = "/changePasswordView";
+  static const emailLoginView = "/emailLoginView";
 }
 
 class AppPages {
@@ -82,16 +88,24 @@ class AppPages {
         page: () => const ViewAllAddressView(),
         binding: ViewAllAddressBinding()),
     GetPage(
-        name: Routes.loginView,
-        page: () => const LoginView(),
-        binding: LoginBinding()),
-         GetPage(
+        name: Routes.otpLoginView,
+        page: () => const OTPLoginView(),
+        binding: OTPLoginBinding()),
+    GetPage(
         name: Routes.addNewAddress,
         page: () => const AddNewAddressView(),
         binding: AddNewAddressBinding()),
-          GetPage(
+    GetPage(
         name: Routes.myAccountView,
         page: () => const MyAccountView(),
         binding: MyAccountBinding()),
+    GetPage(
+        name: Routes.changePasswordView,
+        page: () => const ChangePasswordView(),
+        binding: ChangePasswordBinding()),
+    GetPage(
+        name: Routes.emailLoginView,
+        page: () => const EmailLoginView(),
+        binding: EmailLoginBinding()),
   ];
 }

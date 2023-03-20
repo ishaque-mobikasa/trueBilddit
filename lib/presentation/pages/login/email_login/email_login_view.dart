@@ -6,14 +6,16 @@ import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/strings.dart';
 import 'package:truebildit/presentation/common_widgets/form_field_with_validation.dart';
 import 'package:truebildit/presentation/common_widgets/long_button.dart';
-import 'package:truebildit/presentation/pages/login/controller_binding/login_controller.dart';
 
-class LoginView extends GetView<LoginController> {
-  const LoginView({super.key});
+import 'controller_binding/email_login_controller.dart';
+
+class EmailLoginView extends GetView<EmailLoginController> {
+  const EmailLoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
       child: Column(
         children: [
           AppBar(
@@ -62,9 +64,17 @@ class LoginView extends GetView<LoginController> {
             ),
           ),
           CustomFormField(
-            initialValue: "+44 7911 123456",
+            initialValue: "richard@gmail.com",
             type: FieldType.eMail,
-            hintText: "Mobile Number",
+            hintText: "Email",
+            margin: EdgeInsets.symmetric(horizontal: Get.width * 0.1),
+          ),
+          SizedBox(
+            height: Get.height * 0.02,
+          ),
+          CustomFormField(
+            type: FieldType.password,
+            hintText: "Password",
             margin: EdgeInsets.symmetric(horizontal: Get.width * 0.1),
           ),
           SizedBox(
@@ -74,7 +84,7 @@ class LoginView extends GetView<LoginController> {
             width: Get.width * 0.8,
             child: LongButton(
                 buttonType: ButtonType.elevatedButton,
-                buttonText: "GET OTP",
+                buttonText: "LOGIN",
                 onPressed: () {}),
           ),
           SizedBox(
@@ -127,7 +137,7 @@ class LoginView extends GetView<LoginController> {
                 onPressed: () {}),
           ),
           SizedBox(
-            height: Get.height * 0.03,
+            height: Get.height * 0.02,
           ),
           SizedBox(
             width: Get.width * 0.8,

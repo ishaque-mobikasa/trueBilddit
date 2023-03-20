@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
@@ -90,6 +92,7 @@ class MyAccountView extends GetView<MyAccountController> {
                             EdgeInsets.symmetric(horizontal: Get.width * 0.05),
                         child: MyaccountItem(
                             title: listOfMyAccount[index],
+                            onTap: () => log("tapped on $index"),
                             borderRadius: index == 0
                                 ? const BorderRadius.only(
                                     topLeft: Radius.circular(10),
