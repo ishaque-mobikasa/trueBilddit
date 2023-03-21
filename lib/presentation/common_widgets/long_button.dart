@@ -63,7 +63,7 @@ class LongButton extends StatelessWidget {
                       style: buttonTextStyle ??
                           TextStyle(
                               color: AppPaintings.kWhite,
-                              fontSize: 16,
+                              fontSize: 14,
                               fontWeight: FontWeight.w500),
                     ))
                   ],

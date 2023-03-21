@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/presentation/pages/address/view_all_address/address_view.dart';
 import 'package:truebildit/presentation/pages/home/home_view.dart';
-import 'package:truebildit/presentation/pages/my_list/my_list_view.dart';
+import 'package:truebildit/presentation/pages/my_list/all_lists_view/my_list_view.dart';
 import 'package:truebildit/presentation/pages/sub_category_listing/sub_category_view.dart';
 
 class DashBoardController extends GetxController {

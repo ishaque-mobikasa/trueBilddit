@@ -19,8 +19,10 @@ import 'package:truebildit/presentation/pages/login/otp_login/controller_binding
 import 'package:truebildit/presentation/pages/login/otp_login/otp_login_view.dart';
 import 'package:truebildit/presentation/pages/my_account/controllers_binding/my_account_binding.dart';
 import 'package:truebildit/presentation/pages/my_account/my_account_view.dart';
-import 'package:truebildit/presentation/pages/my_list/controllers_bindings/my_list_binding.dart';
-import 'package:truebildit/presentation/pages/my_list/my_list_view.dart';
+import 'package:truebildit/presentation/pages/my_list/all_lists_view/controllers_bindings/my_list_binding.dart';
+import 'package:truebildit/presentation/pages/my_list/all_lists_view/my_list_view.dart';
+import 'package:truebildit/presentation/pages/my_list/selected_list_contents/selected_list_controller_binding/selected_list_binding.dart';
+import 'package:truebildit/presentation/pages/my_list/selected_list_contents/selected_list_view.dart';
 import 'package:truebildit/presentation/pages/profile/controllers_bindings/profile_binding.dart';
 import 'package:truebildit/presentation/pages/profile/profile_view.dart';
 import 'package:truebildit/presentation/pages/search_results/controllers_bindings/search_binding.dart';
@@ -48,7 +50,8 @@ class Routes {
   static const changePasswordView = "/changePasswordView";
   static const emailLoginView = "/emailLoginView";
   static const subCategoryView = "/subCategoryView";
-   static const myListView = "/myListView";
+  static const myListView = "/myListView";
+  static const selectedListView = "/selectedListView";
 }
 
 class AppPages {
@@ -117,9 +120,13 @@ class AppPages {
         name: Routes.subCategoryView,
         page: () => const SubCategoryView(),
         binding: SubCategoryBinding()),
-          GetPage(
+    GetPage(
         name: Routes.myListView,
         page: () => const MyListView(),
         binding: MyListBinding()),
+    GetPage(
+        name: Routes.selectedListView,
+        page: () => const SelectedListView(),
+        binding: SelectedListBinding()),
   ];
 }

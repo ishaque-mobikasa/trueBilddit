@@ -12,9 +12,8 @@ class AppPaintings {
   static Color disabledColor = const Color(0xffF3F3F3);
   static Color dimWhite = const Color(0xffECECEC);
   static Color scaffoldBackgroundDimmed = const Color(0xffF6F6F6);
-
   static Color loginButtonBorderColor = const Color(0xffD9D9D9);
-
+  static Color appRedColor = const Color(0xffEE4C4C);
   static ThemeData appTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
     fontFamily: GoogleFonts.montserrat().fontFamily,

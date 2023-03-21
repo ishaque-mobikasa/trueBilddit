@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:truebildit/app/routes/routes.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/presentation/common_widgets/long_button.dart';
 import 'package:truebildit/presentation/common_widgets/short_button.dart';
@@ -51,7 +52,11 @@ class MyListView extends GetView<MyListController> {
                                     horizontal: Get.width * 0.05),
                                 child: MyaccountItem(
                                     title: 'List ${index + 1}',
-                                    onTap: () => log("tapped on $index"),
+                                    onTap: () {
+                                      log("tapped on $index");
+                                      Get.toNamed(Routes.selectedListView,
+                                          arguments: 'List ${index + 1}');
+                                    },
                                     borderRadius: index == 0
                                         ? const BorderRadius.only(
                                             topLeft: Radius.circular(10),

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/strings.dart';
 import 'package:truebildit/presentation/common_widgets/long_button.dart';
-import 'package:truebildit/presentation/pages/my_list/controllers_bindings/my_list_controller.dart';
+import 'package:truebildit/presentation/pages/my_list/all_lists_view/controllers_bindings/my_list_controller.dart';
 
 import 'add_list_modal.dart';
 

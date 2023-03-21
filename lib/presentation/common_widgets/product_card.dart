@@ -9,9 +9,14 @@ import 'package:truebildit/presentation/common_widgets/short_button.dart';
 class ProductCard extends StatelessWidget {
   final ProductModel product;
   final IconData? icon;
+  final Color? iconColor;
   final void Function()? onStarButtonClick;
   const ProductCard(
-      {super.key, required this.product, this.icon, this.onStarButtonClick});
+      {super.key,
+      this.iconColor,
+      required this.product,
+      this.icon,
+      this.onStarButtonClick});
 
   @override
   Widget build(BuildContext context) {
@@ -99,6 +104,7 @@ class ProductCard extends StatelessWidget {
                         onTap: onStarButtonClick,
                         child: Icon(
                           icon,
+                          color: iconColor,
                           size: 17,
                         ),
                       )

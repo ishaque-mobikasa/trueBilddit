@@ -9,7 +9,8 @@ class AppStrings {
       "Enter your email address. You will receive an\n email with a link to reset your password";
   static String needYourLocation = "Need Your Location";
   static String searchForProduct = "Search for your product here...";
-  static String didntCreateList = "You didn't create a list yet.\n Please create a list to add your items";
+  static String didntCreateList =
+      "You didn't create a list yet.\n Please create a list to add your items";
 }
 
 class UrlStrings {}
@@ -48,4 +49,6 @@ class AssetStrings {
   static String gardeningIcon = "assets/images/gardening.png";
   static String changePassword = "assets/images/change_password.png";
   static String emptyList = "assets/images/empty_list.png";
+  static String editIcon = "assets/images/edit_icon.png";
+  static String deleteIcon = "assets/images/delete_icon.png";
 }
