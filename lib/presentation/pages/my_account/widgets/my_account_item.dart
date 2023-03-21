@@ -43,12 +43,15 @@ class MyaccountItem extends StatelessWidget {
             children: [
               Text(
                 title,
+                overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.right,
               ),
-              Icon(
-                Icons.arrow_forward_ios,
-                size: 14,
-                color: AppPaintings.themeLightBlack,
+              Flexible(
+                child: Icon(
+                  Icons.arrow_forward_ios,
+                  size: 14,
+                  color: AppPaintings.themeLightBlack,
+                ),
               )
             ],
           ),

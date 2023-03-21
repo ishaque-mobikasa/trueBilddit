@@ -33,7 +33,7 @@ class ViewAllAddressView extends GetView<ViewAllAddressController> {
         ),
         Container(
           margin: EdgeInsets.only(top: Get.height * 0.01),
-          height: 55,
+          height: Get.height * 0.065,
           child: ShortButton(
               buttonTextStyle: TextStyle(
                   fontSize: 14,

@@ -14,12 +14,12 @@ class AddNewAddressView extends GetView<AddNewAddressController> {
     return Stack(
       children: [
         SingleChildScrollView(
+          padding: EdgeInsets.only(
+            top: Get.height * 0.1,
+          ),
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              SizedBox(
-                height: Get.height * 0.1,
-              ),
               SizedBox(
                   width: Get.width * 0.9,
                   child: Text(
@@ -135,8 +135,9 @@ class AddNewAddressView extends GetView<AddNewAddressController> {
           ),
         ),
         SizedBox(
-          height: Get.height * 0.065,
+          height: Get.height * 0.07,
           child: AppBar(
+            backgroundColor: AppPaintings.themeGreenColor,
             elevation: 0,
             centerTitle: true,
             leading: IconButton(

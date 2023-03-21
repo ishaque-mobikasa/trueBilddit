@@ -16,7 +16,7 @@ class SubCategoryView extends GetView<SubCategoryController> {
     return Stack(
       children: [
         SingleChildScrollView(
-          padding: EdgeInsets.only(top: Get.height * 0.08),
+          padding: EdgeInsets.only(top: Get.height * 0.1),
           physics: const BouncingScrollPhysics(),
           child: Column(
               children: List.generate(
@@ -26,7 +26,9 @@ class SubCategoryView extends GetView<SubCategoryController> {
                             EdgeInsets.symmetric(horizontal: Get.width * 0.05),
                         child: MyaccountItem(
                             title: subCategoryItems[index],
-                            onTap: () => log("tapped on $index"),
+                            onTap: () {
+                              log("tapped on $index");
+                            },
                             borderRadius: index == 0
                                 ? const BorderRadius.only(
                                     topLeft: Radius.circular(10),
@@ -39,7 +41,7 @@ class SubCategoryView extends GetView<SubCategoryController> {
                       ))),
         ),
         SizedBox(
-          height: Get.height * 0.065,
+          height: Get.height * 0.07,
           child: AppBar(
             elevation: 0,
             backgroundColor: AppPaintings.themeGreenColor,
