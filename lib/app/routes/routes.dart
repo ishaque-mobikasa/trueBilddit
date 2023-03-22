@@ -23,6 +23,8 @@ import 'package:truebildit/presentation/pages/my_list/all_lists_view/controllers
 import 'package:truebildit/presentation/pages/my_list/all_lists_view/my_list_view.dart';
 import 'package:truebildit/presentation/pages/my_list/selected_list_contents/selected_list_controller_binding/selected_list_binding.dart';
 import 'package:truebildit/presentation/pages/my_list/selected_list_contents/selected_list_view.dart';
+import 'package:truebildit/presentation/pages/orders/order_history/order_history_controller_binding/order_history_binding.dart';
+import 'package:truebildit/presentation/pages/orders/order_history/order_history_view.dart';
 import 'package:truebildit/presentation/pages/profile/controllers_bindings/profile_binding.dart';
 import 'package:truebildit/presentation/pages/profile/profile_view.dart';
 import 'package:truebildit/presentation/pages/search_results/controllers_bindings/search_binding.dart';
@@ -52,6 +54,7 @@ class Routes {
   static const subCategoryView = "/subCategoryView";
   static const myListView = "/myListView";
   static const selectedListView = "/selectedListView";
+  static const orderHistoryView = "/orderHistoryView";
 }
 
 class AppPages {
@@ -128,5 +131,9 @@ class AppPages {
         name: Routes.selectedListView,
         page: () => const SelectedListView(),
         binding: SelectedListBinding()),
+          GetPage(
+        name: Routes.orderHistoryView,
+        page: () => const OrderHistoryView(),
+        binding: OrderHistoryBinding()),
   ];
 }

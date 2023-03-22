@@ -34,4 +34,11 @@ class AppPaintings {
     overflow: TextOverflow.ellipsis,
     fontWeight: FontWeight.w300,
   );
+  static TextStyle textSpanStyle = TextStyle(
+    color: AppPaintings.themeBlack,
+    fontSize: 12,
+    overflow: TextOverflow.ellipsis,
+    fontWeight: FontWeight.w500,
+    fontFamily: GoogleFonts.montserrat().fontFamily,
+  );
 }

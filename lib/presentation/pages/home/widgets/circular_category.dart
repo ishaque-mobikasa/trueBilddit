@@ -33,15 +33,17 @@ class CircularCategoryItem extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(
+            height: 10,
+          ),
           Flexible(
             flex: 3,
             child: SizedBox(
               width: Get.width * 0.25,
               child: Text(
                 circularItem.title,
-                style: const TextStyle(
-                  fontSize: 12,
-                ),
+                style:
+                    const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,

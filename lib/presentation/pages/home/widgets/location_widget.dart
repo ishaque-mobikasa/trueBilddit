@@ -16,7 +16,7 @@ class LocationWidget extends StatelessWidget {
         children: [
           Container(
             height: size.height * 0.05,
-            width: size.width * 0.45,
+            width: size.width * 0.4,
             color: AppPaintings.themeGreenColor,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -42,8 +42,8 @@ class LocationWidget extends StatelessWidget {
                 Flexible(
                   child: Image.asset(
                     AssetStrings.arrowDownIcon,
-                    height: 20,
-                    width: 20,
+                    height: 15,
+                    width: 15,
                     fit: BoxFit.contain,
                   ),
                 ),

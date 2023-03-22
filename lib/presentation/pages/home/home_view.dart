@@ -96,12 +96,6 @@ class HomeView extends GetView<HomeController> {
                                   style: TextStyle(
                                       fontSize: 24,
                                       fontWeight: FontWeight.bold)),
-                              TextSpan(
-                                  text: '...',
-                                  style: TextStyle(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold,
-                                  )),
                             ],
                           ),
                         ),

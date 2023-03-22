@@ -53,12 +53,12 @@ class SelectedListView extends GetView<SelectedListController> {
         ),
         body: Column(
           children: [
-            const SizedBox(height: 20),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const SizedBox(width: 20),
+                const SizedBox(width: 10),
                 Expanded(
-                    flex: 3,
+                    flex: 2,
                     child: Text(
                       "10 items Available",
                       style: AppPaintings.customSmallText
