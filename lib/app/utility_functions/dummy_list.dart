@@ -13,7 +13,7 @@ List<CircularItemModel> homeItems = [
   CircularItemModel(
       image: AssetStrings.ironMongery, title: "General Construction"),
   CircularItemModel(
-      image: AssetStrings.fireAndSecurity, title: "Fire&Security"),
+      image: AssetStrings.fireAndSecurity, title: "Fire& \nSecurity"),
   CircularItemModel(
       image: AssetStrings.gardeningIcon, title: "Outdoor & Gardening"),
 ];

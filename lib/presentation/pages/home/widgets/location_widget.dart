@@ -14,21 +14,24 @@ class LocationWidget extends StatelessWidget {
       onTap: onTap,
       child: Row(
         children: [
+          SizedBox(width: size.width * 0.05),
           Container(
             height: size.height * 0.05,
-            width: size.width * 0.4,
+            constraints: BoxConstraints(
+              maxWidth: size.width * 0.42,
+            ),
             color: AppPaintings.themeGreenColor,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Flexible(
                   child: Image.asset(
                     AssetStrings.landMarkIconOutlined,
-                    height: 20,
-                    width: 20,
+                    height: 16,
+                    width: 16,
                     fit: BoxFit.contain,
                   ),
                 ),
+                SizedBox(width: size.width * 0.01),
                 Flexible(
                     flex: 2,
                     child: Text(
@@ -39,6 +42,7 @@ class LocationWidget extends StatelessWidget {
                           fontSize: 12,
                           color: AppPaintings.kWhite),
                     )),
+                SizedBox(width: size.width * 0.01),
                 Flexible(
                   child: Image.asset(
                     AssetStrings.arrowDownIcon,

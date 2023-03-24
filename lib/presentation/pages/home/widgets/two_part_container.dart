@@ -22,7 +22,7 @@ class TwoPartContainer extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               alignment: Alignment.centerRight,
               width: Get.width,
-              height: Get.height * 0.1,
+              height: Get.height * 0.09,
               child: SizedBox(
                 width: Get.width * 0.35,
                 child: Column(
@@ -67,7 +67,7 @@ class TwoPartContainer extends StatelessWidget {
             ),
           ),
           Container(
-              height: Get.height * 0.1,
+              height: Get.height * 0.09,
               width: Get.width * 0.56,
               decoration: const BoxDecoration(
                   color: Color(0xff64BD3C),

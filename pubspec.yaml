@@ -39,6 +39,7 @@ dependencies:
   get: ^4.6.5
   google_fonts: ^4.0.3
   image_picker: ^0.8.6+4
+  flutter_screenutil: ^5.7.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0

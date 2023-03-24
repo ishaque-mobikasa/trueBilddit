@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
+import 'package:truebildit/app/utils/strings.dart';
 
 class CustomSearchField extends StatelessWidget {
   final String? Function(String?)? validator;
@@ -50,7 +52,12 @@ class CustomSearchField extends StatelessWidget {
           labelStyle: labelStyle,
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
           filled: true,
-          prefixIcon: Icon(Icons.search, color: AppPaintings.hintTextColor),
+          prefixIcon: ImageIcon(
+              color: AppPaintings.hintTextColor,
+              size: 20,
+              AssetImage(
+                AssetStrings.searchIcon,
+              )).paddingOnly(right: 8, left: 12, top: 14, bottom: 17),
           enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(
               color: Colors.white,

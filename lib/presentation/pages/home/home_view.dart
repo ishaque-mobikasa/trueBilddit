@@ -3,16 +3,17 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:truebildit/app/utility_functions/dummy_list.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/strings.dart';
 import 'package:truebildit/presentation/common_widgets/custom_clipper.dart';
 import 'package:truebildit/presentation/pages/home/controller_binding/home_controller.dart';
-import 'package:truebildit/presentation/pages/home/widgets/circular_category.dart';
 import 'package:truebildit/presentation/pages/home/widgets/location_widget.dart';
 import 'package:truebildit/presentation/pages/home/widgets/modal_bottom_sheet.dart';
 import 'package:truebildit/presentation/pages/home/widgets/two_part_container.dart';
 
+import 'widgets/circular_category.dart';
 import 'widgets/search_widget.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -78,24 +79,39 @@ class HomeView extends GetView<HomeController> {
                           textAlign: TextAlign.start,
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
-                          text: const TextSpan(
+                          text: TextSpan(
                             children: [
                               TextSpan(
                                   text: 'Delivery',
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w600,
+                                      fontFamily:
+                                          GoogleFonts.montserrat().fontFamily,
                                       fontSize: 24)),
                               TextSpan(
                                   text: ' to your door in \n',
-                                  style: TextStyle(fontSize: 24)),
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily:
+                                        GoogleFonts.montserrat().fontFamily,
+                                  )),
                               TextSpan(
                                   text: 'under ',
-                                  style: TextStyle(fontSize: 24)),
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w400,
+                                    fontFamily:
+                                        GoogleFonts.montserrat().fontFamily,
+                                  )),
                               TextSpan(
                                   text: '2 hours',
                                   style: TextStyle(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold)),
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.w600,
+                                    fontFamily:
+                                        GoogleFonts.montserrat().fontFamily,
+                                  )),
                             ],
                           ),
                         ),
@@ -105,22 +121,20 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               SizedBox(
-                height: Get.height * 0.47,
+                height: Get.height * 0.48,
+                width: size.width * 0.9,
                 child: GridView.builder(
                   physics: const BouncingScrollPhysics(),
                   itemCount: homeItems.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      mainAxisSpacing: 0,
-                      crossAxisSpacing: 0,
-                      childAspectRatio: 1.05,
-                      crossAxisCount: 3),
+                      crossAxisSpacing: 0, crossAxisCount: 3),
                   itemBuilder: (context, index) => CircularCategoryItem(
                     circularItem: homeItems[index],
                     onTap: () => log("Clicked on circular item"),
                   ),
                 ),
               ),
-              const TwoPartContainer()
+              const TwoPartContainer(),
             ],
           ),
           Positioned(

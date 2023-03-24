@@ -5,7 +5,7 @@ import 'package:truebildit/data/models/circular_item_model.dart';
 class CircularCategoryItem extends StatelessWidget {
   final CircularItemModel circularItem;
   const CircularCategoryItem(
-      {super.key, required, required this.circularItem, this.onTap});
+      {super.key, required this.circularItem, this.onTap});
 
   final void Function()? onTap;
   @override
@@ -20,7 +20,7 @@ class CircularCategoryItem extends StatelessWidget {
             maxHeight: size.height * 0.15, maxWidth: size.width * 0.25),
         child: Column(children: [
           Flexible(
-            flex: 5,
+            flex: 2,
             child: Container(
               padding: const EdgeInsets.all(15),
               decoration: const BoxDecoration(
@@ -34,10 +34,10 @@ class CircularCategoryItem extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: 10,
+            height: 5,
           ),
           Flexible(
-            flex: 3,
+            flex: 1,
             child: SizedBox(
               width: Get.width * 0.25,
               child: Text(

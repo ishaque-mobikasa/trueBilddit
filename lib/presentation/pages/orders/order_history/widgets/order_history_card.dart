@@ -19,7 +19,7 @@ class OrderHistoryCard extends StatelessWidget {
         margin: EdgeInsets.symmetric(
             horizontal: size.width * 0.03, vertical: size.width * 0.03),
         constraints:
-            BoxConstraints(maxWidth: size.width, maxHeight: size.height * 0.2),
+            BoxConstraints(maxWidth: size.width, maxHeight: size.height * 0.22),
         child: Column(children: [
           Expanded(
             flex: 3,
