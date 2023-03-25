@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:truebildit/data/models/circular_item_model.dart';
 
 class CircularCategoryItem extends StatelessWidget {
@@ -10,40 +10,38 @@ class CircularCategoryItem extends StatelessWidget {
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.only(top: 10),
-        constraints: BoxConstraints(
-            maxHeight: size.height * 0.15, maxWidth: size.width * 0.25),
+        height: 126.h,
+        constraints: const BoxConstraints(),
         child: Column(children: [
-          Flexible(
-            flex: 2,
-            child: Container(
-              padding: const EdgeInsets.all(15),
+          Container(
+              height: 90.h,
+              width: 90.h,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.white,
               ),
-              child: Image.asset(
-                circularItem.image,
-                width: size.width * 0.2,
-              ),
-            ),
-          ),
-          const SizedBox(
-            height: 5,
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Image.asset(
+                  circularItem.image,
+                  fit: BoxFit.contain,
+                  width: 45.w,
+                  height: 52.67.h,
+                ),
+              )),
+          SizedBox(
+            height: 8.h,
           ),
           Flexible(
-            flex: 1,
             child: SizedBox(
-              width: Get.width * 0.25,
+              height: 28.h,
+              width: 75.w,
               child: Text(
                 circularItem.title,
-                style:
-                    const TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,

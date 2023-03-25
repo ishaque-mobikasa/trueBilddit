@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/presentation/common_widgets/long_button.dart';
@@ -17,7 +18,7 @@ class ViewAllAddressView extends GetView<ViewAllAddressController> {
     return Stack(
       children: [
         SingleChildScrollView(
-          padding: EdgeInsets.only(top: Get.height * 0.08),
+          padding: EdgeInsets.only(top: 103.h),
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
@@ -47,7 +48,7 @@ class ViewAllAddressView extends GetView<ViewAllAddressController> {
           ),
         ),
         SizedBox(
-          height: Get.height * 0.07,
+          height: 90.h,
           child: AppBar(
             centerTitle: true,
             title: Text(

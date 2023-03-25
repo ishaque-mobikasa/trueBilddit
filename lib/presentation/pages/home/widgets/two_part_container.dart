@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 
@@ -10,7 +11,7 @@ class TwoPartContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 8, right: 8),
+      padding: EdgeInsets.only(left: 14.w, right: 14.w),
       child: Stack(
         children: [
           Align(
@@ -19,12 +20,12 @@ class TwoPartContainer extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(10)),
                 color: Color(0xff6EC647),
               ),
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.symmetric(horizontal: 13.w),
               alignment: Alignment.centerRight,
-              width: Get.width,
-              height: Get.height * 0.09,
+              width: Get.width.w,
+              height: 62.h,
               child: SizedBox(
-                width: Get.width * 0.35,
+                width: 140.w,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -32,7 +33,7 @@ class TwoPartContainer extends StatelessWidget {
                       child: Text(
                         "Extra \u{00A3}50*",
                         style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 16.sp,
                             overflow: TextOverflow.ellipsis,
                             color: AppPaintings.kWhite,
                             fontWeight: FontWeight.bold),
@@ -42,7 +43,7 @@ class TwoPartContainer extends StatelessWidget {
                       child: Text(
                         "If you refer a friend",
                         style: TextStyle(
-                          fontSize: 10,
+                          fontSize: 10.sp,
                           color: AppPaintings.kWhite,
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -54,7 +55,7 @@ class TwoPartContainer extends StatelessWidget {
                         child: Text(
                           "Learn More",
                           style: TextStyle(
-                              fontSize: 8,
+                              fontSize: 8.sp,
                               overflow: TextOverflow.ellipsis,
                               color: AppPaintings.kWhite,
                               decoration: TextDecoration.underline),
@@ -67,8 +68,8 @@ class TwoPartContainer extends StatelessWidget {
             ),
           ),
           Container(
-              height: Get.height * 0.09,
-              width: Get.width * 0.56,
+              height: 62.h,
+              width: 205.w,
               decoration: const BoxDecoration(
                   color: Color(0xff64BD3C),
                   borderRadius: BorderRadius.only(
@@ -87,7 +88,7 @@ class TwoPartContainer extends StatelessWidget {
                         child: Text(
                           "   \u{00A3} 50 OFF*",
                           style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               overflow: TextOverflow.ellipsis,
                               color: AppPaintings.kWhite,
                               fontWeight: FontWeight.bold),
@@ -108,7 +109,7 @@ class TwoPartContainer extends StatelessWidget {
                               child: Text(
                                 "SHOP NOW",
                                 style: TextStyle(
-                                  fontSize: 9,
+                                  fontSize: 9.sp,
                                   color: AppPaintings.kBlack,
                                   overflow: TextOverflow.ellipsis,
                                 ),
@@ -126,7 +127,7 @@ class TwoPartContainer extends StatelessWidget {
                         child: Text(
                           "on first 5 orders",
                           style: TextStyle(
-                            fontSize: 10,
+                            fontSize: 10.sp,
                             color: AppPaintings.kWhite,
                             overflow: TextOverflow.ellipsis,
                           ),
@@ -135,7 +136,7 @@ class TwoPartContainer extends StatelessWidget {
                       Text(
                         "*T&Cs Apply",
                         style: TextStyle(
-                          fontSize: 8,
+                          fontSize: 8.sp,
                           color: AppPaintings.kWhite,
                           overflow: TextOverflow.ellipsis,
                         ),

@@ -35,11 +35,8 @@ class CustomSearchField extends StatelessWidget {
       this.hintStyle});
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Container(
       padding: padding,
-      height: size.height * 0.07,
-      width: size.width,
       child: TextFormField(
         onEditingComplete: onEditingComplete,
         cursorColor: AppPaintings.themeGreenColor,
@@ -54,10 +51,10 @@ class CustomSearchField extends StatelessWidget {
           filled: true,
           prefixIcon: ImageIcon(
               color: AppPaintings.hintTextColor,
-              size: 20,
+              size: 18,
               AssetImage(
                 AssetStrings.searchIcon,
-              )).paddingOnly(right: 8, left: 12, top: 14, bottom: 17),
+              )).paddingOnly(right: 8, left: 12, top: 10, bottom: 15),
           enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(
               color: Colors.white,

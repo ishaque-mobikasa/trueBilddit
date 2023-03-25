@@ -10,7 +10,7 @@ class OvalShape extends CustomClipper<Path> {
             20); // Start at the bottom left corner, but with a 20 pixel gap from the bottom
     path.quadraticBezierTo(
         size.width / 2,
-        size.height + 10,
+        size.height + 20,
         size.width,
         size.height -
             20); // Draw a quadratic bezier curve to create the nail end shape

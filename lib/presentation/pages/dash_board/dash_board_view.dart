@@ -10,83 +10,79 @@ class DashBoardView extends GetView<DashBoardController> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Obx(
-        () => Scaffold(
-          backgroundColor: controller.getScaffoldColor(),
-          body: Obx(() => controller.currentPage),
-          bottomNavigationBar: Obx(
-            () => ClipRRect(
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
-              ),
-              child: CustomNavigationBar(
-                  strokeColor: AppPaintings.themeGreenColor,
-                  selectedColor: AppPaintings.themeGreenColor,
-                  onTap: (index) {
-                    controller.setIndex(index);
-                  },
-                  currentIndex: controller.selectedIndex.value,
-                  items: [
-                    CustomNavigationBarItem(
-                        selectedTitle: Text(
-                          "Home",
-                          style: TextStyle(
-                              color: AppPaintings.themeGreenColor,
-                              overflow: TextOverflow.ellipsis),
-                        ),
-                        selectedIcon: ImageIcon(
-                            AssetImage(AssetStrings.homeIconSelected)),
-                        icon: ImageIcon(
-                            AssetImage(AssetStrings.homeIconUnSelected)),
-                        title: const Text(
-                          "Home",
-                          style: TextStyle(overflow: TextOverflow.ellipsis),
-                        )),
-                    CustomNavigationBarItem(
-                        selectedTitle: Text(
-                          "Categories",
-                          style: TextStyle(
-                              color: AppPaintings.themeGreenColor,
-                              overflow: TextOverflow.ellipsis),
-                        ),
-                        selectedIcon: ImageIcon(
-                            AssetImage(AssetStrings.categoriesSelected)),
-                        icon: ImageIcon(
-                            AssetImage(AssetStrings.categoriesUnSelected)),
-                        title: const Text(
-                          "Categories",
-                          overflow: TextOverflow.ellipsis,
-                        )),
-                    CustomNavigationBarItem(
-                        selectedTitle: Text(
-                          "My List",
-                          style: TextStyle(
-                              color: AppPaintings.themeGreenColor,
-                              overflow: TextOverflow.ellipsis),
-                        ),
-                        selectedIcon:
-                            ImageIcon(AssetImage(AssetStrings.myListSelected)),
-                        icon:
-                            ImageIcon(AssetImage(AssetStrings.myListSelected)),
-                        title: const Text(
-                          "My List",
-                          style: TextStyle(overflow: TextOverflow.ellipsis),
-                        )),
-                    CustomNavigationBarItem(
-                        selectedTitle: Text(
-                          "Basket",
-                          style: TextStyle(color: AppPaintings.themeGreenColor),
-                        ),
-                        icon:
-                            ImageIcon(AssetImage(AssetStrings.basketSelected)),
-                        title: const Text(
-                          "Basket",
-                          overflow: TextOverflow.ellipsis,
-                        ))
-                  ]),
+    return Obx(
+      () => Scaffold(
+        backgroundColor: controller.getScaffoldColor(),
+        body: Obx(() => controller.currentPage),
+        bottomNavigationBar: Obx(
+          () => ClipRRect(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
             ),
+            child: CustomNavigationBar(
+                strokeColor: AppPaintings.themeGreenColor,
+                selectedColor: AppPaintings.themeGreenColor,
+                onTap: (index) {
+                  controller.setIndex(index);
+                },
+                currentIndex: controller.selectedIndex.value,
+                items: [
+                  CustomNavigationBarItem(
+                      selectedTitle: Text(
+                        "Home",
+                        style: TextStyle(
+                            color: AppPaintings.themeGreenColor,
+                            overflow: TextOverflow.ellipsis),
+                      ),
+                      selectedIcon:
+                          ImageIcon(AssetImage(AssetStrings.homeIconSelected)),
+                      icon: ImageIcon(
+                          AssetImage(AssetStrings.homeIconUnSelected)),
+                      title: const Text(
+                        "Home",
+                        style: TextStyle(overflow: TextOverflow.ellipsis),
+                      )),
+                  CustomNavigationBarItem(
+                      selectedTitle: Text(
+                        "Categories",
+                        style: TextStyle(
+                            color: AppPaintings.themeGreenColor,
+                            overflow: TextOverflow.ellipsis),
+                      ),
+                      selectedIcon: ImageIcon(
+                          AssetImage(AssetStrings.categoriesSelected)),
+                      icon: ImageIcon(
+                          AssetImage(AssetStrings.categoriesUnSelected)),
+                      title: const Text(
+                        "Categories",
+                        overflow: TextOverflow.ellipsis,
+                      )),
+                  CustomNavigationBarItem(
+                      selectedTitle: Text(
+                        "My List",
+                        style: TextStyle(
+                            color: AppPaintings.themeGreenColor,
+                            overflow: TextOverflow.ellipsis),
+                      ),
+                      selectedIcon:
+                          ImageIcon(AssetImage(AssetStrings.myListSelected)),
+                      icon: ImageIcon(AssetImage(AssetStrings.myListSelected)),
+                      title: const Text(
+                        "My List",
+                        style: TextStyle(overflow: TextOverflow.ellipsis),
+                      )),
+                  CustomNavigationBarItem(
+                      selectedTitle: Text(
+                        "Basket",
+                        style: TextStyle(color: AppPaintings.themeGreenColor),
+                      ),
+                      icon: ImageIcon(AssetImage(AssetStrings.basketSelected)),
+                      title: const Text(
+                        "Basket",
+                        overflow: TextOverflow.ellipsis,
+                      ))
+                ]),
           ),
         ),
       ),

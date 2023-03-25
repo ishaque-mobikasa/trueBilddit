@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/strings.dart';
 
@@ -9,47 +10,39 @@ class LocationWidget extends StatelessWidget {
   final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: onTap,
       child: Row(
         children: [
-          SizedBox(width: size.width * 0.05),
+          SizedBox(width: 15.w),
           Container(
-            height: size.height * 0.05,
-            constraints: BoxConstraints(
-              maxWidth: size.width * 0.42,
-            ),
             color: AppPaintings.themeGreenColor,
             child: Row(
               children: [
-                Flexible(
-                  child: Image.asset(
-                    AssetStrings.landMarkIconOutlined,
-                    height: 16,
-                    width: 16,
-                    fit: BoxFit.contain,
+                Image.asset(
+                  AssetStrings.landMarkIconOutlined,
+                  height: 15.h,
+                  width: 11.w,
+                  fit: BoxFit.contain,
+                ),
+                SizedBox(width: 5.w),
+                SizedBox(
+                  width: 70.w,
+                  height: 15.h,
+                  child: Text(
+                    locationName,
+                    maxLines: 1,
+                    style: TextStyle(
+                        overflow: TextOverflow.ellipsis,
+                        fontSize: 12.sp,
+                        color: AppPaintings.kWhite),
                   ),
                 ),
-                SizedBox(width: size.width * 0.01),
-                Flexible(
-                    flex: 2,
-                    child: Text(
-                      locationName,
-                      maxLines: 2,
-                      style: TextStyle(
-                          overflow: TextOverflow.ellipsis,
-                          fontSize: 12,
-                          color: AppPaintings.kWhite),
-                    )),
-                SizedBox(width: size.width * 0.01),
-                Flexible(
-                  child: Image.asset(
-                    AssetStrings.arrowDownIcon,
-                    height: 15,
-                    width: 15,
-                    fit: BoxFit.contain,
-                  ),
+                Image.asset(
+                  AssetStrings.arrowDownIcon,
+                  height: 5.h,
+                  width: 9.w,
+                  fit: BoxFit.cover,
                 ),
               ],
             ),

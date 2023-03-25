@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/presentation/pages/my_account/widgets/my_account_item.dart';
@@ -16,7 +17,7 @@ class SubCategoryView extends GetView<SubCategoryController> {
     return Stack(
       children: [
         SingleChildScrollView(
-          padding: EdgeInsets.only(top: Get.height * 0.1),
+          padding: EdgeInsets.only(top: 103.h),
           physics: const BouncingScrollPhysics(),
           child: Column(
               children: List.generate(
@@ -41,7 +42,7 @@ class SubCategoryView extends GetView<SubCategoryController> {
                       ))),
         ),
         SizedBox(
-          height: Get.height * 0.07,
+          height: 90.h,
           child: AppBar(
             elevation: 0,
             backgroundColor: AppPaintings.themeGreenColor,
