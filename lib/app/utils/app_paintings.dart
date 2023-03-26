@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppPaintings {
@@ -24,19 +25,19 @@ class AppPaintings {
 
   static TextStyle customLargeText = TextStyle(
     color: AppPaintings.themeBlack,
-    fontSize: 18,
+    fontSize: 18.sp,
     overflow: TextOverflow.ellipsis,
     fontWeight: FontWeight.w800,
   );
   static TextStyle customSmallText = TextStyle(
     color: AppPaintings.themeLightBlack,
-    fontSize: 12,
+    fontSize: 12.sp,
     overflow: TextOverflow.ellipsis,
     fontWeight: FontWeight.w300,
   );
   static TextStyle textSpanStyle = TextStyle(
     color: AppPaintings.themeBlack,
-    fontSize: 12,
+    fontSize: 12.sp,
     overflow: TextOverflow.ellipsis,
     fontWeight: FontWeight.w500,
     fontFamily: GoogleFonts.montserrat().fontFamily,

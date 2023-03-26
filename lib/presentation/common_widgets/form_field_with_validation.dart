@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/string_extensions.dart';
 
@@ -14,7 +15,7 @@ class CustomFormField extends StatelessWidget {
   final IconData? icon;
   final IconData? postFixIcon;
   final bool? obscureText;
-  final EdgeInsetsGeometry padding;
+  final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry margin;
   final TextEditingController? controller;
   final VoidCallback? toggleVisibility;
@@ -25,14 +26,14 @@ class CustomFormField extends StatelessWidget {
       {this.obscureText,
       this.initialValue,
       this.labelStyle,
-      this.margin = const EdgeInsets.symmetric(horizontal: 15),
+      this.margin = const EdgeInsets.symmetric(horizontal: 0),
       this.borderRadius,
       this.hintStyle = const TextStyle(color: Colors.grey),
       this.toggleVisibility,
       this.autovalidateMode = AutovalidateMode.disabled,
       this.postFixIcon,
       this.validator,
-      this.padding = const EdgeInsets.only(top: 10, left: 0),
+      this.padding,
       this.controller,
       required this.type,
       this.hintText = "",
@@ -44,7 +45,7 @@ class CustomFormField extends StatelessWidget {
       margin: margin,
       decoration: const BoxDecoration(
           border: Border(bottom: BorderSide(color: Color(0xffECECEC)))),
-      padding: padding,
+      padding: padding ?? EdgeInsets.only(top: 10.h, left: 0),
       child: TextFormField(
           initialValue: initialValue ?? "",
           autovalidateMode: autovalidateMode,
@@ -73,7 +74,7 @@ class CustomFormField extends StatelessWidget {
           obscureText: obscureText ?? false,
           decoration: InputDecoration(
               fillColor: Colors.white,
-              contentPadding: const EdgeInsets.only(bottom: 10),
+              contentPadding: EdgeInsets.only(bottom: 10.h),
               filled: true,
               suffixIcon: type == FieldType.password
                   ? IconButton(

@@ -1,6 +1,8 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:developer';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/strings.dart';
@@ -13,154 +15,190 @@ class OTPLoginView extends GetView<OTPLoginController> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          AppBar(
-            elevation: 0,
-            backgroundColor: AppPaintings.kWhite,
-            actions: [
-              CupertinoButton(
-                  child: Text(
-                    "SKIP",
-                    style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                        color: AppPaintings.themeBlack),
-                  ),
-                  onPressed: () {})
-            ],
-          ),
-          Image.asset(
-            AssetStrings.bildItLogoGreen,
-            width: Get.width / 3,
-            height: Get.height * 0.05,
-          ),
-          SizedBox(
-            height: Get.height * 0.05,
-          ),
-          SizedBox(
-            width: Get.width * 0.8,
-            child: Text(
-              "Welcome!",
-              textAlign: TextAlign.center,
-              style: AppPaintings.customLargeText
-                  .copyWith(fontSize: 30, fontWeight: FontWeight.w500),
+    return Material(
+      color: Colors.white,
+      child: SingleChildScrollView(
+        physics: const NeverScrollableScrollPhysics(),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 34.h,
             ),
-          ),
-          SizedBox(
-            height: Get.height * 0.02,
-          ),
-          SizedBox(
-            width: Get.width * 0.8,
-            height: Get.height * 0.05,
-            child: Text(
-              textAlign: TextAlign.center,
-              "Sign in to continue",
-              style: AppPaintings.customSmallText
-                  .copyWith(fontSize: 14, fontWeight: FontWeight.w400),
-            ),
-          ),
-          CustomFormField(
-            initialValue: "+44 7911 123456",
-            type: FieldType.phoneNumber,
-            hintText: "Mobile Number",
-            margin: EdgeInsets.symmetric(horizontal: Get.width * 0.1),
-          ),
-          SizedBox(
-            height: Get.height * 0.02,
-          ),
-          SizedBox(
-            width: Get.width * 0.8,
-            child: LongButton(
-                buttonType: ButtonType.elevatedButton,
-                buttonText: "GET OTP",
-                onPressed: () {}),
-          ),
-          SizedBox(
-            height: Get.height * 0.02,
-          ),
-          SizedBox(
-              width: Get.width * 0.5,
+            SizedBox(
+              height: 51.h,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Container(
-                    color: AppPaintings.dimWhite,
-                    width: Get.width * 0.15,
-                    height: 3,
-                  ),
-                  const Text("OR"),
-                  Container(
-                    color: AppPaintings.dimWhite,
-                    width: Get.width * 0.15,
-                    height: 3,
+                  GestureDetector(
+                    onTap: () {
+                      log("Skip button pressed");
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.only(right: 15.w),
+                      height: 20.h,
+                      child: Text(
+                        "SKIP",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 12.sp, color: AppPaintings.themeBlack),
+                      ),
+                    ),
                   ),
                 ],
-              )),
-          SizedBox(
-            height: Get.height * 0.02,
-          ),
-          SizedBox(
-            width: Get.width * 0.8,
-            child: LongButton(
-                isSocialButton: true,
-                outlinedButtonBorderColor: AppPaintings.loginButtonBorderColor,
-                buttonType: ButtonType.outLinedButton,
-                buttonText: "  Sign In With Email",
-                iconImage: AssetStrings.emailIcon,
-                buttonTextStyle: TextStyle(color: AppPaintings.themeBlack),
-                onPressed: () {}),
-          ),
-          SizedBox(
-            height: Get.height * 0.02,
-          ),
-          SizedBox(
-            width: Get.width * 0.8,
-            child: LongButton(
-                isSocialButton: true,
-                outlinedButtonBorderColor: AppPaintings.loginButtonBorderColor,
-                buttonType: ButtonType.outLinedButton,
-                buttonText: "Sign In With Google",
-                iconImage: AssetStrings.googleIcon,
-                buttonTextStyle: TextStyle(color: AppPaintings.themeBlack),
-                onPressed: () {}),
-          ),
-          SizedBox(
-            height: Get.height * 0.03,
-          ),
-          SizedBox(
-            width: Get.width * 0.8,
-            child: LongButton(
-                isSocialButton: true,
-                outlinedButtonBorderColor: AppPaintings.loginButtonBorderColor,
-                buttonType: ButtonType.outLinedButton,
-                buttonText: "Sign In With Facebook",
-                iconImage: AssetStrings.facebookIcon,
-                buttonTextStyle: TextStyle(color: AppPaintings.themeBlack),
-                onPressed: () {}),
-          ),
-          SizedBox(
-            height: Get.height * 0.03,
-          ),
-          Text.rich(
-            TextSpan(
-              text: 'Don’t have an account? ',
-              children: [
-                TextSpan(
-                  text: 'Sign Up ',
-                  style: TextStyle(
-                    color: AppPaintings.themeGreenColor,
-                  ),
-                  recognizer: TapGestureRecognizer()
-                    ..onTap = () {
-                      // handle sign in tap
-                    },
-                ),
-              ],
+              ),
             ),
-          ),
-        ],
+            Container(
+              margin: EdgeInsets.only(top: 5.h),
+              child: Image.asset(
+                AssetStrings.bildItLogoGreen,
+                width: 150.h,
+                height: 38.3.w,
+              ),
+            ),
+            SizedBox(
+              height: 68.7.h,
+            ),
+            SizedBox(
+              width: 158.w,
+              height: 30.h,
+              child: Text(
+                "Welcome!",
+                textAlign: TextAlign.center,
+                style: AppPaintings.customLargeText
+                    .copyWith(fontSize: 30.sp, fontWeight: FontWeight.w500),
+              ),
+            ),
+            SizedBox(height: 8.h),
+            SizedBox(
+              width: 139.w,
+              height: 22.h,
+              child: Text(
+                textAlign: TextAlign.center,
+                "Sign in to continue",
+                style: AppPaintings.customSmallText
+                    .copyWith(fontSize: 14, fontWeight: FontWeight.w400),
+              ),
+            ),
+            SizedBox(
+              height: 36.h,
+            ),
+            SizedBox(
+              width: 300.w,
+              height: 57.5.h,
+              child: const CustomFormField(
+                initialValue: "+44 7911 123456",
+                type: FieldType.phoneNumber,
+                hintText: "Mobile Number",
+              ),
+            ),
+            SizedBox(
+              height: 19.5.h,
+            ),
+            SizedBox(
+              width: 300.w,
+              height: 42.h,
+              child: LongButton(
+                  buttonType: ButtonType.elevatedButton,
+                  buttonText: "RECIEVE A CODE",
+                  onPressed: () {}),
+            ),
+            SizedBox(height: 25.h),
+            SizedBox(
+                width: 120.w,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      color: AppPaintings.dimWhite,
+                      width: 36.5.w,
+                      height: 1.5.h,
+                    ),
+                    SizedBox(
+                        width: 47.w,
+                        height: 14.h,
+                        child: Text(
+                          "OR",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w300,
+                              color: AppPaintings.themeLightBlack),
+                        )),
+                    Container(
+                      color: AppPaintings.dimWhite,
+                      width: 36.5.w,
+                      height: 1.5.h,
+                    ),
+                  ],
+                )),
+            SizedBox(height: 21.h),
+            SizedBox(
+              width: 300.w,
+              height: 42.h,
+              child: LongButton(
+                  isSocialButton: true,
+                  outlinedButtonBorderColor:
+                      AppPaintings.loginButtonBorderColor,
+                  buttonType: ButtonType.outLinedButton,
+                  buttonText: "  Sign In With Email",
+                  iconImage: AssetStrings.emailIcon,
+                  buttonTextStyle: TextStyle(color: AppPaintings.themeBlack),
+                  onPressed: () {}),
+            ),
+            SizedBox(height: 12.h),
+            SizedBox(
+              width: 300.w,
+              height: 42.h,
+              child: LongButton(
+                  isSocialButton: true,
+                  outlinedButtonBorderColor:
+                      AppPaintings.loginButtonBorderColor,
+                  buttonType: ButtonType.outLinedButton,
+                  buttonText: "Sign In With Google",
+                  iconImage: AssetStrings.googleIcon,
+                  buttonTextStyle: TextStyle(color: AppPaintings.themeBlack),
+                  onPressed: () {}),
+            ),
+            SizedBox(height: 12.h),
+            SizedBox(
+              width: 300.w,
+              height: 42.h,
+              child: LongButton(
+                  isSocialButton: true,
+                  outlinedButtonBorderColor:
+                      AppPaintings.loginButtonBorderColor,
+                  buttonType: ButtonType.outLinedButton,
+                  buttonText: "Sign In With Facebook",
+                  iconImage: AssetStrings.facebookIcon,
+                  buttonTextStyle: TextStyle(color: AppPaintings.themeBlack),
+                  onPressed: () {}),
+            ),
+            SizedBox(height: 29.h),
+            SizedBox(
+              width: 234.h,
+              height: 18.h,
+              child: Text.rich(
+                TextSpan(
+                  text: 'Don’t have an account? ',
+                  children: [
+                    TextSpan(
+                      text: 'Sign Up ',
+                      style: TextStyle(
+                        color: AppPaintings.themeGreenColor,
+                      ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          // handle sign in tap
+                        },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            SizedBox(height: 140.h),
+          ],
+        ),
       ),
     );
   }

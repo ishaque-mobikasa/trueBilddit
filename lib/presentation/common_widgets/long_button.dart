@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 
 enum ButtonType { elevatedButton, outLinedButton }
@@ -40,34 +41,55 @@ class LongButton extends StatelessWidget {
                         backgroundColor: AppPaintings.themeGreenColor,
                         shadowColor: Colors.transparent),
                 onPressed: onPressed,
-                child: Row(
-                  mainAxisAlignment: iconImage == null
-                      ? MainAxisAlignment.center
-                      : MainAxisAlignment.spaceAround,
-                  children: [
-                    iconImage == null
-                        ? const SizedBox(
-                            height: 0,
-                            width: 0,
+                child: isSocialButton == true
+                    ? Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                              height: 20,
+                              width: 20,
+                              child: Image.asset(iconImage!)),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            buttonText,
+                            overflow: TextOverflow.ellipsis,
+                            textAlign: TextAlign.center,
+                            maxLines: 1,
+                            style: buttonTextStyle ??
+                                TextStyle(color: AppPaintings.kWhite),
                           )
-                        : SizedBox(
-                            height: 20,
-                            width: 20,
-                            child: Image.asset(iconImage!)),
-                    Expanded(
-                        child: Text(
-                      buttonText,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                      textAlign: TextAlign.center,
-                      style: buttonTextStyle ??
-                          TextStyle(
-                              color: AppPaintings.kWhite,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500),
-                    ))
-                  ],
-                )),
+                        ],
+                      )
+                    : Row(
+                        mainAxisAlignment: iconImage == null
+                            ? MainAxisAlignment.center
+                            : MainAxisAlignment.spaceAround,
+                        children: [
+                          iconImage == null
+                              ? const SizedBox(
+                                  height: 0,
+                                  width: 0,
+                                )
+                              : SizedBox(
+                                  height: 20,
+                                  width: 20,
+                                  child: Image.asset(iconImage!)),
+                          Expanded(
+                              child: Text(
+                            buttonText,
+                            overflow: TextOverflow.ellipsis,
+                            maxLines: 1,
+                            textAlign: TextAlign.center,
+                            style: buttonTextStyle ??
+                                TextStyle(
+                                    color: AppPaintings.kWhite,
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w500),
+                          ))
+                        ],
+                      )),
           )
         : Container(
             constraints: BoxConstraints(
