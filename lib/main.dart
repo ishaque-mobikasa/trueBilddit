@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: AppPaintings.appTheme,
         getPages: AppPages.pages,
-        initialRoute: Routes.locationRequestView,
+        initialRoute: Routes.signUpview,
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:truebildit/app/utility_functions/place_holder_image.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/strings.dart';
@@ -17,7 +18,7 @@ class CircledProfileImage extends StatelessWidget {
     this.onTap,
     this.backGroundCameraAvatarColor,
     this.image = placeHolder,
-    this.imageAvatarRadius = 50,
+    this.imageAvatarRadius,
     this.backGroundAvatarColor,
     required this.isCameraIconed,
   });
@@ -29,23 +30,23 @@ class CircledProfileImage extends StatelessWidget {
       child: Stack(
         children: [
           CircleAvatar(
-            radius: imageAvatarRadius! + 2,
+            radius: imageAvatarRadius ?? 54.r + 2.r,
             backgroundColor: backGroundAvatarColor ?? Colors.white,
             child: CircleAvatar(
-                radius: imageAvatarRadius,
+                radius: imageAvatarRadius ?? 54.r,
                 backgroundImage:
                     MemoryImage(const Base64Decoder().convert(image))),
           ),
           if (isCameraIconed)
             Positioned(
-                bottom: 1,
-                right: 1,
+                bottom: 1.h,
+                right: 6.w,
                 child: CircleAvatar(
-                  radius: imageAvatarRadius! - 33.5,
+                  radius: imageAvatarRadius ?? 54.r / 3,
                   backgroundColor:
                       backGroundCameraAvatarColor ?? AppPaintings.kWhite,
                   child: CircleAvatar(
-                    radius: imageAvatarRadius! - 35,
+                    radius: imageAvatarRadius ?? 54.r / 3 - 1.5.r,
                     backgroundImage: AssetImage(AssetStrings.cameraImage),
                   ),
                 ))

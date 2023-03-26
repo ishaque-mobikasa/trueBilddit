@@ -1,7 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/presentation/common_widgets/circled_profile_image.dart';
 import 'package:truebildit/presentation/common_widgets/form_field_with_validation.dart';
@@ -13,138 +17,197 @@ class SignUpView extends GetView<SignUpController> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return SafeArea(
-      child: Scaffold(
-          appBar: AppBar(
-            titleTextStyle: AppPaintings.customLargeText
-                .copyWith(fontWeight: FontWeight.w500),
-            backgroundColor: AppPaintings.kWhite,
-            elevation: 0,
-            title: const Text("Sign Up"),
-            leading: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  CupertinoIcons.back,
-                  color: AppPaintings.themeLightBlack,
-                )),
-            centerTitle: true,
-          ),
-          body: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                    padding: const EdgeInsets.only(top: 10),
-                    constraints: BoxConstraints(maxHeight: size.height * 0.2),
-                    child: Obx(
-                      () => CircledProfileImage(
-                        isCameraIconed: true,
-                        image: controller.pickedImage.value,
-                        backGroundCameraAvatarColor:
-                            AppPaintings.themeGreenColor,
-                        onTap: () => controller.onImagePickButtonClick(),
-                      ),
-                    )),
-                const CustomFormField(
+    return Material(
+        color: AppPaintings.kWhite,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 34.h,
+              ),
+              SizedBox(
+                width: 375.w,
+                height: 52.h,
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        log("back button pressed");
+                      },
+                      child: Container(
+                          alignment: Alignment.center,
+                          margin: EdgeInsets.only(left: 15.w),
+                          constraints: const BoxConstraints(),
+                          child: Icon(
+                            size: 18.h,
+                            CupertinoIcons.back,
+                            color: AppPaintings.themeLightBlack,
+                          )),
+                    ),
+                    SizedBox(
+                      width: 128.w,
+                    ),
+                    Text(
+                      "Sign Up",
+                      style: TextStyle(
+                          color: AppPaintings.kBlack,
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: GoogleFonts.montserrat().fontFamily),
+                    ),
+                  ],
+                ),
+              ),
+              Row(
+                children: [
+                  SizedBox(width: 134.w),
+                  SizedBox(
+                      height: 108.h,
+                      width: 115.w,
+                      child: Obx(
+                        () => CircledProfileImage(
+                          isCameraIconed: true,
+                          image: controller.pickedImage.value,
+                          backGroundCameraAvatarColor:
+                              AppPaintings.themeGreenColor,
+                          onTap: () => controller.onImagePickButtonClick(),
+                        ),
+                      )),
+                ],
+              ),
+              SizedBox(height: 22.h),
+              SizedBox(
+                width: 300.w,
+                height: 50,
+                child: const CustomFormField(
                     hintText: "Full Name",
                     icon: Icons.ac_unit,
                     type: FieldType.normalInputField),
-                const CustomFormField(
+              ),
+              SizedBox(
+                width: 300.w,
+                child: const CustomFormField(
                     hintText: "Comapny Name(Optional)",
                     icon: Icons.ac_unit,
                     type: FieldType.normalInputField),
-                const CustomFormField(
+              ),
+              SizedBox(
+                width: 300.w,
+                child: const CustomFormField(
                     hintText: "E mail*",
                     icon: Icons.ac_unit,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     type: FieldType.eMail),
-                const CustomFormField(
+              ),
+              SizedBox(
+                width: 300.w,
+                child: const CustomFormField(
                     hintText: "Mobile Number*",
                     icon: Icons.ac_unit,
                     type: FieldType.phoneNumber),
-                const CustomFormField(
+              ),
+              SizedBox(
+                width: 300.w,
+                child: const CustomFormField(
                     hintText: "Password*",
                     icon: Icons.ac_unit,
                     obscureText: true,
                     type: FieldType.password),
-                const CustomFormField(
+              ),
+              SizedBox(
+                width: 300.w,
+                child: const CustomFormField(
                     hintText: "Confirm Password*",
                     icon: Icons.ac_unit,
                     obscureText: true,
                     type: FieldType.password),
-                const SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: [
-                    Obx(() => Checkbox(
+              ),
+              SizedBox(
+                height: 22.5.h,
+              ),
+              Row(
+                children: [
+                  SizedBox(
+                    width: 38.w,
+                  ),
+                  Obx(() => SizedBox(
+                        height: 20.h,
+                        width: 20.w,
+                        child: Checkbox(
                           value: controller.isPrivacyAccepted.value,
                           onChanged: (value) =>
                               controller.onPrivacyToggler(value!),
-                        )),
-                    Expanded(
-                      child: RichText(
-                        text: TextSpan(
-                          text: "I accept  ",
-                          style: TextStyle(
-                            color: AppPaintings.kBlack,
-                          ),
-                          children: [
-                            TextSpan(
-                              text: "Privacy Policy",
-                              style: TextStyle(
-                                  color: AppPaintings.themeGreenColor,
-                                  decoration: TextDecoration.underline),
-                              recognizer: TapGestureRecognizer()..onTap = () {},
-                            ),
-                            const TextSpan(text: ' and '),
-                            TextSpan(
-                              text: "Terms of Use",
-                              style: TextStyle(
-                                  color: AppPaintings.themeGreenColor,
-                                  decoration: TextDecoration.underline),
-                              recognizer: TapGestureRecognizer()..onTap = () {},
-                            ),
-                          ],
                         ),
-                      ),
+                      )),
+                  SizedBox(
+                    width: 9.w,
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      text: "I accept  ",
+                      style: TextStyle(
+                          color: AppPaintings.kBlack,
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w400,
+                          fontFamily: GoogleFonts.montserrat().fontFamily),
+                      children: [
+                        TextSpan(
+                          text: "Privacy Policy",
+                          style: TextStyle(
+                              color: AppPaintings.themeGreenColor,
+                              decoration: TextDecoration.underline),
+                          recognizer: TapGestureRecognizer()..onTap = () {},
+                        ),
+                        const TextSpan(text: ' and '),
+                        TextSpan(
+                          text: "Terms of Use",
+                          style: TextStyle(
+                              color: AppPaintings.themeGreenColor,
+                              decoration: TextDecoration.underline),
+                          recognizer: TapGestureRecognizer()..onTap = () {},
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                LongButton(
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 23.h,
+              ),
+              SizedBox(
+                height: 42.h,
+                width: 300.w,
+                child: LongButton(
                     buttonType: ButtonType.elevatedButton,
                     buttonText: "Sign Up",
                     onPressed: () {}),
-                const SizedBox(
-                  height: 20,
-                ),
-                Text.rich(
-                  TextSpan(
-                    text: 'Already have an account? ',
-                    children: [
-                      TextSpan(
-                        text: 'Sign In',
-                        style: TextStyle(
-                          color: AppPaintings.themeGreenColor,
-                          decoration: TextDecoration.underline,
-                        ),
-                        recognizer: TapGestureRecognizer()
-                          ..onTap = () {
-                            // handle sign in tap
-                          },
+              ),
+              SizedBox(
+                height: 26.h,
+              ),
+              Text.rich(
+                TextSpan(
+                  text: 'Already have an account? ',
+                  children: [
+                    TextSpan(
+                      text: 'Sign In',
+                      style: TextStyle(
+                        color: AppPaintings.themeGreenColor,
+                        decoration: TextDecoration.underline,
                       ),
-                    ],
-                  ),
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          // handle sign in tap
+                        },
+                    ),
+                  ],
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
-              ],
-            ),
-          )),
-    );
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+            ],
+          ),
+        ));
   }
 }
