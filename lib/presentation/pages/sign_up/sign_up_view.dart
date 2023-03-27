@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,6 +18,10 @@ class SignUpView extends GetView<SignUpController> {
 
   @override
   Widget build(BuildContext context) {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor:
+          AppPaintings.kWhite,
+    ));
     return Material(
         color: AppPaintings.kWhite,
         child: SingleChildScrollView(
@@ -96,7 +101,6 @@ class SignUpView extends GetView<SignUpController> {
                 child: const CustomFormField(
                     hintText: "E mail*",
                     icon: Icons.ac_unit,
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
                     type: FieldType.eMail),
               ),
               SizedBox(

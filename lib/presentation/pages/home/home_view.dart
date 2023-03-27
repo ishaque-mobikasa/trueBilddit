@@ -125,13 +125,13 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               SizedBox(
-                height: Get.height * 0.54,
+                height: Get.height * 0.55,
                 width: size.width * 0.9,
                 child: GridView.builder(
                   physics: const BouncingScrollPhysics(),
                   itemCount: homeItems.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      childAspectRatio: 0.9, crossAxisCount: 3),
+                      childAspectRatio: 0.85, crossAxisCount: 3),
                   itemBuilder: (context, index) => CircularCategoryItem(
                     circularItem: homeItems[index],
                     onTap: () => log("Clicked on circular item"),

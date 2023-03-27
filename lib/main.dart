@@ -7,6 +7,7 @@ import 'package:truebildit/app/utils/app_paintings.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(const MyApp());
 }
@@ -20,13 +21,12 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       designSize: const Size(375, 812),
       builder: (context, child) => GetMaterialApp(
-        title: 'TrueBuildIt',
-        defaultTransition: Transition.cupertino,
-        debugShowCheckedModeBanner: false,
-        theme: AppPaintings.appTheme,
-        getPages: AppPages.pages,
-        initialRoute: Routes.signUpview,
-      ),
+          title: 'TrueBuildIt',
+          defaultTransition: Transition.cupertino,
+          debugShowCheckedModeBanner: false,
+          theme: AppPaintings.appTheme,
+          getPages: AppPages.pages,
+          initialRoute: Routes.dashBoardView),
     );
   }
 }

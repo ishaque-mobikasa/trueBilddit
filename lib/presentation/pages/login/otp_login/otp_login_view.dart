@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
@@ -15,10 +16,12 @@ class OTPLoginView extends GetView<OTPLoginController> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Colors.white,
-      child: SingleChildScrollView(
-        physics: const NeverScrollableScrollPhysics(),
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: AppPaintings.kWhite,
+    ));
+    return Scaffold(
+      body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
             SizedBox(
@@ -176,7 +179,6 @@ class OTPLoginView extends GetView<OTPLoginController> {
             ),
             SizedBox(height: 29.h),
             SizedBox(
-              width: 234.h,
               height: 18.h,
               child: Text.rich(
                 TextSpan(
@@ -187,10 +189,7 @@ class OTPLoginView extends GetView<OTPLoginController> {
                       style: TextStyle(
                         color: AppPaintings.themeGreenColor,
                       ),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          // handle sign in tap
-                        },
+                      recognizer: TapGestureRecognizer()..onTap = () {},
                     ),
                   ],
                 ),

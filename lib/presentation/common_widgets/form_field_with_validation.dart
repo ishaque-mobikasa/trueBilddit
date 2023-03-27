@@ -22,11 +22,13 @@ class CustomFormField extends StatelessWidget {
   final AutovalidateMode? autovalidateMode;
   final TextStyle? labelStyle;
   final dynamic initialValue;
+  final EdgeInsetsGeometry? contentPadding;
   const CustomFormField(
       {this.obscureText,
       this.initialValue,
       this.labelStyle,
-      this.margin = const EdgeInsets.symmetric(horizontal: 0),
+      this.contentPadding,
+      this.margin = EdgeInsets.zero,
       this.borderRadius,
       this.hintStyle = const TextStyle(color: Colors.grey),
       this.toggleVisibility,
@@ -74,7 +76,7 @@ class CustomFormField extends StatelessWidget {
           obscureText: obscureText ?? false,
           decoration: InputDecoration(
               fillColor: Colors.white,
-              contentPadding: EdgeInsets.only(bottom: 10.h),
+              contentPadding: contentPadding ?? EdgeInsets.only(bottom: 10.h),
               filled: true,
               suffixIcon: type == FieldType.password
                   ? IconButton(

@@ -27,7 +27,7 @@ class AppPaintings {
     color: AppPaintings.themeBlack,
     fontSize: 18.sp,
     overflow: TextOverflow.ellipsis,
-    fontWeight: FontWeight.w800,
+    fontWeight: FontWeight.w500,
   );
   static TextStyle customSmallText = TextStyle(
     color: AppPaintings.themeLightBlack,

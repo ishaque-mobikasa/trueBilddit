@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/presentation/pages/address/view_all_address/address_view.dart';
-import 'package:truebildit/presentation/pages/login/email_login/email_login_view.dart';
-import 'package:truebildit/presentation/pages/login/otp_login/otp_login_view.dart';
+import 'package:truebildit/presentation/pages/home/home_view.dart';
 import 'package:truebildit/presentation/pages/orders/order_history/order_history_view.dart';
+import 'package:truebildit/presentation/pages/sub_category_listing/sub_category_view.dart';
 
 class DashBoardController extends GetxController {
   final Rx<Color> _scaffoldBackground = Colors.white.withAlpha(245).obs;
   RxInt selectedIndex = 0.obs;
   List<Widget> pages = [
-    const EmailLoginView(),
-    const OTPLoginView(),
+    const HomeView(),
+    const SubCategoryView(),
     const ViewAllAddressView(),
     const OrderHistoryView()
   ];
@@ -20,7 +21,7 @@ class DashBoardController extends GetxController {
   setIndex(index) {
     if (index != selectedIndex.value) {
       selectedIndex.value = index;
-      setWhiteBackground = Colors.white;
+      setWhiteBackground = AppPaintings.scaffoldBackgroundDimmed;
     } else {
       return;
     }

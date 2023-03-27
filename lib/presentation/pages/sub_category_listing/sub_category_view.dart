@@ -17,29 +17,26 @@ class SubCategoryView extends GetView<SubCategoryController> {
     return Stack(
       children: [
         SingleChildScrollView(
-          padding: EdgeInsets.only(top: 103.h),
+          padding: EdgeInsets.only(top: 103.h, left: 15.w, right: 15.w),
           physics: const BouncingScrollPhysics(),
           child: Column(
               children: List.generate(
                   subCategoryItems.length,
-                  (index) => Container(
-                        margin:
-                            EdgeInsets.symmetric(horizontal: Get.width * 0.05),
-                        child: MyaccountItem(
-                            title: subCategoryItems[index],
-                            onTap: () {
-                              log("tapped on $index");
-                            },
-                            borderRadius: index == 0
-                                ? const BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    topRight: Radius.circular(10))
-                                : index == subCategoryItems.length - 1
-                                    ? const BorderRadius.only(
-                                        bottomLeft: Radius.circular(10),
-                                        bottomRight: Radius.circular(10))
-                                    : null),
-                      ))),
+                  (index) => MyaccountItem(
+                      padding: EdgeInsets.only(left: 17.w, right: 22.w),
+                      title: subCategoryItems[index],
+                      onTap: () {
+                        log("tapped on $index");
+                      },
+                      borderRadius: index == 0
+                          ? BorderRadius.only(
+                              topLeft: Radius.circular(10.r),
+                              topRight: Radius.circular(10.r))
+                          : index == subCategoryItems.length - 1
+                              ? BorderRadius.only(
+                                  bottomLeft: Radius.circular(10.r),
+                                  bottomRight: Radius.circular(10.r))
+                              : null))),
         ),
         SizedBox(
           height: 90.h,

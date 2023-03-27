@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 
 class MyaccountItem extends StatelessWidget {
   const MyaccountItem(
       {this.borderRadius,
-      this.padding = const EdgeInsets.symmetric(horizontal: 20),
+      this.padding = const EdgeInsets.symmetric(horizontal: 0),
       this.margin,
       this.onTap,
+      this.height,
+      this.width,
       required this.title,
       super.key});
   final EdgeInsets? padding;
   final EdgeInsets? margin;
   final String title;
+  final double? height;
+  final double? width;
   final void Function()? onTap;
   final BorderRadiusGeometry? borderRadius;
   @override
@@ -27,13 +32,10 @@ class MyaccountItem extends StatelessWidget {
                 topLeft: Radius.circular(0),
                 bottomLeft: Radius.circular(0)),
         child: Container(
+          height: height ?? 54.h,
+          width: width ?? size.width.w,
           padding: padding,
           margin: margin,
-          constraints: BoxConstraints(
-            maxHeight: size.height * 0.08,
-            minHeight: size.height * 0.07,
-            maxWidth: size.width,
-          ),
           decoration: BoxDecoration(
               color: AppPaintings.kWhite,
               border: BorderDirectional(
@@ -45,6 +47,8 @@ class MyaccountItem extends StatelessWidget {
                 title,
                 overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.right,
+                style: AppPaintings.customSmallText
+                    .copyWith(fontSize: 14.sp, fontWeight: FontWeight.w400),
               ),
               Flexible(
                 child: Icon(

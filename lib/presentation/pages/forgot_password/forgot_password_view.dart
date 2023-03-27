@@ -1,5 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/strings.dart';
@@ -12,42 +16,66 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return SafeArea(
-        child: Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppPaintings.kWhite,
-        elevation: 0,
-        leading: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              CupertinoIcons.back,
-              color: AppPaintings.themeLightBlack,
-            )),
-        centerTitle: true,
-      ),
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: AppPaintings.kWhite,
+    ));
+    return Scaffold(
+      backgroundColor: AppPaintings.kWhite,
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
             Container(
-                height: size.height * 0.25,
-                alignment: Alignment.bottomCenter,
-                child: Image.asset(
-                  AssetStrings.forgotPasswordImage,
-                  height: size.height * 0.15,
-                )),
-            const SizedBox(
-              height: 20,
-            ),
-            Text(
-              AppStrings.forgotPassword,
-              style: AppPaintings.customLargeText,
-            ),
-            const SizedBox(
-              height: 30,
+              margin: EdgeInsets.only(top: 34.h),
+              height: 51.h,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      log("back button pressed");
+                    },
+                    child: Container(
+                        width: 15.w,
+                        alignment: Alignment.center,
+                        margin: EdgeInsets.only(left: 15.w),
+                        constraints: const BoxConstraints(),
+                        child: Icon(
+                          size: 24.h,
+                          CupertinoIcons.back,
+                          color: AppPaintings.themeLightBlack,
+                        )),
+                  ),
+                ],
+              ),
             ),
             SizedBox(
-              width: size.width * 0.8,
+              height: 34.h,
+            ),
+            Image.asset(
+              AssetStrings.forgotPasswordImage,
+              height: 120.h,
+              width: 120.w,
+            ),
+            SizedBox(
+              height: 30.h,
+            ),
+            SizedBox(
+              width: 211.w,
+              height: 22.h,
+              child: Text(
+                textAlign: TextAlign.center,
+                AppStrings.forgotPassword,
+                style: AppPaintings.customLargeText,
+              ),
+            ),
+            SizedBox(
+              height: 9.h,
+            ),
+            Container(
+              alignment: Alignment.center,
+              width: 300.w,
+              height: 38.h,
               child: Text(
                 AppStrings.getPasswordLink,
                 style: AppPaintings.customSmallText,
@@ -55,26 +83,31 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
                 textAlign: TextAlign.center,
               ),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 56.h,
             ),
-            Container(
-              constraints: BoxConstraints(maxWidth: size.width * 0.82),
+            SizedBox(
+              width: 300.w,
+              height: 57.5.h,
               child: const CustomFormField(
                 type: FieldType.eMail,
                 hintText: "Email",
               ),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 21.5.h,
             ),
-            LongButton(
-                buttonType: ButtonType.elevatedButton,
-                buttonText: "REQUEST RESET LINK",
-                onPressed: () {})
+            SizedBox(
+              height: 42.h,
+              width: 300.w,
+              child: LongButton(
+                  buttonType: ButtonType.elevatedButton,
+                  buttonText: "REQUEST RESET LINK",
+                  onPressed: () {}),
+            ),
           ],
         ),
       ),
-    ));
+    );
   }
 }
