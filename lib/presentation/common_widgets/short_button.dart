@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/presentation/common_widgets/long_button.dart';
 
@@ -67,9 +68,9 @@ class ShortButton extends StatelessWidget {
                     buttonText,
                     style: buttonTextStyle ??
                         TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: AppPaintings.kWhite,
-                        ),
+                            fontWeight: FontWeight.w500,
+                            color: AppPaintings.kWhite,
+                            fontSize: 12.sp),
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     textAlign: TextAlign.center,
@@ -80,7 +81,7 @@ class ShortButton extends StatelessWidget {
               style: buttonStyle ??
                   ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10)),
+                          borderRadius: BorderRadius.circular(10.r)),
                       side: BorderSide(
                         color: outlineButtonBorderColor ??
                             AppPaintings.themeGreenColor,
@@ -109,7 +110,8 @@ class ShortButton extends StatelessWidget {
                     buttonText,
                     style: buttonTextStyle ??
                         TextStyle(
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12.sp,
                           color: AppPaintings.themeBlack,
                         ),
                     overflow: TextOverflow.ellipsis,

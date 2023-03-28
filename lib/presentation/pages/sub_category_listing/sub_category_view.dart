@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:truebildit/app/routes/routes.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/presentation/pages/my_account/widgets/my_account_item.dart';
 import 'package:truebildit/presentation/pages/sub_category_listing/controllers_bindings/sub_category_controller.dart';
@@ -27,6 +28,7 @@ class SubCategoryView extends GetView<SubCategoryController> {
                       title: subCategoryItems[index],
                       onTap: () {
                         log("tapped on $index");
+                        Get.toNamed(Routes.subCategoryItemsView,arguments:subCategoryItems[index] );
                       },
                       borderRadius: index == 0
                           ? BorderRadius.only(

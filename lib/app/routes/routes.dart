@@ -34,6 +34,8 @@ import 'package:truebildit/presentation/pages/sign_up/sign_up_view.dart';
 import 'package:truebildit/presentation/pages/splash_screen/controllers_bindings/splash_screen_bindings.dart';
 import 'package:truebildit/presentation/pages/splash_screen/splash_screen_view.dart';
 import 'package:truebildit/presentation/pages/sub_category_listing/controllers_bindings/sub_category_binding.dart';
+import 'package:truebildit/presentation/pages/sub_category_listing/sub_category_item_view/controller_binding.dart/sub_category_items_view_controller.dart';
+import 'package:truebildit/presentation/pages/sub_category_listing/sub_category_item_view/sub_category_items.dart';
 import 'package:truebildit/presentation/pages/sub_category_listing/sub_category_view.dart';
 
 class Routes {
@@ -55,6 +57,7 @@ class Routes {
   static const myListView = "/myListView";
   static const selectedListView = "/selectedListView";
   static const orderHistoryView = "/orderHistoryView";
+  static const subCategoryItemsView = "/subCategoryItemsView";
 }
 
 class AppPages {
@@ -131,9 +134,13 @@ class AppPages {
         name: Routes.selectedListView,
         page: () => const SelectedListView(),
         binding: SelectedListBinding()),
-          GetPage(
+    GetPage(
         name: Routes.orderHistoryView,
         page: () => const OrderHistoryView(),
         binding: OrderHistoryBinding()),
+    GetPage(
+        name: Routes.subCategoryItemsView,
+        page: () => const SubCategoryItemsView(),
+        binding: SubcategoryItemsBindings()),
   ];
 }

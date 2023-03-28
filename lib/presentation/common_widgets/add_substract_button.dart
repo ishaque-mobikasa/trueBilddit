@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddSubstractButton extends StatelessWidget {
   final int count;
@@ -15,39 +16,45 @@ class AddSubstractButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Container(
-      constraints: BoxConstraints(
-        maxWidth: size.width * 0.25,
-        maxHeight: size.height * 0.04,
-      ),
+    return SizedBox(
+      width: 74.w,
+      height: 24.h,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          InkWell(
-              onTap: onSubstractButtonClick,
-              child: Container(
-                  height: size.height * 0.05,
-                  decoration:
-                      BoxDecoration(border: Border.all(color: borderColor)),
-                  child: const Icon(Icons.remove))),
-          Expanded(
-            flex: 2,
+          Flexible(
+            child: InkWell(
+                onTap: onSubstractButtonClick,
+                child: Container(
+                    decoration:
+                        BoxDecoration(border: Border.all(color: borderColor)),
+                    child: const Icon(
+                      Icons.remove,
+                      size: 20,
+                    ))),
+          ),
+          Flexible(
             child: Container(
               alignment: Alignment.center,
-              height: size.height * 0.05,
+              width: 32.w,
               decoration: BoxDecoration(
                   border: Border.symmetric(
                       horizontal: BorderSide(color: borderColor))),
               child: Text(count.toString()),
             ),
           ),
-          InkWell(
-              onTap: onAddButtonClick,
-              child: Container(
-                  height: size.height * 0.05,
-                  decoration:
-                      BoxDecoration(border: Border.all(color: borderColor)),
-                  child: const Icon(Icons.add))),
+          Flexible(
+            child: InkWell(
+                onTap: onAddButtonClick,
+                child: Container(
+                    constraints: BoxConstraints(minWidth: 20.w),
+                    decoration:
+                        BoxDecoration(border: Border.all(color: borderColor)),
+                    child: const Icon(
+                      Icons.add,
+                      size: 20,
+                    ))),
+          ),
         ],
       ),
     );
