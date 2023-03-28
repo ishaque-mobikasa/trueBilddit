@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
-import 'package:truebildit/presentation/pages/address/view_all_address/address_view.dart';
+import 'package:truebildit/presentation/pages/address/add_address_page/add_address_view.dart';
 import 'package:truebildit/presentation/pages/home/home_view.dart';
-import 'package:truebildit/presentation/pages/orders/order_history/order_history_view.dart';
+import 'package:truebildit/presentation/pages/search_results/search_result_view.dart';
 import 'package:truebildit/presentation/pages/sub_category_listing/sub_category_view.dart';
 
 class DashBoardController extends GetxController {
@@ -12,8 +12,8 @@ class DashBoardController extends GetxController {
   List<Widget> pages = [
     const HomeView(),
     const SubCategoryView(),
-    const ViewAllAddressView(),
-    const OrderHistoryView()
+    const SearchResultsView(),
+    const AddNewAddressView()
   ];
   Color getScaffoldColor() => _scaffoldBackground.value;
 

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key,required this.title});
-  final String title;
+  const CustomAppBar(
+      {super.key, this.title = "", this.titleImage, this.height = 90});
+  final String? title;
+  final double? height;
+  final Widget? titleImage;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 90.h,
+      height: height,
       child: AppBar(
         elevation: 0,
         backgroundColor: AppPaintings.themeGreenColor,
@@ -18,9 +20,7 @@ class CustomAppBar extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_ios),
           onPressed: () => {Get.back()},
         ),
-        title: Text(
-          title
-        ),
+        title: titleImage ?? Text(title!),
       ),
     );
   }

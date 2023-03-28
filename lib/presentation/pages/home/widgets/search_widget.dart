@@ -25,7 +25,7 @@ class CustomSearchField extends StatelessWidget {
       this.toggleVisibility,
       this.postFixIcon,
       this.validator,
-      this.padding = const EdgeInsets.symmetric(horizontal: 20),
+      this.padding = const EdgeInsets.symmetric(horizontal: 15),
       this.controller,
       super.key,
       this.icons,

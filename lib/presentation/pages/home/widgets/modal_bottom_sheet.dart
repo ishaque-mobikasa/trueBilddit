@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/strings.dart';
@@ -16,9 +17,7 @@ class LocationModalSheet extends StatelessWidget {
         borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(25), topRight: Radius.circular(25)),
         child: Container(
-          constraints: BoxConstraints(
-            maxHeight: size.height * 0.6,
-          ),
+          constraints: BoxConstraints(maxHeight: 469.h),
           color: Colors.white,
           child: Column(
             children: [
@@ -26,7 +25,8 @@ class LocationModalSheet extends StatelessWidget {
                 child: Row(
                   children: [
                     Container(
-                      height: size.height * 0.08,
+                      alignment: Alignment.center,
+                      height: 52.h,
                       width: size.width,
                       color: const Color(0xffF8F8F8),
                       child: Row(
@@ -54,22 +54,19 @@ class LocationModalSheet extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(height: 35.h),
+              Image.asset(
+                AssetStrings.circledLocation,
+                width: 204.w,
+                height: 204.h,
+                fit: BoxFit.contain,
               ),
               SizedBox(
-                height: size.height * 0.25,
-                child: Image.asset(
-                  AssetStrings.circledLocation,
-                  width: size.width,
-                  fit: BoxFit.contain,
-                ),
-              ),
-              const SizedBox(
-                height: 10,
+                height: 25.h,
               ),
               SizedBox(
-                width: size.width * 0.75,
+                width: 300.w,
+                height: 42.h,
                 child: LongButton(
                   buttonType: ButtonType.elevatedButton,
                   buttonText: AppStrings.yourCurrentLocation,
@@ -77,11 +74,10 @@ class LocationModalSheet extends StatelessWidget {
                   iconImage: AssetStrings.currentLocationIcon,
                 ),
               ),
+              SizedBox(height: 14.h),
               SizedBox(
-                height: size.height * 0.01,
-              ),
-              SizedBox(
-                width: size.width * 0.75,
+                width: 300.w,
+                height: 42.h,
                 child: LongButton(
                     buttonType: ButtonType.outLinedButton,
                     buttonText: AppStrings.enterManualLocation,
