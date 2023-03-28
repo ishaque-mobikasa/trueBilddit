@@ -22,22 +22,24 @@ class ViewAllAddressView extends GetView<ViewAllAddressController> {
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              Container(
-                margin: EdgeInsets.only(top: Get.height * 0.01),
-                height: Get.height * 0.065,
+              SizedBox(
+                height: 50.h,
                 child: ShortButton(
                     buttonTextStyle: TextStyle(
                         fontSize: 14,
                         color: AppPaintings.themeGreenColor,
                         fontWeight: FontWeight.w500),
                     backGroundColor: const Color.fromARGB(255, 255, 255, 255),
-                    maxWidth: Get.width * 0.95,
+                    maxWidth: 345.w,
                     buttonType: ButtonType.outLinedButton,
                     outlineButtonBorderColor: AppPaintings.kWhite,
                     buttonText: " + ADD NEW ADDRESS",
                     onPressed: () {
                       log("Add new Address");
                     }),
+              ),
+              SizedBox(
+                height: 12.h,
               ),
               Column(
                   children: List.generate(

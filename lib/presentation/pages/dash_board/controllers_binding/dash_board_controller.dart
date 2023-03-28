@@ -21,7 +21,7 @@ class DashBoardController extends GetxController {
   setIndex(index) {
     if (index != selectedIndex.value) {
       selectedIndex.value = index;
-      setWhiteBackground = AppPaintings.scaffoldBackgroundDimmed;
+      setWhiteBackground = AppPaintings.kWhite;
     } else {
       return;
     }

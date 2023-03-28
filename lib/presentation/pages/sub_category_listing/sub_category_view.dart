@@ -28,7 +28,8 @@ class SubCategoryView extends GetView<SubCategoryController> {
                       title: subCategoryItems[index],
                       onTap: () {
                         log("tapped on $index");
-                        Get.toNamed(Routes.subCategoryItemsView,arguments:subCategoryItems[index] );
+                        Get.toNamed(Routes.subCategoryItemsView,
+                            arguments: subCategoryItems[index]);
                       },
                       borderRadius: index == 0
                           ? BorderRadius.only(

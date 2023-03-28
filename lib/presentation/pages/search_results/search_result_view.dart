@@ -22,7 +22,7 @@ class SearchResultsView extends GetView<SearchController> {
       children: [
         SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
-            padding: EdgeInsets.only(top: 160.h),
+            padding: EdgeInsets.only(top: 150.h),
             child: Column(
               children: [
                 Container(
@@ -135,8 +135,10 @@ class SearchResultsView extends GetView<SearchController> {
             )),
         Container(
           margin: EdgeInsets.only(top: 90.h),
+          height: 50.h,
           child: const CustomSearchField(
-            hintText: "Cable MC Wire",
+            hintText: "Search",
+            initialValue: "Cable MC Wire",
           ),
         ),
       ],

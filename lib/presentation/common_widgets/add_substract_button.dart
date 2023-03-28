@@ -15,7 +15,6 @@ class AddSubstractButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return SizedBox(
       width: 74.w,
       height: 24.h,

@@ -1,10 +1,13 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/strings.dart';
 import 'package:truebildit/presentation/common_widgets/circled_profile_image.dart';
+import 'package:truebildit/presentation/common_widgets/custom_app_bar.dart';
 import 'package:truebildit/presentation/pages/my_account/controllers_binding/my_account_controller.dart';
 import 'package:truebildit/presentation/pages/my_account/widgets/list_of_my_account.dart';
 import 'package:truebildit/presentation/pages/my_account/widgets/my_account_item.dart';
@@ -18,12 +21,9 @@ class MyAccountView extends GetView<MyAccountController> {
       physics: const BouncingScrollPhysics(),
       child: Column(
         children: [
-          AppBar(
-            title: Image.asset(
-              AssetStrings.bildItLogo,
-              width: Get.width * 0.3,
-              height: Get.height * 0.03,
-            ),
+          CustomAppBar(
+            height: 73.h,
+            isBackButtonAllowed: false,
             actions: [
               IconButton(
                   onPressed: () {},
@@ -32,13 +32,11 @@ class MyAccountView extends GetView<MyAccountController> {
                     color: Colors.white,
                   ))
             ],
-            centerTitle: true,
-            backgroundColor: AppPaintings.themeGreenColor,
-            elevation: 0,
+            titleImage:
+                Image.asset(AssetStrings.bildItLogo, width: 94.w, height: 24.h),
           ),
           Container(
-            constraints: BoxConstraints(
-                maxHeight: Get.height * 0.25, minWidth: Get.width),
+            constraints: BoxConstraints(maxHeight: 213.h, minWidth: Get.width),
             decoration: BoxDecoration(color: AppPaintings.themeGreenColor),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -49,8 +47,8 @@ class MyAccountView extends GetView<MyAccountController> {
                 Column(
                   children: [
                     RichText(
-                      text: const TextSpan(
-                          style: TextStyle(
+                      text: TextSpan(
+                          style: const TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w400,
                               fontSize: 20),
@@ -61,18 +59,19 @@ class MyAccountView extends GetView<MyAccountController> {
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.w600,
+                                    fontFamily:
+                                        GoogleFonts.montserrat().fontFamily,
                                     fontSize: 20))
                           ]),
                     ),
-                    SizedBox(
-                      height: Get.height * 0.01,
-                    ),
-                    const Text(
+                    SizedBox(height: 5.h),
+                    Text(
                       "richard.george@gmail.com",
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                       style: TextStyle(
                           color: Colors.white,
+                          fontFamily: GoogleFonts.montserrat().fontFamily,
                           fontWeight: FontWeight.w400,
                           fontSize: 12),
                     )
@@ -81,28 +80,25 @@ class MyAccountView extends GetView<MyAccountController> {
               ],
             ),
           ),
-          SizedBox(
-            height: Get.height * 0.03,
-          ),
-          Column(
-              children: List.generate(
-                  listOfMyAccount.length,
-                  (index) => Container(
-                        margin:
-                            EdgeInsets.symmetric(horizontal: Get.width * 0.05),
-                        child: MyaccountItem(
-                            title: listOfMyAccount[index],
-                            onTap: () => log("tapped on $index"),
-                            borderRadius: index == 0
+          SingleChildScrollView(
+            padding: EdgeInsets.only(left: 15.w, right: 15.w, top: 12.h),
+            child: Column(
+                children: List.generate(
+                    listOfMyAccount.length,
+                    (index) => MyaccountItem(
+                        padding: EdgeInsets.only(left: 15.w, right: 22.w),
+                        title: listOfMyAccount[index],
+                        onTap: () => log("tapped on $index"),
+                        borderRadius: index == 0
+                            ? const BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10))
+                            : index == listOfMyAccount.length - 1
                                 ? const BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    topRight: Radius.circular(10))
-                                : index == listOfMyAccount.length - 1
-                                    ? const BorderRadius.only(
-                                        bottomLeft: Radius.circular(10),
-                                        bottomRight: Radius.circular(10))
-                                    : null),
-                      ))),
+                                    bottomLeft: Radius.circular(10),
+                                    bottomRight: Radius.circular(10))
+                                : null))),
+          ),
         ],
       ),
     );

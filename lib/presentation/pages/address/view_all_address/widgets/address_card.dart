@@ -2,32 +2,27 @@ import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/data/models/address_model.dart';
 
 class AddressCard extends StatelessWidget {
   const AddressCard({
+    super.key,
     this.nameStyle = const TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w500,
       color: Color(0xff252525),
     ),
-    this.margin = const EdgeInsets.only(
-      top: 8,
-      bottom: 8,
-      right: 10,
-      left: 10,
-    ),
-    super.key,
+    this.margin,
     required this.addressData,
-    this.pading = const EdgeInsets.symmetric(horizontal: 20),
+    this.pading = const EdgeInsets.symmetric(horizontal: 13),
   });
 
   final TextStyle nameStyle;
 
-  final EdgeInsets margin;
+  final EdgeInsets? margin;
   final EdgeInsets pading;
   final AddressModel addressData;
 
@@ -37,7 +32,6 @@ class AddressCard extends StatelessWidget {
     return SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: SizedBox(
-          width: Get.width,
           child: Slidable(
             endActionPane: ActionPane(motion: const ScrollMotion(), children: [
               SlidableAction(
@@ -58,10 +52,15 @@ class AddressCard extends StatelessWidget {
               )
             ]),
             child: Container(
-              margin: margin,
-              height: Get.height * 0.12,
+              margin: margin ??
+                  EdgeInsets.only(
+                    bottom: 11,
+                    right: 15,
+                    left: 15.w,
+                  ),
+              height: 92.h,
               padding: pading,
-              width: Get.width,
+              width: 345.w,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
@@ -101,9 +100,7 @@ class AddressCard extends StatelessWidget {
                             ),
                           )),
                     ],
-                  )
-                  
-                  ),
+                  )),
                   Expanded(
                       child: Text(
                     '${addressData.streetAddress} ${addressData.city}, ${addressData.county} ${addressData.phoneNumber},',

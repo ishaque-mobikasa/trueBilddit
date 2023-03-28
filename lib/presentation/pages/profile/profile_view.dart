@@ -1,10 +1,11 @@
 import 'dart:developer';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/presentation/common_widgets/circled_profile_image.dart';
+import 'package:truebildit/presentation/common_widgets/custom_app_bar.dart';
 import 'package:truebildit/presentation/common_widgets/form_field_with_validation.dart';
 import 'package:truebildit/presentation/common_widgets/long_button.dart';
 import 'package:truebildit/presentation/pages/profile/controllers_bindings/profile_controller.dart';
@@ -17,34 +18,17 @@ class ProfileView extends GetView<ProfileController> {
     return SafeArea(
       child: Material(
         color: Colors.white,
-        child: Stack(
-          children: [
-            SingleChildScrollView(
-              physics: const NeverScrollableScrollPhysics(),
-              child: SizedBox(
-                height: Get.height * 0.9,
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Stack(
+            children: [
+              SizedBox(
+                height: Get.height.h,
                 child: Column(
                   children: [
-                    AppBar(
-                      toolbarHeight: Get.height * 0.09,
-                      title: const Text("My Profile"),
-                      leading: IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            CupertinoIcons.back,
-                            color: AppPaintings.kWhite,
-                          )),
-                      centerTitle: true,
-                      backgroundColor: AppPaintings.themeGreenColor,
-                      elevation: 0,
-                    ),
-                    Container(
-                      color: AppPaintings.themeGreenColor,
-                      height: Get.height * 0.08,
-                    ),
-                    SizedBox(
-                      height: Get.height * 0.08,
-                    ),
+                    CustomAppBar(title: "My Profile", height: 155.h),
+                    Container(color: AppPaintings.themeGreenColor, height: 1),
+                    SizedBox(height: 78.h),
                     const CustomFormField(
                         margin:
                             EdgeInsets.only(left: 20, right: 20, bottom: 20),
@@ -65,25 +49,25 @@ class ProfileView extends GetView<ProfileController> {
                         type: FieldType.normalInputField),
                     const CustomFormField(
                         margin:
-                            EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                            EdgeInsets.only(left: 20, right: 20, bottom: 26.5),
                         initialValue: "+44 7911 123456",
                         hintText: "Mobile Number",
                         type: FieldType.normalInputField),
-                    LongButton(
-                      buttonType: ButtonType.elevatedButton,
-                      buttonText: "EDIT",
-                      onPressed: () => log("Edit Button Pressed"),
-                    )
+                    SizedBox(
+                      height: 42.h,
+                      width: 300.w,
+                      child: LongButton(
+                        buttonType: ButtonType.elevatedButton,
+                        buttonText: "EDIT",
+                        onPressed: () => log("Edit Button Pressed"),
+                      ),
+                    ),
                   ],
                 ),
               ),
-            ),
-            Positioned(
-              top: Get.height * 0.09,
-              left: Get.width * 0.35,
-              child: Container(
-                padding: const EdgeInsets.only(top: 10),
-                constraints: BoxConstraints(maxHeight: Get.height * 0.2),
+              Positioned(
+                top: 95.h,
+                left: Get.width * 0.35,
                 child: GestureDetector(
                   onTap: controller.onImagePickButtonClick,
                   child: Stack(
@@ -99,8 +83,8 @@ class ProfileView extends GetView<ProfileController> {
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
