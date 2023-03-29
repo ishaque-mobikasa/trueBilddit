@@ -7,6 +7,7 @@ class CustomAppBar extends StatelessWidget {
   const CustomAppBar(
       {super.key,
       this.title = "",
+      this.backGroundColor,
       this.actions,
       this.titleImage,
       this.isBackButtonAllowed = true,
@@ -16,6 +17,7 @@ class CustomAppBar extends StatelessWidget {
   final bool? isBackButtonAllowed;
   final Widget? titleImage;
   final List<Widget>? actions;
+  final Color? backGroundColor;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -23,11 +25,14 @@ class CustomAppBar extends StatelessWidget {
       child: AppBar(
         actions: actions,
         elevation: 0,
-        backgroundColor: AppPaintings.themeGreenColor,
+        backgroundColor: backGroundColor ?? AppPaintings.themeGreenColor,
         centerTitle: true,
         leading: isBackButtonAllowed!
             ? IconButton(
-                icon: const Icon(Icons.arrow_back_ios),
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  color: AppPaintings.themeLightBlack,
+                ),
                 onPressed: () => {Get.back()},
               )
             : null,

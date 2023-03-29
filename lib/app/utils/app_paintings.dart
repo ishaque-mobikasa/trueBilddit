@@ -30,11 +30,11 @@ class AppPaintings {
     fontWeight: FontWeight.w500,
   );
   static TextStyle customSmallText = TextStyle(
-    color: AppPaintings.themeLightBlack,
-    fontSize: 12.sp,
-    overflow: TextOverflow.ellipsis,
-    fontWeight: FontWeight.w300,
-  );
+      color: AppPaintings.themeLightBlack,
+      fontSize: 12.sp,
+      overflow: TextOverflow.ellipsis,
+      fontWeight: FontWeight.w300,
+      fontFamily: GoogleFonts.montserrat().fontFamily);
   static TextStyle textSpanStyle = TextStyle(
     color: AppPaintings.themeBlack,
     fontSize: 12.sp,

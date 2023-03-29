@@ -12,7 +12,7 @@ class DashBoardView extends GetView<DashBoardController> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: AppPaintings.themeGreenColor,
+      statusBarColor: AppPaintings.kWhite,
     ));
     return Obx(
       () => Scaffold(
@@ -21,8 +21,8 @@ class DashBoardView extends GetView<DashBoardController> {
         bottomNavigationBar: Obx(
           () => ClipRRect(
             borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(30),
-              topRight: Radius.circular(30),
+              topLeft: Radius.circular(15),
+              topRight: Radius.circular(15),
             ),
             child: CustomNavigationBar(
                 strokeColor: AppPaintings.themeGreenColor,

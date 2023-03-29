@@ -53,4 +53,5 @@ class AssetStrings {
   static String deleteIcon = "assets/images/delete_icon.png";
   static String searchIcon = "assets/images/search_icon.png";
   static String personIcon = "assets/images/person_icon.png";
+  static String inputOtp = "assets/images/input_otp.png";
 }

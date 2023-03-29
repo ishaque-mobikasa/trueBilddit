@@ -17,6 +17,8 @@ import 'package:truebildit/presentation/pages/login/email_login/controller_bindi
 import 'package:truebildit/presentation/pages/login/email_login/email_login_view.dart';
 import 'package:truebildit/presentation/pages/login/otp_login/controller_binding/otp_login_binding.dart';
 import 'package:truebildit/presentation/pages/login/otp_login/otp_login_view.dart';
+import 'package:truebildit/presentation/pages/login/otp_login/otp_verification/controller_binding/otp_verification_binding.dart';
+import 'package:truebildit/presentation/pages/login/otp_login/otp_verification/otp_verification_view.dart';
 import 'package:truebildit/presentation/pages/my_account/controllers_binding/my_account_binding.dart';
 import 'package:truebildit/presentation/pages/my_account/my_account_view.dart';
 import 'package:truebildit/presentation/pages/my_list/all_lists_view/controllers_bindings/my_list_binding.dart';
@@ -58,6 +60,7 @@ class Routes {
   static const selectedListView = "/selectedListView";
   static const orderHistoryView = "/orderHistoryView";
   static const subCategoryItemsView = "/subCategoryItemsView";
+  static const otpVerificationView = "/otpVerificationView";
 }
 
 class AppPages {
@@ -142,5 +145,9 @@ class AppPages {
         name: Routes.subCategoryItemsView,
         page: () => const SubCategoryItemsView(),
         binding: SubcategoryItemsBindings()),
+    GetPage(
+        name: Routes.otpVerificationView,
+        page: () => const OTPverificationView(),
+        binding: OTPverificationBinding()),
   ];
 }
