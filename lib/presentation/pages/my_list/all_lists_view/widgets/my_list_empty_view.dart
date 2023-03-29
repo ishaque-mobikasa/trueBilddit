@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/strings.dart';
+import 'package:truebildit/presentation/common_widgets/custom_app_bar.dart';
 import 'package:truebildit/presentation/common_widgets/long_button.dart';
 import 'package:truebildit/presentation/pages/my_list/all_lists_view/controllers_bindings/my_list_controller.dart';
 
@@ -14,28 +16,33 @@ class MyListEmptyWidget extends GetView<MyListController> {
   Widget build(BuildContext context) {
     return SizedBox(
         width: Get.width,
-        height: Get.height * 0.7,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const CustomAppBar(
+              title: "My Lists",
+            ),
+            SizedBox(
+              height: 154.h,
+            ),
             Image.asset(
               AssetStrings.emptyList,
-              height: 100,
-              width: 100,
+              height: 120,
+              width: 120,
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 33.h,
             ),
             Text(
               "No List Found!",
               style: AppPaintings.customLargeText
                   .copyWith(fontWeight: FontWeight.w500),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 9.h,
             ),
             SizedBox(
-              width: Get.width * 0.8,
+              width: 300.w,
+              height: 38.h,
               child: Text(
                 AppStrings.didntCreateList,
                 style: AppPaintings.customSmallText,
@@ -43,15 +50,16 @@ class MyListEmptyWidget extends GetView<MyListController> {
                 textAlign: TextAlign.center,
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
-            LongButton(
-                buttonType: ButtonType.elevatedButton,
-                buttonText: "CREATE LIST",
-                onPressed: () {
-                  Get.bottomSheet(const AddNewWishListModal());
-                })
+            SizedBox(
+              width: 300.w,
+              height: 42.h,
+              child: LongButton(
+                  buttonType: ButtonType.elevatedButton,
+                  buttonText: "CREATE LIST",
+                  onPressed: () {
+                    Get.bottomSheet(const AddNewWishListModal());
+                  }),
+            )
           ],
         ));
   }

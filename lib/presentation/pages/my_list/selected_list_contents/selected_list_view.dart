@@ -2,7 +2,9 @@ import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/strings.dart';
 import 'package:truebildit/data/models/product_model.dart';
@@ -21,9 +23,12 @@ class SelectedListView extends GetView<SelectedListController> {
         appBar: AppBar(
           backgroundColor: AppPaintings.themeGreenColor,
           elevation: 0,
+          toolbarHeight: 62.h,
           centerTitle: true,
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios),
+            icon: const Icon(
+              Icons.arrow_back_ios,
+            ),
             onPressed: () => Get.back(),
           ),
           title: Text(
@@ -36,27 +41,28 @@ class SelectedListView extends GetView<SelectedListController> {
               child: ImageIcon(
                 AssetImage(AssetStrings.editIcon),
                 color: AppPaintings.kWhite,
-                size: 23,
+                size: 16,
               ),
             ),
-            const SizedBox(width: 20),
+            SizedBox(width: 20.w),
             GestureDetector(
               onTap: () => log("Clicked on delete icon"),
               child: ImageIcon(
                 AssetImage(AssetStrings.deleteIcon),
                 color: AppPaintings.kWhite,
-                size: 23,
+                size: 19.sp,
               ),
             ),
-            const SizedBox(width: 10),
+            SizedBox(width: 19.w),
           ],
         ),
         body: Column(
           children: [
+            SizedBox(height: 15.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const SizedBox(width: 10),
+                SizedBox(width: 15.w),
                 Expanded(
                     flex: 2,
                     child: Text(
@@ -71,6 +77,7 @@ class SelectedListView extends GetView<SelectedListController> {
                         style: TextStyle(
                             color: AppPaintings.appRedColor,
                             fontSize: 12,
+                            fontFamily: GoogleFonts.montserrat().fontFamily,
                             fontWeight: FontWeight.w600),
                       ),
                       onPressed: () {
@@ -81,13 +88,14 @@ class SelectedListView extends GetView<SelectedListController> {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8),
+                padding: EdgeInsets.only(top: 15.h),
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
                   child: Column(
                       children: List.generate(
                     10,
                     (index) => ProductCard(
+                        
                         iconColor: const Color(0xffB7B7B7),
                         icon: CupertinoIcons.delete,
                         onStarButtonClick: () =>

@@ -53,7 +53,7 @@ class MyaccountItem extends StatelessWidget {
               Flexible(
                 child: Icon(
                   Icons.arrow_forward_ios,
-                  size: 14,
+                  size: 14.sp,
                   color: AppPaintings.themeLightBlack,
                 ),
               )

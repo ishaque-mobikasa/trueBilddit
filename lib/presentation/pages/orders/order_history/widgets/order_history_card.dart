@@ -1,140 +1,143 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 
 class OrderHistoryCard extends StatelessWidget {
   const OrderHistoryCard(
       {this.orderDate,
+      this.margin,
+      this.padding,
       required this.orderAmount,
       required this.orderId,
       super.key});
   final String orderId;
   final DateTime? orderDate;
   final double orderAmount;
+  final EdgeInsetsGeometry? margin;
+  final EdgeInsetsGeometry? padding;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
+        padding: padding,
+        margin: margin,
+        height: 146.h,
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(10)),
-        margin: EdgeInsets.symmetric(
-            horizontal: size.width * 0.03, vertical: size.width * 0.03),
-        constraints:
-            BoxConstraints(maxWidth: size.width, maxHeight: size.height * 0.22),
+        constraints: BoxConstraints(maxWidth: size.width.w, maxHeight: 146.h),
         child: Column(children: [
-          Expanded(
-            flex: 3,
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: size.width * 0.03, vertical: size.width * 0.03),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Flexible(
-                        child: Container(
-                            constraints: BoxConstraints(
-                                maxWidth: size.width,
-                                maxHeight: size.height * 0.08),
-                            child: RichText(
-                                text: TextSpan(children: [
-                              TextSpan(
-                                  text: 'Ordrer : ',
-                                  style: AppPaintings.textSpanStyle),
-                              TextSpan(
-                                  text: '#345123',
-                                  style: AppPaintings.textSpanStyle.copyWith(
-                                      color: AppPaintings.themeGreenColor)),
-                            ]))),
-                      ),
-                      Flexible(
-                          flex: 2,
-                          child: Text(
-                            "Ordered on: Mon 12Dec, 2022",
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                                color: AppPaintings.themeBlack,
-                                fontSize: 11,
-                                fontWeight: FontWeight.w400),
-                          ))
-                    ],
-                  ),
-                  SizedBox(height: size.height * 0.01),
-                  Row(
-                    children: [
-                      Container(
-                          constraints: BoxConstraints(
-                              maxWidth: size.width,
-                              maxHeight: size.height * 0.05),
+          Flexible(
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      child: Container(
+                          alignment: Alignment.centerLeft,
+                          height: 18.h,
                           child: RichText(
                               text: TextSpan(children: [
                             TextSpan(
-                                text: 'Order Amount: ',
-                                style: AppPaintings.textSpanStyle),
+                                text: 'Order : ',
+                                style: AppPaintings.textSpanStyle
+                                    .copyWith(fontWeight: FontWeight.bold)),
                             TextSpan(
-                                text: '£450.00',
+                                text: '#$orderId',
                                 style: AppPaintings.textSpanStyle.copyWith(
                                     color: AppPaintings.themeGreenColor)),
                           ]))),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Divider(
-            color: AppPaintings.dimWhite,
-            height: 5,
-            thickness: 1,
-          ),
-          Expanded(
-            flex: 4,
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: size.width * 0.03, vertical: size.width * 0.03),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Row(
-                    children: [
-                      Flexible(
-                          child: Text(
-                        "John Doe",
+                    ),
+                    Flexible(
+                        child: Container(
+                      alignment: Alignment.centerRight,
+                      height: 18.h,
+                      child: Text(
+                        "Ordered on: Mon 12Dec, 2022",
+                        maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                             color: AppPaintings.themeBlack,
-                            fontSize: 13,
-                            fontWeight: FontWeight.w500),
-                      )),
-                      Container(
-                          height: 20,
-                          width: 70,
-                          margin: const EdgeInsets.only(left: 5),
-                          decoration: BoxDecoration(
-                              color: AppPaintings.disabledColor,
-                              borderRadius: BorderRadius.circular(10)),
-                          child: Center(
-                            child: Text(
-                              "Site Name",
-                              style: TextStyle(
-                                  color: AppPaintings.hintTextColor,
-                                  fontSize: 10,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                          ))
+                            fontSize: 11,
+                            fontWeight: FontWeight.w400),
+                      ),
+                    ))
+                  ],
+                ),
+                SizedBox(height: 4.h),
+                Container(
+                    alignment: Alignment.centerLeft,
+                    height: 18.h,
+                    child: RichText(
+                        maxLines: 1,
+                        text: TextSpan(children: [
+                          TextSpan(
+                              text: 'Order Amount: ',
+                              style: AppPaintings.textSpanStyle
+                                  .copyWith(fontWeight: FontWeight.bold)),
+                          TextSpan(
+                              text: '£${orderAmount.toStringAsFixed(2)}',
+                              style: AppPaintings.textSpanStyle.copyWith(
+                                  color: AppPaintings.themeGreenColor)),
+                        ]))),
+                SizedBox(
+                  height: 11.h,
+                ),
+                Divider(
+                  color: AppPaintings.dimWhite,
+                  height: 5,
+                  thickness: 1,
+                ),
+                Flexible(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Row(
+                        children: [
+                          Flexible(
+                              child: Text(
+                            "John Doe",
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                color: AppPaintings.themeBlack,
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.bold),
+                          )),
+                          Container(
+                              height: 18.h,
+                              alignment: Alignment.center,
+                              margin: EdgeInsets.only(left: 5.w),
+                              decoration: BoxDecoration(
+                                  color: AppPaintings.disabledColor,
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints(
+                                  maxWidth: 100.w,
+                                ),
+                                child: Text(
+                                  "Site Name",
+                                  maxLines: 1,
+                                  style: TextStyle(
+                                      color: AppPaintings.hintTextColor,
+                                      fontSize: 10.sp,
+                                      fontWeight: FontWeight.w400),
+                                ),
+                              ))
+                        ],
+                      ),
+                      const Flexible(
+                        child: Text(
+                          "Vicarage Rd Stourbridge West, Midlands DY8 4JB United Kingdom, 020 7836 0004",
+                          maxLines: 2,
+                          style: TextStyle(
+                              fontSize: 12, fontWeight: FontWeight.w300),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      )
                     ],
                   ),
-                  const Flexible(
-                    child: Text(
-                      "Vicarage Rd Stourbridge West, Midlands DY8 4JB United Kingdom, 020 7836 0004",
-                      maxLines: 2,
-                      style:
-                          TextStyle(fontSize: 12, fontWeight: FontWeight.w300),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  )
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ]));
