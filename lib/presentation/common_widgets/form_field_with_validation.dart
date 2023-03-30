@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -80,7 +81,7 @@ class CustomFormField extends StatelessWidget {
               filled: true,
               suffixIcon: type == FieldType.password
                   ? IconButton(
-                      icon: Icon(postFixIcon ?? Icons.visibility_off),
+                      icon: Icon(postFixIcon ?? CupertinoIcons.eye),
                       onPressed: toggleVisibility,
                       color: Colors.black,
                     )

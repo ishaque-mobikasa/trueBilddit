@@ -22,7 +22,7 @@ class SearchResultsView extends GetView<SearchController> {
       children: [
         SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
-            padding: EdgeInsets.only(top: 150.h),
+            padding: EdgeInsets.only(top: 145.h),
             child: Column(
               children: [
                 Container(

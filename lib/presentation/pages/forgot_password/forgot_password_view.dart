@@ -88,7 +88,6 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
             ),
             SizedBox(
               width: 300.w,
-              height: 57.5.h,
               child: const CustomFormField(
                 type: FieldType.eMail,
                 hintText: "Email",

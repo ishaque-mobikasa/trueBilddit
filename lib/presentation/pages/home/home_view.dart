@@ -60,6 +60,7 @@ class HomeView extends GetView<HomeController> {
                               onPressed: () {},
                               icon: ImageIcon(
                                   size: 18.w,
+                                  color: AppPaintings.kWhite,
                                   AssetImage(AssetStrings.personIcon)))
                         ],
                       ),

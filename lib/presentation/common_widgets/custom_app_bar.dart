@@ -10,6 +10,7 @@ class CustomAppBar extends StatelessWidget {
       this.backGroundColor,
       this.actions,
       this.titleImage,
+      this.iconColor,
       this.isBackButtonAllowed = true,
       this.height});
   final String? title;
@@ -18,6 +19,7 @@ class CustomAppBar extends StatelessWidget {
   final Widget? titleImage;
   final List<Widget>? actions;
   final Color? backGroundColor;
+  final Color? iconColor;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -31,7 +33,7 @@ class CustomAppBar extends StatelessWidget {
             ? IconButton(
                 icon: Icon(
                   Icons.arrow_back_ios,
-                  color: AppPaintings.themeLightBlack,
+                  color: iconColor ?? AppPaintings.kWhite,
                 ),
                 onPressed: () => {Get.back()},
               )

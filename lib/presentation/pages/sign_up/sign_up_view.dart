@@ -18,17 +18,17 @@ class SignUpView extends GetView<SignUpController> {
 
   @override
   Widget build(BuildContext context) {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor:
-          AppPaintings.kWhite,
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: AppPaintings.kWhite,
     ));
     return Material(
         color: AppPaintings.kWhite,
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               SizedBox(
-                height: 34.h,
+                height: 36.h,
               ),
               SizedBox(
                 width: 375.w,
@@ -44,13 +44,12 @@ class SignUpView extends GetView<SignUpController> {
                           margin: EdgeInsets.only(left: 15.w),
                           constraints: const BoxConstraints(),
                           child: Icon(
-                            size: 18.h,
                             CupertinoIcons.back,
                             color: AppPaintings.themeLightBlack,
                           )),
                     ),
                     SizedBox(
-                      width: 128.w,
+                      width: 115.w,
                     ),
                     Text(
                       "Sign Up",
@@ -63,6 +62,7 @@ class SignUpView extends GetView<SignUpController> {
                   ],
                 ),
               ),
+              SizedBox(height: 17.h),
               Row(
                 children: [
                   SizedBox(width: 134.w),
@@ -83,16 +83,15 @@ class SignUpView extends GetView<SignUpController> {
               SizedBox(height: 22.h),
               SizedBox(
                 width: 300.w,
-                height: 50,
                 child: const CustomFormField(
-                    hintText: "Full Name",
+                    hintText: "Full Name*",
                     icon: Icons.ac_unit,
                     type: FieldType.normalInputField),
               ),
               SizedBox(
                 width: 300.w,
                 child: const CustomFormField(
-                    hintText: "Comapny Name(Optional)",
+                    hintText: "Company Name(Optional)",
                     icon: Icons.ac_unit,
                     type: FieldType.normalInputField),
               ),
@@ -183,7 +182,7 @@ class SignUpView extends GetView<SignUpController> {
                 width: 300.w,
                 child: LongButton(
                     buttonType: ButtonType.elevatedButton,
-                    buttonText: "Sign Up",
+                    buttonText: "SIGN UP",
                     onPressed: () {}),
               ),
               SizedBox(
@@ -207,8 +206,8 @@ class SignUpView extends GetView<SignUpController> {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 20.h,
               ),
             ],
           ),

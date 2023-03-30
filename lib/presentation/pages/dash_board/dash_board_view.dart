@@ -12,7 +12,7 @@ class DashBoardView extends GetView<DashBoardController> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: AppPaintings.kWhite,
+      statusBarColor: AppPaintings.themeGreenColor,
     ));
     return Obx(
       () => Scaffold(
@@ -70,8 +70,9 @@ class DashBoardView extends GetView<DashBoardController> {
                             overflow: TextOverflow.ellipsis),
                       ),
                       selectedIcon:
-                          ImageIcon(AssetImage(AssetStrings.myListSelected)),
-                      icon: ImageIcon(AssetImage(AssetStrings.myListSelected)),
+                          ImageIcon(AssetImage(AssetStrings.myListUnSelected)),
+                      icon:
+                          ImageIcon(AssetImage(AssetStrings.myListUnSelected)),
                       title: const Text(
                         "My List",
                         style: TextStyle(overflow: TextOverflow.ellipsis),

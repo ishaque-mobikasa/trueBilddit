@@ -60,6 +60,7 @@ class OTPverificationView extends GetView<OTPverificationController> {
                   height: 22.h,
                   child: Text(
                     "OTP Verfication",
+                    textAlign: TextAlign.center,
                     style: AppPaintings.customLargeText
                         .copyWith(fontWeight: FontWeight.bold),
                   )),
@@ -70,6 +71,7 @@ class OTPverificationView extends GetView<OTPverificationController> {
                 height: 19.h,
                 child: Text(
                   "Enter the OTP send to +44 7911 123456",
+                  textAlign: TextAlign.center,
                   style: AppPaintings.customSmallText,
                 ),
               ),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/strings.dart';
@@ -14,48 +15,58 @@ class ChangePasswordView extends GetView<ChangePasswordView> {
     return Stack(
       children: [
         SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 37.5),
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              Image.asset(
-                alignment: Alignment.bottomCenter,
-                AssetStrings.changePassword,
-                width: Get.width * 0.3,
-                height: Get.height * 0.3,
+              SizedBox(
+                height: 193.h,
               ),
-              const CustomFormField(
+              Image.asset(
+                  alignment: Alignment.bottomCenter,
+                  AssetStrings.changePassword,
+                  width: 120.w,
+                  height: 120.h),
+              SizedBox(
+                height: 49.h,
+              ),
+              CustomFormField(
+                obscureText: true,
                 type: FieldType.password,
                 hintText: "Current Password*",
-                labelStyle: TextStyle(fontSize: 14),
-                hintStyle: TextStyle(fontSize: 14),
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                labelStyle: TextStyle(fontSize: 14.sp),
+                hintStyle: TextStyle(fontSize: 14.sp),
               ),
-              const CustomFormField(
+              CustomFormField(
                 type: FieldType.password,
                 hintText: "New Password",
-                labelStyle: TextStyle(fontSize: 14),
-                hintStyle: TextStyle(fontSize: 14),
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                obscureText: true,
+                labelStyle: TextStyle(fontSize: 14.sp),
+                hintStyle: TextStyle(fontSize: 14.sp),
               ),
-              const CustomFormField(
+              CustomFormField(
                 type: FieldType.password,
+                obscureText: true,
                 hintText: "Confirm New Password",
-                labelStyle: TextStyle(fontSize: 14),
-                hintStyle: TextStyle(fontSize: 14),
-                margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                labelStyle: TextStyle(fontSize: 14.sp),
+                hintStyle: TextStyle(fontSize: 14.sp),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: 25.5.h,
               ),
-              LongButton(
-                  buttonType: ButtonType.elevatedButton,
-                  buttonText: "UPDATE",
-                  onPressed: () {}),
+              SizedBox(
+                width: 302.w,
+                height: 42.h,
+                child: LongButton(
+                    buttonType: ButtonType.elevatedButton,
+                    buttonText: "UPDATE",
+                    onPressed: () {}),
+              ),
             ],
           ),
         ),
         SizedBox(
-          height: Get.height * 0.07,
+          height: 90.h,
           child: AppBar(
             elevation: 0,
             backgroundColor: AppPaintings.themeGreenColor,
