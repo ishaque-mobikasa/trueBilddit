@@ -22,13 +22,13 @@ class SubCategoryItemsView extends GetView<SubcategoryItemsController> {
         children: [
           SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
-              padding: EdgeInsets.only(top: 111.h),
+              padding: EdgeInsets.only(top: 90.h),
               child: Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(
-                        top: 11.h, left: 17.w, bottom: 13.h, right: 13.w),
-                    height: 66.h,
+                    margin: EdgeInsets.only(
+                        top: 13.h, left: 17.w, bottom: 13.h, right: 13.w),
+                    height: 42.h,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

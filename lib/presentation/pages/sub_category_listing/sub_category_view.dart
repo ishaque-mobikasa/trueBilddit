@@ -18,7 +18,8 @@ class SubCategoryView extends GetView<SubCategoryController> {
     return Stack(
       children: [
         SingleChildScrollView(
-          padding: EdgeInsets.only(top: 103.h, left: 15.w, right: 15.w),
+          padding:
+              EdgeInsets.only(top: 103.h, left: 15.w, right: 15.w, bottom: 13),
           physics: const BouncingScrollPhysics(),
           child: Column(
               children: List.generate(

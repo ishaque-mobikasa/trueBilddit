@@ -27,7 +27,7 @@ class SearchResultsView extends GetView<SearchController> {
               children: [
                 Container(
                   padding: EdgeInsets.only(
-                      top: 11.h, left: 17.w, bottom: 13.h, right: 13.w),
+                      top: 11.h, left: 19.w, bottom: 13.h, right: 15.w),
                   height: 66.h,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

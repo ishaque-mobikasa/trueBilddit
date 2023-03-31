@@ -147,7 +147,7 @@ class ProductCard extends StatelessWidget {
   const ProductCard(
       {super.key,
       this.margin,
-      this.iconColor,
+      this.iconColor = const Color(0xffB7B7B7),
       required this.product,
       this.icon,
       this.onStarButtonClick});
