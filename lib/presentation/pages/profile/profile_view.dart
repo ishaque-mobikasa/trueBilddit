@@ -26,8 +26,7 @@ class ProfileView extends GetView<ProfileController> {
                 height: Get.height.h,
                 child: Column(
                   children: [
-                    CustomAppBar(title: "My Profile", height: 155.h),
-                    Container(color: AppPaintings.themeGreenColor, height: 1),
+                    CustomAppBar(title: "My Profile", height: 130.h),
                     SizedBox(height: 78.h),
                     const CustomFormField(
                         margin:
@@ -66,8 +65,8 @@ class ProfileView extends GetView<ProfileController> {
                 ),
               ),
               Positioned(
-                top: 95.h,
-                left: Get.width * 0.35,
+                top: 70.h,
+                left: Get.width * 0.35.w,
                 child: GestureDetector(
                   onTap: controller.onImagePickButtonClick,
                   child: Stack(

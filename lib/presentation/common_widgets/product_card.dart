@@ -149,7 +149,7 @@ class ProductCard extends StatelessWidget {
       this.margin,
       this.iconColor = const Color(0xffB7B7B7),
       required this.product,
-      this.icon,
+      this.icon = Icons.star_border,
       this.onStarButtonClick});
 
   @override
@@ -166,19 +166,18 @@ class ProductCard extends StatelessWidget {
         children: [
           Container(
             padding:
-                EdgeInsets.only(left: 9.w, right: 12.w, bottom: 11, top: 9.h),
+                EdgeInsets.only(left: 9.w, right: 12.w, top: 9.h, bottom: 11.h),
             child: Container(
                 height: 74.w,
                 width: 74.w,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(6.r),
                     color: const Color(0xffF8F8F8)),
-                padding: EdgeInsets.only(
-                    left: 13.w, right: 12.w, bottom: 13.h, top: 14.h),
+                padding: const EdgeInsets.all(5),
                 child: Image.asset(
                   product.image,
-                  height: 47.h,
-                  width: 49.w,
+                  height: 50.h,
+                  width: 50.w,
                 )),
           ),
           SizedBox(
@@ -237,7 +236,7 @@ class ProductCard extends StatelessWidget {
                 ],
               )),
           SizedBox(
-            width: 50.w,
+            width: 45.w,
           ),
           Expanded(
             child: Container(
@@ -259,7 +258,7 @@ class ProductCard extends StatelessWidget {
                       SizedBox(
                         height: 18.h,
                         child: Text(
-                          "\u00A3${product.price.toString()}",
+                          "\u00A3${product.price.toStringAsFixed(2).toString()}",
                           style: TextStyle(
                               color: AppPaintings.themeBlack,
                               fontSize: 12.sp,

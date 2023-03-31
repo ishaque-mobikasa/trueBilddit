@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/presentation/pages/home/home_view.dart';
+import 'package:truebildit/presentation/pages/my_basket/my_basket_view.dart';
 import 'package:truebildit/presentation/pages/search_results/search_result_view.dart';
 import 'package:truebildit/presentation/pages/sub_category_listing/sub_category_view.dart';
 
@@ -12,7 +13,7 @@ class DashBoardController extends GetxController {
     const HomeView(),
     const SubCategoryView(),
     const SearchResultsView(),
-    const SearchResultsView()
+    const MyBasketView()
   ];
   Color getScaffoldColor() => _scaffoldBackground.value;
 

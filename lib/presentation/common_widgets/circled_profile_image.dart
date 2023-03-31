@@ -39,8 +39,8 @@ class CircledProfileImage extends StatelessWidget {
           ),
           if (isCameraIconed)
             Positioned(
-                bottom: 1.h,
-                right: 6.w,
+                bottom: 6.h,
+                right: 0.5.w,
                 child: CircleAvatar(
                   radius: imageAvatarRadius ?? 54.r / 3,
                   backgroundColor:

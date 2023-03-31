@@ -34,8 +34,8 @@ class ShortButton extends StatelessWidget {
 
     return Container(
       constraints: BoxConstraints(
-        maxWidth: maxWidth ?? size.width * 0.2,
-        maxHeight: maxheight ?? size.height * 0.04,
+        maxWidth: maxWidth ?? size.width * 0.2.w,
+        maxHeight: maxheight ?? size.height * 0.04.h,
       ),
       decoration: BoxDecoration(
           color: backGroundColor, borderRadius: BorderRadius.circular(10)),
