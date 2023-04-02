@@ -54,8 +54,8 @@ class AddressCard extends StatelessWidget {
             child: Container(
               margin: margin ??
                   EdgeInsets.only(
-                    bottom: 11,
-                    right: 15,
+                    bottom: 11.h,
+                    right: 15.w,
                     left: 15.w,
                   ),
               height: 92.h,
@@ -63,7 +63,7 @@ class AddressCard extends StatelessWidget {
               width: 345.w,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(10.r),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,10 +79,10 @@ class AddressCard extends StatelessWidget {
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
-                      const SizedBox(width: 10),
+                      SizedBox(width: 10.h),
                       Container(
                           alignment: Alignment.center,
-                          height: 20,
+                          height: 20.h,
                           decoration: BoxDecoration(
                               color: AppPaintings.disabledColor,
                               borderRadius: BorderRadius.circular(12)),
@@ -95,7 +95,7 @@ class AddressCard extends StatelessWidget {
                               maxLines: 1,
                               style: TextStyle(
                                   color: AppPaintings.hintTextColor,
-                                  fontSize: 10,
+                                  fontSize: 10.sp,
                                   fontWeight: FontWeight.w400),
                             ),
                           )),

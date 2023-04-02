@@ -15,6 +15,7 @@ class AppPaintings {
   static Color scaffoldBackgroundDimmed = const Color(0xffF6F6F6);
   static Color loginButtonBorderColor = const Color(0xffD9D9D9);
   static Color appRedColor = const Color(0xffEE4C4C);
+  static Color shippingCardSelectedColor = const Color(0xffF5FDF1);
   static ThemeData appTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
     fontFamily: GoogleFonts.montserrat().fontFamily,

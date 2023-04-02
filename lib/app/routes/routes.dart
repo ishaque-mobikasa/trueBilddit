@@ -33,6 +33,8 @@ import 'package:truebildit/presentation/pages/profile/controllers_bindings/profi
 import 'package:truebildit/presentation/pages/profile/profile_view.dart';
 import 'package:truebildit/presentation/pages/search_results/controllers_bindings/search_binding.dart';
 import 'package:truebildit/presentation/pages/search_results/search_result_view.dart';
+import 'package:truebildit/presentation/pages/shipping_address/controllers_binding/shipping_address_binding.dart';
+import 'package:truebildit/presentation/pages/shipping_address/shipping_address_view.dart';
 import 'package:truebildit/presentation/pages/sign_up/controllers_binding/sign_up_binding.dart';
 import 'package:truebildit/presentation/pages/sign_up/sign_up_view.dart';
 import 'package:truebildit/presentation/pages/splash_screen/controllers_bindings/splash_screen_bindings.dart';
@@ -64,6 +66,7 @@ class Routes {
   static const subCategoryItemsView = "/subCategoryItemsView";
   static const otpVerificationView = "/otpVerificationView";
   static const myBasketView = "/myBasketView";
+  static const shippingAddressView = "/shippingAddressView";
 }
 
 class AppPages {
@@ -156,5 +159,9 @@ class AppPages {
         name: Routes.myBasketView,
         page: () => const MyBasketView(),
         binding: MyBasketBinding()),
+    GetPage(
+        name: Routes.shippingAddressView,
+        page: () => const ShippingAddressView(),
+        binding: ShippingAddressBinding()),
   ];
 }
