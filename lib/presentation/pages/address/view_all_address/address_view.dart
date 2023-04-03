@@ -44,8 +44,13 @@ class ViewAllAddressView extends GetView<ViewAllAddressController> {
               Column(
                   children: List.generate(
                       dummyAddresses.length,
-                      (index) =>
-                          AddressCard(addressData: dummyAddresses[index])))
+                      (index) => AddressCard(
+                          margin: EdgeInsets.only(
+                            bottom: 11.h,
+                            right: 15.w,
+                            left: 15.w,
+                          ),
+                          addressData: dummyAddresses[index])))
             ],
           ),
         ),

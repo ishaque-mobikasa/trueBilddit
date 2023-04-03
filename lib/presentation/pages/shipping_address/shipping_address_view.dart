@@ -46,6 +46,11 @@ class ShippingAddressView extends GetView<ShippingAddressController> {
                   children: List.generate(
                       dummyAddresses.length - 1,
                       (index) => ShippingAddressCard(
+                          margin: EdgeInsets.only(
+                            bottom: 11.h,
+                            right: 15.w,
+                            left: 15.w,
+                          ),
                           isSelected: index == 1 ? true : false,
                           addressData: dummyAddresses[index]))),
               SizedBox(

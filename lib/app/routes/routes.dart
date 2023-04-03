@@ -29,9 +29,11 @@ import 'package:truebildit/presentation/pages/my_list/selected_list_contents/sel
 import 'package:truebildit/presentation/pages/my_list/selected_list_contents/selected_list_view.dart';
 import 'package:truebildit/presentation/pages/orders/order_history/order_history_controller_binding/order_history_binding.dart';
 import 'package:truebildit/presentation/pages/orders/order_history/order_history_view.dart';
+import 'package:truebildit/presentation/pages/orders/order_summary/controller_binding/order_summary_binding.dart';
+import 'package:truebildit/presentation/pages/orders/order_summary/order_summary_view.dart';
 import 'package:truebildit/presentation/pages/profile/controllers_bindings/profile_binding.dart';
 import 'package:truebildit/presentation/pages/profile/profile_view.dart';
-import 'package:truebildit/presentation/pages/search_results/controllers_bindings/search_binding.dart';
+import 'package:truebildit/presentation/pages/search_results/controllers_binding/search_binding.dart';
 import 'package:truebildit/presentation/pages/search_results/search_result_view.dart';
 import 'package:truebildit/presentation/pages/shipping_address/controllers_binding/shipping_address_binding.dart';
 import 'package:truebildit/presentation/pages/shipping_address/shipping_address_view.dart';
@@ -67,6 +69,7 @@ class Routes {
   static const otpVerificationView = "/otpVerificationView";
   static const myBasketView = "/myBasketView";
   static const shippingAddressView = "/shippingAddressView";
+  static const orderSummaryView = "/orderSummaryView";
 }
 
 class AppPages {
@@ -163,5 +166,9 @@ class AppPages {
         name: Routes.shippingAddressView,
         page: () => const ShippingAddressView(),
         binding: ShippingAddressBinding()),
+    GetPage(
+        name: Routes.orderSummaryView,
+        page: () => const OrderSummaryView(),
+        binding: OrderSummaryBinding()),
   ];
 }

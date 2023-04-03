@@ -18,7 +18,7 @@ import 'package:truebildit/presentation/pages/login/otp_login/controller_binding
 import 'package:truebildit/presentation/pages/login/otp_login/otp_login_view.dart';
 import 'package:truebildit/presentation/pages/profile/controllers_bindings/profile_binding.dart';
 import 'package:truebildit/presentation/pages/profile/profile_view.dart';
-import 'package:truebildit/presentation/pages/search_results/controllers_bindings/search_binding.dart';
+import 'package:truebildit/presentation/pages/search_results/controllers_binding/search_binding.dart';
 import 'package:truebildit/presentation/pages/search_results/search_result_view.dart';
 import 'package:truebildit/presentation/pages/sign_up/controllers_binding/sign_up_binding.dart';
 import 'package:truebildit/presentation/pages/sign_up/sign_up_view.dart';

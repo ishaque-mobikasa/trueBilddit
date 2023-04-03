@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/data/models/address_model.dart';
 
-class ShippingAddressCard extends StatelessWidget {
-  const ShippingAddressCard({
+class OrderSummaryAddressCard extends StatelessWidget {
+  const OrderSummaryAddressCard({
     super.key,
     this.nameStyle = const TextStyle(
       fontSize: 14,
@@ -13,15 +13,17 @@ class ShippingAddressCard extends StatelessWidget {
     ),
     this.margin,
     required this.addressData,
-    this.pading = const EdgeInsets.symmetric(horizontal: 13),
+    this.padding = const EdgeInsets.symmetric(horizontal: 13),
     this.isSelected = false,
+    this.onChangeButtonTap,
   });
 
   final TextStyle nameStyle;
   final bool isSelected;
   final EdgeInsets? margin;
-  final EdgeInsets pading;
+  final EdgeInsets padding;
   final AddressModel addressData;
+  final void Function()? onChangeButtonTap;
 
   @override
   Widget build(BuildContext context) {
@@ -31,16 +33,12 @@ class ShippingAddressCard extends StatelessWidget {
         Container(
           margin: margin ?? EdgeInsets.zero,
           height: 92.h,
-          padding: pading,
+          padding: padding,
           decoration: BoxDecoration(
               color: isSelected
                   ? AppPaintings.shippingCardSelectedColor
                   : AppPaintings.kWhite,
-              borderRadius: BorderRadius.circular(10.r),
-              border: Border.all(
-                  color: isSelected
-                      ? AppPaintings.themeGreenColor
-                      : AppPaintings.kWhite)),
+              borderRadius: BorderRadius.circular(10.r)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -89,21 +87,23 @@ class ShippingAddressCard extends StatelessWidget {
         Positioned(
             top: 13.h,
             right: 28.w,
-            child: isSelected
-                ? CircleAvatar(
-                    backgroundColor: AppPaintings.themeGreenColor,
-                    radius: 11.r,
-                    child: CircleAvatar(
-                      backgroundColor: AppPaintings.kWhite,
-                      radius: 10.r,
-                      child: Icon(
-                        Icons.check,
-                        size: 15,
-                        color: AppPaintings.themeGreenColor,
-                      ),
-                    ),
-                  )
-                : const SizedBox.shrink())
+            child: GestureDetector(
+              onTap: onChangeButtonTap,
+              child: Container(
+                  alignment: Alignment.center,
+                  height: 22.h,
+                  width: 56.w,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: AppPaintings.dimWhite),
+                      color: AppPaintings.kWhite,
+                      borderRadius: BorderRadius.circular(1.r)),
+                  child: Text(
+                    "CHANGE",
+                    overflow: TextOverflow.ellipsis,
+                    style: AppPaintings.customSmallText.copyWith(
+                        fontSize: 10.sp, color: AppPaintings.themeGreenColor),
+                  )),
+            ))
       ],
     );
   }

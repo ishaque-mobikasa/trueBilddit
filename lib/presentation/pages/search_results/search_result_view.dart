@@ -11,7 +11,7 @@ import 'package:truebildit/presentation/common_widgets/long_button.dart';
 import 'package:truebildit/presentation/common_widgets/product_card.dart';
 import 'package:truebildit/presentation/common_widgets/short_button.dart';
 import 'package:truebildit/presentation/pages/home/widgets/search_widget.dart';
-import 'package:truebildit/presentation/pages/search_results/controllers_bindings/search_controller.dart';
+import 'package:truebildit/presentation/pages/search_results/controllers_binding/search_controller.dart';
 
 class SearchResultsView extends GetView<SearchController> {
   const SearchResultsView({super.key});

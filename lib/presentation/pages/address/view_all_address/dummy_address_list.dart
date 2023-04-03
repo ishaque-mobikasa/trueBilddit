@@ -45,7 +45,7 @@ List<AddressModel> dummyAddresses = [
       firstName: "John",
       lastName: " Micheal",
       phoneNumber: "+9198765443210",
-      streetAddress: "36 north near st. street",
+      streetAddress: "42 st.noth ",
       city: "Netherton",
       county: "DD9 7SU",
       siteName: "Site Name"),

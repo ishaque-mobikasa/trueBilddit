@@ -143,6 +143,7 @@ class ProductCard extends StatelessWidget {
   final IconData? icon;
   final Color? iconColor;
   final EdgeInsets? margin;
+  final bool? showAddButton;
   final void Function()? onStarButtonClick;
   const ProductCard(
       {super.key,
@@ -150,7 +151,8 @@ class ProductCard extends StatelessWidget {
       this.iconColor = const Color(0xffB7B7B7),
       required this.product,
       this.icon = Icons.star_border,
-      this.onStarButtonClick});
+      this.onStarButtonClick,
+      this.showAddButton = true});
 
   @override
   Widget build(BuildContext context) {
@@ -213,23 +215,25 @@ class ProductCard extends StatelessWidget {
                         onTap: () {
                           log("Added to Cart");
                         },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: AppPaintings.themeGreenColor,
-                            borderRadius: BorderRadius.circular(2.r),
-                          ),
-                          alignment: Alignment.center,
-                          width: 56.w,
-                          height: 24.h,
-                          child: Text(
-                            "ADD",
-                            overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 12.sp,
-                                color: AppPaintings.kWhite),
-                          ),
-                        ),
+                        child: showAddButton!
+                            ? Container(
+                                decoration: BoxDecoration(
+                                  color: AppPaintings.themeGreenColor,
+                                  borderRadius: BorderRadius.circular(2.r),
+                                ),
+                                alignment: Alignment.center,
+                                width: 56.w,
+                                height: 24.h,
+                                child: Text(
+                                  "ADD",
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 12.sp,
+                                      color: AppPaintings.kWhite),
+                                ),
+                              )
+                            : const SizedBox.shrink(),
                       ),
                     ],
                   )

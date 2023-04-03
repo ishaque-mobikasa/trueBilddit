@@ -52,15 +52,9 @@ class AddressCard extends StatelessWidget {
               )
             ]),
             child: Container(
-              margin: margin ??
-                  EdgeInsets.only(
-                    bottom: 11.h,
-                    right: 15.w,
-                    left: 15.w,
-                  ),
+              margin: margin ?? EdgeInsets.zero,
               height: 92.h,
               padding: pading,
-              width: 345.w,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10.r),
@@ -90,7 +84,7 @@ class AddressCard extends StatelessWidget {
                             constraints:
                                 BoxConstraints(maxWidth: size.width * 0.5),
                             child: Text(
-                              ' ${addressData.siteName} ',
+                              '\t\t${addressData.siteName}\t\t',
                               overflow: TextOverflow.ellipsis,
                               maxLines: 1,
                               style: TextStyle(
