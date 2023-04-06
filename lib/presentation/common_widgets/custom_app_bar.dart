@@ -37,7 +37,7 @@ class CustomAppBar extends StatelessWidget {
                 ),
                 onPressed: () => {Get.back()},
               )
-            : null,
+            : const SizedBox.shrink(),
         title: titleImage ?? Text(title!),
       ),
     );

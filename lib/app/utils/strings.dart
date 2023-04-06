@@ -10,7 +10,10 @@ class AppStrings {
   static String needYourLocation = "Need Your Location";
   static String searchForProduct = "Search for your product here...";
   static String didntCreateList =
-      "You didn't create a list yet.\n Please create a list to add your items";
+      "You didn't create a list yet.\nPlease create a list to add your items";
+  static String orderConfirmed = "Your order has been successfully placed";
+  static String youCanTrackOrder =
+      "You can track the delivery from the homepage.";
 }
 
 class UrlStrings {}
@@ -54,4 +57,6 @@ class AssetStrings {
   static String searchIcon = "assets/images/search_icon.png";
   static String personIcon = "assets/images/person_icon.png";
   static String inputOtp = "assets/images/input_otp.png";
+  static String carouselImage = "assets/images/slider_image.png";
+  static String orderConfirmedImage = "assets/images/order_confirmed.png";
 }

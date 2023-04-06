@@ -56,12 +56,15 @@ class HomeView extends GetView<HomeController> {
                             ),
                           ),
                           const Spacer(),
-                          IconButton(
-                              onPressed: () {},
-                              icon: ImageIcon(
-                                  size: 18.w,
-                                  color: AppPaintings.kWhite,
-                                  AssetImage(AssetStrings.personIcon)))
+                          Padding(
+                            padding: const EdgeInsets.only(right: 8.0),
+                            child: Image.asset(
+                              AssetStrings.personIcon,
+                              height: 18.h,
+                              width: 16.w,
+                              fit: BoxFit.fill,
+                            ),
+                          )
                         ],
                       ),
                       LocationWidget(
@@ -126,8 +129,8 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               SizedBox(
-                height: Get.height * 0.54,
-                width: size.width * 0.9,
+                height: Get.height * 0.56.h,
+                width: size.width * 0.9.w,
                 child: GridView.builder(
                   physics: const BouncingScrollPhysics(),
                   itemCount: homeItems.length,

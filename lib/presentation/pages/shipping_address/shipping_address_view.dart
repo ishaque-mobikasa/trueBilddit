@@ -16,76 +16,79 @@ class ShippingAddressView extends GetView<ShippingAddressController> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        SingleChildScrollView(
-          padding: EdgeInsets.only(top: 103.h),
-          physics: const BouncingScrollPhysics(),
-          child: Column(
-            children: [
-              SizedBox(
-                height: 50.h,
-                child: ShortButton(
-                    buttonTextStyle: TextStyle(
-                        fontSize: 14,
-                        color: AppPaintings.themeGreenColor,
-                        fontWeight: FontWeight.w500),
-                    backGroundColor: const Color.fromARGB(255, 255, 255, 255),
-                    maxWidth: 345.w,
-                    buttonType: ButtonType.outLinedButton,
-                    outlineButtonBorderColor: AppPaintings.kWhite,
-                    buttonText: " + ADD NEW ADDRESS",
-                    onPressed: () {
-                      log("Add new Address");
-                    }),
-              ),
-              SizedBox(
-                height: 12.h,
-              ),
-              Column(
-                  children: List.generate(
-                      dummyAddresses.length - 1,
-                      (index) => ShippingAddressCard(
-                          margin: EdgeInsets.only(
-                            bottom: 11.h,
-                            right: 15.w,
-                            left: 15.w,
-                          ),
-                          isSelected: index == 1 ? true : false,
-                          addressData: dummyAddresses[index]))),
-              SizedBox(
-                height: 12.h,
-              ),
-              SizedBox(
-                  height: 42.h,
-                  width: 345.w,
-                  child: LongButton(
-                      buttonType: ButtonType.elevatedButton,
-                      buttonText: "CONTINUE",
-                      onPressed: () {}))
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 90.h,
-          child: AppBar(
-            centerTitle: true,
-            title: Text(
-              "Shipping Address",
-              style: AppPaintings.customLargeText.copyWith(
-                  color: AppPaintings.kWhite, fontWeight: FontWeight.w500),
-            ),
-            elevation: 0,
-            backgroundColor: AppPaintings.themeGreenColor,
-            leading: IconButton(
-              icon: const Icon(
-                Icons.arrow_back_ios,
-              ),
-              onPressed: () {},
+    return Material(
+    color: AppPaintings.scaffoldBackgroundDimmed,
+      child: Stack(
+        children: [
+          SingleChildScrollView(
+            padding: EdgeInsets.only(top: 103.h),
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 50.h,
+                  child: ShortButton(
+                      buttonTextStyle: TextStyle(
+                          fontSize: 14,
+                          color: AppPaintings.themeGreenColor,
+                          fontWeight: FontWeight.w500),
+                      backGroundColor: const Color.fromARGB(255, 255, 255, 255),
+                      maxWidth: 345.w,
+                      buttonType: ButtonType.outLinedButton,
+                      outlineButtonBorderColor: AppPaintings.kWhite,
+                      buttonText: " + ADD NEW ADDRESS",
+                      onPressed: () {
+                        log("Add new Address");
+                      }),
+                ),
+                SizedBox(
+                  height: 12.h,
+                ),
+                Column(
+                    children: List.generate(
+                        dummyAddresses.length - 1,
+                        (index) => ShippingAddressCard(
+                            margin: EdgeInsets.only(
+                              bottom: 11.h,
+                              right: 15.w,
+                              left: 15.w,
+                            ),
+                            isSelected: index == 1 ? true : false,
+                            addressData: dummyAddresses[index]))),
+                SizedBox(
+                  height: 12.h,
+                ),
+                SizedBox(
+                    height: 42.h,
+                    width: 345.w,
+                    child: LongButton(
+                        buttonType: ButtonType.elevatedButton,
+                        buttonText: "CONTINUE",
+                        onPressed: () {}))
+              ],
             ),
           ),
-        ),
-      ],
+          SizedBox(
+            height: 90.h,
+            child: AppBar(
+              centerTitle: true,
+              title: Text(
+                "Shipping Address",
+                style: AppPaintings.customLargeText.copyWith(
+                    color: AppPaintings.kWhite, fontWeight: FontWeight.w500),
+              ),
+              elevation: 0,
+              backgroundColor: AppPaintings.themeGreenColor,
+              leading: IconButton(
+                icon: const Icon(
+                  Icons.arrow_back_ios,
+                ),
+                onPressed: () {},
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

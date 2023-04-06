@@ -17,94 +17,94 @@ class AddressCard extends StatelessWidget {
     ),
     this.margin,
     required this.addressData,
-    this.pading = const EdgeInsets.symmetric(horizontal: 13),
+    this.padding = const EdgeInsets.symmetric(horizontal: 13),
   });
-
   final TextStyle nameStyle;
-
   final EdgeInsets? margin;
-  final EdgeInsets pading;
+  final EdgeInsets padding;
   final AddressModel addressData;
-
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        child: SizedBox(
-          child: Slidable(
-            endActionPane: ActionPane(motion: const ScrollMotion(), children: [
-              SlidableAction(
-                flex: 1,
-                onPressed: (ctx) {
-                  log("message");
-                },
-                backgroundColor: const Color(0xFF7BC043),
-                foregroundColor: Colors.white,
-                icon: Icons.archive,
-              ),
-              SlidableAction(
-                flex: 1,
-                onPressed: (ctx) {},
-                backgroundColor: const Color(0xFF7BC043),
-                foregroundColor: Colors.white,
-                icon: CupertinoIcons.delete,
-              )
-            ]),
-            child: Container(
-              margin: margin ?? EdgeInsets.zero,
-              height: 92.h,
-              padding: pading,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10.r),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                      child: Row(
-                    children: [
-                      Flexible(
-                        child: Text(
-                          '${addressData.firstName} ${addressData.lastName}',
-                          style: nameStyle,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                      SizedBox(width: 10.h),
-                      Container(
-                          alignment: Alignment.center,
-                          height: 20.h,
-                          decoration: BoxDecoration(
-                              color: AppPaintings.disabledColor,
-                              borderRadius: BorderRadius.circular(12)),
-                          child: ConstrainedBox(
-                            constraints:
-                                BoxConstraints(maxWidth: size.width * 0.5),
-                            child: Text(
-                              '\t\t${addressData.siteName}\t\t',
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 1,
-                              style: TextStyle(
-                                  color: AppPaintings.hintTextColor,
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                          )),
-                    ],
-                  )),
-                  Expanded(
-                      child: Text(
-                    '${addressData.streetAddress} ${addressData.city}, ${addressData.county} ${addressData.phoneNumber},',
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  )),
-                ],
-              ),
-            ),
+    return Container(
+      margin: margin ?? EdgeInsets.zero,
+      height: 92.h,
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(10.r)),
+      child: Slidable(
+        endActionPane: ActionPane(motion: const DrawerMotion(), children: [
+          SlidableAction(
+            onPressed: (ctx) {
+              log("message");
+            },
+            backgroundColor: const Color(0xFF7BC043),
+            foregroundColor: Colors.white,
+            icon: Icons.edit,
           ),
-        ));
+          SlidableAction(
+            spacing: 0,
+            borderRadius: const BorderRadius.only(
+                bottomRight: Radius.circular(10),
+                topRight: Radius.circular(10)),
+            onPressed: (ctx) {},
+            backgroundColor: const Color(0xFF7BC043),
+            foregroundColor: Colors.white,
+            icon: CupertinoIcons.delete,
+          )
+        ]),
+        child: Container(
+          margin: margin ?? EdgeInsets.zero,
+          height: 92.h,
+          padding: padding,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10.r),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                  child: Row(
+                children: [
+                  Flexible(
+                    child: Text(
+                      '${addressData.firstName} ${addressData.lastName}',
+                      style: nameStyle,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                  SizedBox(width: 10.h),
+                  Container(
+                      alignment: Alignment.center,
+                      height: 20.h,
+                      decoration: BoxDecoration(
+                          color: AppPaintings.disabledColor,
+                          borderRadius: BorderRadius.circular(12)),
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(maxWidth: size.width * 0.5),
+                        child: Text(
+                          '\t\t${addressData.siteName}\t\t',
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                          style: TextStyle(
+                              color: AppPaintings.hintTextColor,
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      )),
+                ],
+              )),
+              Expanded(
+                  child: Text(
+                '${addressData.streetAddress} ${addressData.city}, ${addressData.county} ${addressData.phoneNumber},',
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+              )),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

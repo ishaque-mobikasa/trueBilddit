@@ -16,6 +16,7 @@ class AppPaintings {
   static Color loginButtonBorderColor = const Color(0xffD9D9D9);
   static Color appRedColor = const Color(0xffEE4C4C);
   static Color shippingCardSelectedColor = const Color(0xffF5FDF1);
+  static Color carousalImageStarColor = const Color(0xffB7B7B7);
   static ThemeData appTheme = ThemeData(
     scaffoldBackgroundColor: Colors.white,
     fontFamily: GoogleFonts.montserrat().fontFamily,

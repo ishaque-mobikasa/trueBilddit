@@ -91,14 +91,14 @@ class SignUpView extends GetView<SignUpController> {
               SizedBox(
                 width: 300.w,
                 child: const CustomFormField(
-                    hintText: "Company Name(Optional)",
+                    hintText: "Company Name (Optional)",
                     icon: Icons.ac_unit,
                     type: FieldType.normalInputField),
               ),
               SizedBox(
                 width: 300.w,
                 child: const CustomFormField(
-                    hintText: "E mail*",
+                    hintText: "Email*",
                     icon: Icons.ac_unit,
                     type: FieldType.eMail),
               ),
@@ -157,6 +157,7 @@ class SignUpView extends GetView<SignUpController> {
                         TextSpan(
                           text: "Privacy Policy",
                           style: TextStyle(
+                              fontSize: 12.sp,
                               color: AppPaintings.themeGreenColor,
                               decoration: TextDecoration.underline),
                           recognizer: TapGestureRecognizer()..onTap = () {},
@@ -165,6 +166,7 @@ class SignUpView extends GetView<SignUpController> {
                         TextSpan(
                           text: "Terms of Use",
                           style: TextStyle(
+                              fontSize: 12.sp,
                               color: AppPaintings.themeGreenColor,
                               decoration: TextDecoration.underline),
                           recognizer: TapGestureRecognizer()..onTap = () {},

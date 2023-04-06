@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
+import 'package:truebildit/data/models/address_model.dart';
 
 class OrderHistoryCard extends StatelessWidget {
   const OrderHistoryCard(
-      {this.orderDate,
+      {required this.orderDate,
       this.margin,
       this.padding,
       required this.orderAmount,
       required this.orderId,
-      super.key});
+      super.key,
+      required this.addressModel});
   final String orderId;
-  final DateTime? orderDate;
+  final DateTime orderDate;
   final double orderAmount;
+  final AddressModel addressModel;
   final EdgeInsetsGeometry? margin;
   final EdgeInsetsGeometry? padding;
   @override
@@ -50,18 +54,27 @@ class OrderHistoryCard extends StatelessWidget {
                     ),
                     Flexible(
                         child: Container(
-                      alignment: Alignment.centerRight,
-                      height: 18.h,
-                      child: Text(
-                        "Ordered on: Mon 12Dec, 2022",
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                            color: AppPaintings.themeBlack,
-                            fontSize: 11,
-                            fontWeight: FontWeight.w400),
-                      ),
-                    ))
+                            alignment: Alignment.centerRight,
+                            height: 18.h,
+                            child: RichText(
+                                maxLines: 1,
+                                text: TextSpan(children: [
+                                  TextSpan(
+                                      text: 'Ordered on: ',
+                                      style: AppPaintings.textSpanStyle
+                                          .copyWith(
+                                              color: AppPaintings.themeBlack,
+                                              fontSize: 12.sp,
+                                              fontWeight: FontWeight.w500)),
+                                  TextSpan(
+                                      text: DateFormat('E d MMM, y')
+                                          .format(orderDate),
+                                      style: AppPaintings.textSpanStyle
+                                          .copyWith(
+                                              color: AppPaintings.themeBlack,
+                                              fontSize: 11.sp,
+                                              fontWeight: FontWeight.w400)),
+                                ]))))
                   ],
                 ),
                 SizedBox(height: 4.h),
@@ -85,18 +98,20 @@ class OrderHistoryCard extends StatelessWidget {
                 ),
                 Divider(
                   color: AppPaintings.dimWhite,
-                  height: 5,
+                  height: 2,
                   thickness: 1,
+                ),
+                SizedBox(
+                  height: 10.h,
                 ),
                 Flexible(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Row(
                         children: [
                           Flexible(
                               child: Text(
-                            "John Doe",
+                            "${addressModel.firstName} ${addressModel.lastName}",
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                                 color: AppPaintings.themeBlack,
@@ -104,7 +119,7 @@ class OrderHistoryCard extends StatelessWidget {
                                 fontWeight: FontWeight.bold),
                           )),
                           Container(
-                              height: 18.h,
+                              height: 20.h,
                               alignment: Alignment.center,
                               margin: EdgeInsets.only(left: 5.w),
                               decoration: BoxDecoration(
@@ -115,7 +130,7 @@ class OrderHistoryCard extends StatelessWidget {
                                   maxWidth: 100.w,
                                 ),
                                 child: Text(
-                                  "Site Name",
+                                  '\t\t${addressModel.siteName}\t\t',
                                   maxLines: 1,
                                   style: TextStyle(
                                       color: AppPaintings.hintTextColor,
@@ -125,12 +140,15 @@ class OrderHistoryCard extends StatelessWidget {
                               ))
                         ],
                       ),
-                      const Flexible(
+                      Flexible(
                         child: Text(
-                          "Vicarage Rd Stourbridge West, Midlands DY8 4JB United Kingdom, 020 7836 0004",
+                          "${addressModel.streetAddress} ${addressModel.city}, ${addressModel.county} ${addressModel.country}, ${addressModel.phoneNumber}",
                           maxLines: 2,
-                          style: TextStyle(
-                              fontSize: 12, fontWeight: FontWeight.w300),
+                          textAlign: TextAlign.start,
+                          style: const TextStyle(
+                              height: 1.5,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w300),
                           overflow: TextOverflow.ellipsis,
                         ),
                       )

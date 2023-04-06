@@ -45,10 +45,13 @@ class MyListEmptyWidget extends GetView<MyListController> {
               height: 38.h,
               child: Text(
                 AppStrings.didntCreateList,
-                style: AppPaintings.customSmallText,
+                style: AppPaintings.customSmallText.copyWith(height: 1.58),
                 maxLines: 2,
                 textAlign: TextAlign.center,
               ),
+            ),
+            SizedBox(
+              height: 21.h,
             ),
             SizedBox(
               width: 300.w,

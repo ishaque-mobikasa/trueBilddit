@@ -34,14 +34,13 @@ class CustomSearchField extends StatelessWidget {
       this.hintText,
       this.labelText,
       this.labelStyle,
-
       this.hintStyle});
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: padding,
       child: TextFormField(
-      initialValue:initialValue??"" ,
+        initialValue: initialValue ?? "",
         onEditingComplete: onEditingComplete,
         cursorColor: AppPaintings.themeGreenColor,
         controller: controller,

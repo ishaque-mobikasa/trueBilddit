@@ -31,6 +31,8 @@ import 'package:truebildit/presentation/pages/orders/order_history/order_history
 import 'package:truebildit/presentation/pages/orders/order_history/order_history_view.dart';
 import 'package:truebildit/presentation/pages/orders/order_summary/controller_binding/order_summary_binding.dart';
 import 'package:truebildit/presentation/pages/orders/order_summary/order_summary_view.dart';
+import 'package:truebildit/presentation/pages/product_description/controller_binding/pdp_binding.dart';
+import 'package:truebildit/presentation/pages/product_description/pdp_view.dart';
 import 'package:truebildit/presentation/pages/profile/controllers_bindings/profile_binding.dart';
 import 'package:truebildit/presentation/pages/profile/profile_view.dart';
 import 'package:truebildit/presentation/pages/search_results/controllers_binding/search_binding.dart';
@@ -70,6 +72,7 @@ class Routes {
   static const myBasketView = "/myBasketView";
   static const shippingAddressView = "/shippingAddressView";
   static const orderSummaryView = "/orderSummaryView";
+  static const pdpView = "/pdpView";
 }
 
 class AppPages {
@@ -170,5 +173,9 @@ class AppPages {
         name: Routes.orderSummaryView,
         page: () => const OrderSummaryView(),
         binding: OrderSummaryBinding()),
+    GetPage(
+        name: Routes.pdpView,
+        page: () => const PDPview(),
+        binding: PDPbinding()),
   ];
 }

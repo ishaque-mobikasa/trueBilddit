@@ -6,18 +6,12 @@ import 'package:truebildit/data/models/address_model.dart';
 class ShippingAddressCard extends StatelessWidget {
   const ShippingAddressCard({
     super.key,
-    this.nameStyle = const TextStyle(
-      fontSize: 14,
-      fontWeight: FontWeight.w500,
-      color: Color(0xff252525),
-    ),
     this.margin,
     required this.addressData,
     this.pading = const EdgeInsets.symmetric(horizontal: 13),
     this.isSelected = false,
   });
 
-  final TextStyle nameStyle;
   final bool isSelected;
   final EdgeInsets? margin;
   final EdgeInsets pading;
@@ -42,47 +36,53 @@ class ShippingAddressCard extends StatelessWidget {
                       ? AppPaintings.themeGreenColor
                       : AppPaintings.kWhite)),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
+                  flex: 3,
                   child: Row(
-                children: [
-                  Flexible(
-                    flex: 3,
-                    child: Text(
-                      '${addressData.firstName} ${addressData.lastName}',
-                      style: nameStyle,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                  SizedBox(width: 10.h),
-                  Container(
-                      alignment: Alignment.center,
-                      height: 20.h,
-                      decoration: BoxDecoration(
-                          color: AppPaintings.disabledColor,
-                          borderRadius: BorderRadius.circular(12)),
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(maxWidth: size.width * 0.5),
+                    children: [
+                      Flexible(
                         child: Text(
-                          '\t\t ${addressData.siteName} \t\t',
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
+                          '${addressData.firstName} ${addressData.lastName}',
                           style: TextStyle(
-                              color: AppPaintings.hintTextColor,
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w400),
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w500,
+                            color: const Color(0xff252525),
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                         ),
-                      )),
-                ],
-              )),
-              Expanded(
+                      ),
+                      SizedBox(width: 10.h),
+                      Container(
+                          alignment: Alignment.center,
+                          height: 20.h,
+                          decoration: BoxDecoration(
+                              color: AppPaintings.disabledColor,
+                              borderRadius: BorderRadius.circular(12)),
+                          child: ConstrainedBox(
+                            constraints:
+                                BoxConstraints(maxWidth: size.width * 0.5),
+                            child: Text(
+                              '\t\t ${addressData.siteName} \t\t',
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
+                              style: TextStyle(
+                                  color: AppPaintings.hintTextColor,
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          )),
+                    ],
+                  )),
+              Flexible(
+                  flex: 4,
                   child: Text(
-                '${addressData.streetAddress} ${addressData.city}, ${addressData.county} ${addressData.phoneNumber},',
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              )),
+                    '${addressData.streetAddress} ${addressData.city}, ${addressData.county} ${addressData.phoneNumber},',
+                    maxLines: 2,
+                    style: AppPaintings.customSmallText.copyWith(height: 1.7),
+                    overflow: TextOverflow.ellipsis,
+                  )),
             ],
           ),
         ),
@@ -98,7 +98,7 @@ class ShippingAddressCard extends StatelessWidget {
                       radius: 10.r,
                       child: Icon(
                         Icons.check,
-                        size: 15,
+                        size: 15.r,
                         color: AppPaintings.themeGreenColor,
                       ),
                     ),

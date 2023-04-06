@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:truebildit/app/utils/app_paintings.dart';
 
 class AddSubstractButton extends StatelessWidget {
   final int count;
@@ -17,14 +18,16 @@ class AddSubstractButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 74.w,
-      height: 24.h,
+      height: 23.h,
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Flexible(
+            flex: 2,
             child: InkWell(
                 onTap: onSubstractButtonClick,
                 child: Container(
+                    alignment: Alignment.center,
                     decoration:
                         BoxDecoration(border: Border.all(color: borderColor)),
                     child: const Icon(
@@ -33,19 +36,25 @@ class AddSubstractButton extends StatelessWidget {
                     ))),
           ),
           Flexible(
+            flex: 3,
             child: Container(
               alignment: Alignment.center,
-              width: 32.w,
+              width: 35.w,
               decoration: BoxDecoration(
                   border: Border.symmetric(
                       horizontal: BorderSide(color: borderColor))),
-              child: Text(count.toString()),
+              child: Text(
+                count.toString(),
+                style: AppPaintings.customSmallText,
+              ),
             ),
           ),
           Flexible(
+            flex: 2,
             child: InkWell(
                 onTap: onAddButtonClick,
                 child: Container(
+                    alignment: Alignment.center,
                     constraints: BoxConstraints(minWidth: 20.w),
                     decoration:
                         BoxDecoration(border: Border.all(color: borderColor)),

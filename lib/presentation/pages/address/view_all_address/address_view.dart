@@ -41,16 +41,21 @@ class ViewAllAddressView extends GetView<ViewAllAddressController> {
               SizedBox(
                 height: 12.h,
               ),
-              Column(
-                  children: List.generate(
-                      dummyAddresses.length,
-                      (index) => AddressCard(
-                          margin: EdgeInsets.only(
-                            bottom: 11.h,
-                            right: 15.w,
-                            left: 15.w,
-                          ),
-                          addressData: dummyAddresses[index])))
+              Padding(
+                padding: EdgeInsets.only(
+                  right: 15.w,
+                  left: 15.w,
+                  bottom: 11.h,
+                ),
+                child: Column(
+                    children: List.generate(
+                        dummyAddresses.length,
+                        (index) => AddressCard(
+                            margin: EdgeInsets.only(
+                              bottom: 11.h,
+                            ),
+                            addressData: dummyAddresses[index]))),
+              )
             ],
           ),
         ),

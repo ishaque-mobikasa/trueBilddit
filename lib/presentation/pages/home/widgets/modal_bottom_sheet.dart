@@ -68,6 +68,7 @@ class LocationModalSheet extends StatelessWidget {
                 width: 300.w,
                 height: 42.h,
                 child: LongButton(
+                  isSocialButton: true,
                   buttonType: ButtonType.elevatedButton,
                   buttonText: AppStrings.yourCurrentLocation,
                   onPressed: () {},
@@ -79,6 +80,7 @@ class LocationModalSheet extends StatelessWidget {
                 width: 300.w,
                 height: 42.h,
                 child: LongButton(
+                    isSocialButton: true,
                     buttonType: ButtonType.outLinedButton,
                     buttonText: AppStrings.enterManualLocation,
                     iconImage: AssetStrings.landMarkIcon,

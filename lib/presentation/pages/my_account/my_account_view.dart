@@ -17,90 +17,95 @@ class MyAccountView extends GetView<MyAccountController> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      child: Column(
-        children: [
-          CustomAppBar(
-            height: 73.h,
-            isBackButtonAllowed: false,
-            actions: [
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.close,
-                    color: Colors.white,
-                  ))
-            ],
-            titleImage:
-                Image.asset(AssetStrings.bildItLogo, width: 94.w, height: 24.h),
-          ),
-          Container(
-            constraints: BoxConstraints(maxHeight: 213.h, minWidth: Get.width),
-            decoration: BoxDecoration(color: AppPaintings.themeGreenColor),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                const CircledProfileImage(
-                  isCameraIconed: false,
-                ),
-                Column(
+    return Stack(
+      children: [
+        SingleChildScrollView(
+          padding: EdgeInsets.only(top: 88.h),
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            children: [
+              Container(
+                constraints:
+                    BoxConstraints(maxHeight: 213.h, minWidth: Get.width),
+                decoration: BoxDecoration(color: AppPaintings.themeGreenColor),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    RichText(
-                      text: TextSpan(
-                          style: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 20),
-                          text: "Hello, ",
-                          children: [
-                            TextSpan(
-                                text: "Richard George",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w600,
-                                    fontFamily:
-                                        GoogleFonts.montserrat().fontFamily,
-                                    fontSize: 20))
-                          ]),
+                    const CircledProfileImage(
+                      isCameraIconed: false,
                     ),
-                    SizedBox(height: 5.h),
-                    Text(
-                      "richard.george@gmail.com",
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: GoogleFonts.montserrat().fontFamily,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 12),
+                    Column(
+                      children: [
+                        RichText(
+                          text: TextSpan(
+                              style: const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 20),
+                              text: "Hello, ",
+                              children: [
+                                TextSpan(
+                                    text: "Richard George",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w600,
+                                        fontFamily:
+                                            GoogleFonts.montserrat().fontFamily,
+                                        fontSize: 20))
+                              ]),
+                        ),
+                        SizedBox(height: 5.h),
+                        Text(
+                          "richard.george@gmail.com",
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: GoogleFonts.montserrat().fontFamily,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12),
+                        )
+                      ],
                     )
                   ],
-                )
-              ],
-            ),
-          ),
-          SingleChildScrollView(
-            padding: EdgeInsets.only(left: 15.w, right: 15.w, top: 12.h),
-            child: Column(
-                children: List.generate(
-                    listOfMyAccount.length,
-                    (index) => MyaccountItem(
-                        padding: EdgeInsets.only(left: 15.w, right: 22.w),
-                        title: listOfMyAccount[index],
-                        onTap: () => log("tapped on $index"),
-                        borderRadius: index == 0
-                            ? const BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                                topRight: Radius.circular(10))
-                            : index == listOfMyAccount.length - 1
+                ),
+              ),
+              SingleChildScrollView(
+                padding: EdgeInsets.only(left: 15.w, right: 15.w, top: 12.h),
+                child: Column(
+                    children: List.generate(
+                        listOfMyAccount.length,
+                        (index) => MyaccountItem(
+                            padding: EdgeInsets.only(left: 15.w, right: 22.w),
+                            title: listOfMyAccount[index],
+                            onTap: () => log("tapped on $index"),
+                            borderRadius: index == 0
                                 ? const BorderRadius.only(
-                                    bottomLeft: Radius.circular(10),
-                                    bottomRight: Radius.circular(10))
-                                : null))),
+                                    topLeft: Radius.circular(10),
+                                    topRight: Radius.circular(10))
+                                : index == listOfMyAccount.length - 1
+                                    ? const BorderRadius.only(
+                                        bottomLeft: Radius.circular(10),
+                                        bottomRight: Radius.circular(10))
+                                    : null))),
+              ),
+            ],
           ),
-        ],
-      ),
+        ),
+        CustomAppBar(
+          isBackButtonAllowed: false,
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.close,
+                  color: Colors.white,
+                ))
+          ],
+          titleImage:
+              Image.asset(AssetStrings.bildItLogo, width: 94.w, height: 24.h),
+        ),
+      ],
     );
   }
 }

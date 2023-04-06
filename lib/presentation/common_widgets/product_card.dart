@@ -266,7 +266,7 @@ class ProductCard extends StatelessWidget {
                           style: TextStyle(
                               color: AppPaintings.themeBlack,
                               fontSize: 12.sp,
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.w500),
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
@@ -274,7 +274,7 @@ class ProductCard extends StatelessWidget {
                         height: 10.h,
                         child: Text(
                           "ex.VAT \u00A34.9",
-                          style: TextStyle(fontSize: 8.sp),
+                          style: TextStyle(fontSize: 10.sp),
                           overflow: TextOverflow.ellipsis,
                         ),
                       )

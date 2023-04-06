@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
+import 'package:truebildit/presentation/pages/address/add_address_page/add_address_view.dart';
 import 'package:truebildit/presentation/pages/home/home_view.dart';
-import 'package:truebildit/presentation/pages/orders/order_summary/order_summary_view.dart';
-import 'package:truebildit/presentation/pages/shipping_address/shipping_address_view.dart';
+import 'package:truebildit/presentation/pages/my_account/my_account_view.dart';
 import 'package:truebildit/presentation/pages/sub_category_listing/sub_category_view.dart';
 
 class DashBoardController extends GetxController {
@@ -12,8 +12,8 @@ class DashBoardController extends GetxController {
   List<Widget> pages = [
     const HomeView(),
     const SubCategoryView(),
-    const ShippingAddressView(),
-    const OrderSummaryView()
+    const AddNewAddressView(),
+    const MyAccountView()
   ];
   Color getScaffoldColor() => _scaffoldBackground.value;
 
@@ -21,7 +21,7 @@ class DashBoardController extends GetxController {
   setIndex(index) {
     if (index != selectedIndex.value) {
       selectedIndex.value = index;
-      setWhiteBackground = AppPaintings.scaffoldBackgroundDimmed;
+      setWhiteBackground = AppPaintings.kWhite;
     } else {
       return;
     }
