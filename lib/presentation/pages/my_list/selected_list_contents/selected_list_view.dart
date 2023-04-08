@@ -101,6 +101,7 @@ class SelectedListView extends GetView<SelectedListController> {
                         onStarButtonClick: () =>
                             log("Clicked on Right icon button"),
                         product: ProductModel(
+                        sku: "75387584",
                             id: "1",
                             title: "Yellow Armoured Cable MC Wire",
                             description: "Raaja",

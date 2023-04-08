@@ -24,7 +24,7 @@ class OrderSummaryView extends GetView<OrderSummaryController> {
   @override
   Widget build(BuildContext context) {
     return Material(
-    color: AppPaintings.scaffoldBackgroundDimmed,
+      color: AppPaintings.scaffoldBackgroundDimmed,
       child: Stack(
         children: [
           SingleChildScrollView(
@@ -39,12 +39,15 @@ class OrderSummaryView extends GetView<OrderSummaryController> {
                     height: 47.h,
                     child: Text(
                       "Shipping Address",
-                      style: AppPaintings.customSmallText
-                          .copyWith(fontSize: 14.sp, fontWeight: FontWeight.w500),
+                      style: AppPaintings.customSmallText.copyWith(
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w500,
+                          color: AppPaintings.themeBlack),
                     ),
                   ),
                   OrderSummaryAddressCard(
-                    margin: EdgeInsets.only(right: 15.w, left: 15.w, bottom: 5.h),
+                    margin:
+                        EdgeInsets.only(right: 15.w, left: 15.w, bottom: 5.h),
                     onChangeButtonTap: () {
                       log("change address");
                     },
@@ -59,7 +62,9 @@ class OrderSummaryView extends GetView<OrderSummaryController> {
                       children: [
                         Text("Order Summary",
                             style: AppPaintings.customSmallText.copyWith(
-                                fontSize: 14.sp, fontWeight: FontWeight.w500)),
+                                color: AppPaintings.themeBlack,
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w500)),
                         SizedBox(
                           height: 40.h,
                           child: CupertinoButton(
@@ -89,6 +94,7 @@ class OrderSummaryView extends GetView<OrderSummaryController> {
                             log("Clicked on Right icon button"),
                         product: ProductModel(
                             id: "1",
+                            sku: "75387584",
                             title: "Armoured Cable MC Wire",
                             description: "Raaja",
                             price: 89.43,
@@ -116,7 +122,8 @@ class OrderSummaryView extends GetView<OrderSummaryController> {
                               buttonStyle: ElevatedButton.styleFrom(
                                   backgroundColor: AppPaintings.themeGreenColor,
                                   shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10.r)),
+                                      borderRadius:
+                                          BorderRadius.circular(10.r)),
                                   splashFactory: NoSplash.splashFactory,
                                   shadowColor: Colors.transparent),
                               onPressed: () {

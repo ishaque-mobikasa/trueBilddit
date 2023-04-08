@@ -30,9 +30,10 @@ class AddSubstractButton extends StatelessWidget {
                     alignment: Alignment.center,
                     decoration:
                         BoxDecoration(border: Border.all(color: borderColor)),
-                    child: const Icon(
+                    child: Icon(
                       Icons.remove,
-                      size: 20,
+                      color: AppPaintings.themeBlack,
+                      size: 20.sp,
                     ))),
           ),
           Flexible(
@@ -45,7 +46,9 @@ class AddSubstractButton extends StatelessWidget {
                       horizontal: BorderSide(color: borderColor))),
               child: Text(
                 count.toString(),
-                style: AppPaintings.customSmallText,
+                style: AppPaintings.customSmallText.copyWith(
+                  color: AppPaintings.themeBlack,
+                ),
               ),
             ),
           ),
@@ -58,9 +61,10 @@ class AddSubstractButton extends StatelessWidget {
                     constraints: BoxConstraints(minWidth: 20.w),
                     decoration:
                         BoxDecoration(border: Border.all(color: borderColor)),
-                    child: const Icon(
+                    child: Icon(
                       Icons.add,
-                      size: 20,
+                      size: 20.sp,
+                      color: AppPaintings.themeBlack,
                     ))),
           ),
         ],

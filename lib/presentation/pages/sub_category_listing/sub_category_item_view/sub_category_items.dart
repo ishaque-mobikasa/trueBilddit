@@ -53,76 +53,22 @@ class SubCategoryItemsView extends GetView<SubcategoryItemsController> {
                       ],
                     ),
                   ),
-                  ProductCard(
-                      icon: Icons.star_border,
-                      onStarButtonClick: () =>
-                          log("Clicked on Right icon button"),
-                      product: ProductModel(
-                          id: "1",
-                          title: "Armoured Cable MC Wire",
-                          description: "Raaja",
-                          price: 89.43,
-                          image: "assets/images/wire.png")),
-                  ProductCard(
-                      icon: Icons.star_border,
-                      onStarButtonClick: () =>
-                          log("Clicked on Right icon button"),
-                      product: ProductModel(
-                          id: "1",
-                          title: "Armoured Cable MC Wire",
-                          description: "Raaja",
-                          price: 89.43,
-                          image: "assets/images/wire.png")),
-                  ProductCard(
-                      icon: Icons.star_border,
-                      onStarButtonClick: () =>
-                          log("Clicked on Right icon button"),
-                      product: ProductModel(
-                          id: "1",
-                          title: "Armoured Cable MC Wire",
-                          description: "Raaja",
-                          price: 89.43,
-                          image: "assets/images/wire.png")),
-                  ProductCard(
-                      icon: Icons.star_border,
-                      onStarButtonClick: () =>
-                          log("Clicked on Right icon button"),
-                      product: ProductModel(
-                          id: "1",
-                          title: "Armoured Cable MC Wire",
-                          description: "Raaja",
-                          price: 89.43,
-                          image: "assets/images/wire.png")),
-                  ProductCard(
-                      icon: Icons.star_border,
-                      onStarButtonClick: () =>
-                          log("Clicked on Right icon button"),
-                      product: ProductModel(
-                          id: "1",
-                          title: "Armoured Cable MC Wire",
-                          description: "Raaja",
-                          price: 89.43,
-                          image: "assets/images/wire.png")),
-                  ProductCard(
-                      icon: Icons.star_border,
-                      onStarButtonClick: () =>
-                          log("Clicked on Right icon button"),
-                      product: ProductModel(
-                          id: "1",
-                          title: "Armoured Cable MC Wire",
-                          description: "Raaja",
-                          price: 89.43,
-                          image: "assets/images/wire.png")),
-                  ProductCard(
-                      icon: Icons.star_border,
-                      onStarButtonClick: () =>
-                          log("Clicked on Right icon button"),
-                      product: ProductModel(
-                          id: "1",
-                          title: "Armoured Cable MC Wire",
-                          description: "Raaja",
-                          price: 89.43,
-                          image: "assets/images/wire.png")),
+                  Column(
+                    children: List.generate(
+                      10,
+                      (index) => ProductCard(
+                          icon: Icons.star_border,
+                          onStarButtonClick: () =>
+                              log("Clicked on Right icon button"),
+                          product: ProductModel(
+                              sku: "75387584",
+                              id: "1",
+                              title: "Armoured Cable MC Wire",
+                              description: "Raaja",
+                              price: 129,
+                              image: "assets/images/wire.png")),
+                    ),
+                  ),
                 ],
               )),
           CustomAppBar(

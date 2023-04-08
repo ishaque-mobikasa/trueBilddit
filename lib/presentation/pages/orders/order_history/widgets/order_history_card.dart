@@ -140,15 +140,16 @@ class OrderHistoryCard extends StatelessWidget {
                               ))
                         ],
                       ),
+                      SizedBox(
+                        height: 5.h,
+                      ),
                       Flexible(
                         child: Text(
                           "${addressModel.streetAddress} ${addressModel.city}, ${addressModel.county} ${addressModel.country}, ${addressModel.phoneNumber}",
                           maxLines: 2,
                           textAlign: TextAlign.start,
                           style: const TextStyle(
-                              height: 1.5,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w300),
+                              fontSize: 12, fontWeight: FontWeight.w300),
                           overflow: TextOverflow.ellipsis,
                         ),
                       )

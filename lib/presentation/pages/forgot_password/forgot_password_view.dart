@@ -75,10 +75,9 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
             Container(
               alignment: Alignment.center,
               width: 300.w,
-              height: 38.h,
               child: Text(
                 AppStrings.getPasswordLink,
-                style: AppPaintings.customSmallText,
+                style: AppPaintings.customSmallText.copyWith(height: 1.6),
                 maxLines: 2,
                 textAlign: TextAlign.center,
               ),

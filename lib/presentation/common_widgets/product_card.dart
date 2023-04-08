@@ -196,7 +196,9 @@ class ProductCard extends StatelessWidget {
                       product.title,
                       maxLines: 2,
                       style: TextStyle(
-                          fontSize: 12.sp, fontWeight: FontWeight.w300),
+                          color: AppPaintings.themeBlack,
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w400),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
@@ -258,15 +260,16 @@ class ProductCard extends StatelessWidget {
                           height: 23.h,
                         ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       SizedBox(
                         height: 18.h,
                         child: Text(
-                          "\u00A3${product.price.toStringAsFixed(2).toString()}",
+                          "\u00A3 ${product.price.toStringAsFixed(2).toString()}",
                           style: TextStyle(
                               color: AppPaintings.themeBlack,
                               fontSize: 12.sp,
-                              fontWeight: FontWeight.w500),
+                              fontWeight: FontWeight.bold),
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),

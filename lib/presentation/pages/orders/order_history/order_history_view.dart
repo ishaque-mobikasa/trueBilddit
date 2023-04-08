@@ -30,7 +30,10 @@ class OrderHistoryView extends GetView<OrderHistoryController> {
                           phoneNumber: "020 7836 0004"),
                       margin: EdgeInsets.only(bottom: 10.h),
                       padding: EdgeInsets.only(
-                          top: 13.h, left: 12.w, right: 11.w, bottom: 14.h),
+                        top: 13.h,
+                        left: 12.w,
+                        right: 11.w,
+                      ),
                       orderAmount: 450,
                       orderId: '345123',
                       orderDate: DateTime.now(),

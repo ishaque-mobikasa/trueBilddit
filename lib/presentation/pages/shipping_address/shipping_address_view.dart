@@ -17,7 +17,7 @@ class ShippingAddressView extends GetView<ShippingAddressController> {
   @override
   Widget build(BuildContext context) {
     return Material(
-    color: AppPaintings.scaffoldBackgroundDimmed,
+      color: AppPaintings.scaffoldBackgroundDimmed,
       child: Stack(
         children: [
           SingleChildScrollView(
@@ -29,7 +29,7 @@ class ShippingAddressView extends GetView<ShippingAddressController> {
                   height: 50.h,
                   child: ShortButton(
                       buttonTextStyle: TextStyle(
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           color: AppPaintings.themeGreenColor,
                           fontWeight: FontWeight.w500),
                       backGroundColor: const Color.fromARGB(255, 255, 255, 255),
@@ -56,7 +56,7 @@ class ShippingAddressView extends GetView<ShippingAddressController> {
                             isSelected: index == 1 ? true : false,
                             addressData: dummyAddresses[index]))),
                 SizedBox(
-                  height: 12.h,
+                  height: 86.h,
                 ),
                 SizedBox(
                     height: 42.h,

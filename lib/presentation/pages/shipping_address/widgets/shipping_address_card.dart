@@ -80,7 +80,7 @@ class ShippingAddressCard extends StatelessWidget {
                   child: Text(
                     '${addressData.streetAddress} ${addressData.city}, ${addressData.county} ${addressData.phoneNumber},',
                     maxLines: 2,
-                    style: AppPaintings.customSmallText.copyWith(height: 1.7),
+                    style: AppPaintings.customSmallText.copyWith(height: 1.5),
                     overflow: TextOverflow.ellipsis,
                   )),
             ],

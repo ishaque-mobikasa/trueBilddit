@@ -20,11 +20,12 @@ class MyBasketView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-    color: AppPaintings.scaffoldBackgroundDimmed,
+      color: AppPaintings.scaffoldBackgroundDimmed,
       child: Column(
         children: [
           const CustomAppBar(
             title: "My Basket",
+            isBackButtonAllowed: false,
           ),
           Container(
             height: 15.h,
@@ -42,12 +43,13 @@ class MyBasketView extends StatelessWidget {
             children: List.generate(
                 3,
                 (index) => ProductCard(
-                      margin:
-                          EdgeInsets.only(left: 15.w, right: 15.w, bottom: 10.h),
+                      margin: EdgeInsets.only(
+                          left: 15.w, right: 15.w, bottom: 10.h),
                       icon: CupertinoIcons.delete,
                       onStarButtonClick: () =>
                           log("Clicked on Right icon button"),
                       product: ProductModel(
+                          sku: "75387584",
                           id: "1",
                           title: "Armoured Cable MC Wire",
                           description: "Raaja",

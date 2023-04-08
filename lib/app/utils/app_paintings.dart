@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppPaintings {
-  static Color themeGreenTextColor = const Color(0xff6ECB44);
   static Color themeGreenColor = const Color(0xff6ECB44);
   static Color kBlack = Colors.black;
   static Color kWhite = Colors.white;
@@ -17,11 +16,14 @@ class AppPaintings {
   static Color appRedColor = const Color(0xffEE4C4C);
   static Color shippingCardSelectedColor = const Color(0xffF5FDF1);
   static Color carousalImageStarColor = const Color(0xffB7B7B7);
+  static Color pdpQuantityBorderColor = const Color(0xffDCDCDC);
+  static Color pdpButtonBorderColor = const Color(0xffBABABA);
   static ThemeData appTheme = ThemeData(
+    dividerColor: Colors.transparent,
     scaffoldBackgroundColor: Colors.white,
     fontFamily: GoogleFonts.montserrat().fontFamily,
-    textTheme: TextTheme(
-        titleSmall: TextStyle(color: AppPaintings.themeGreenTextColor)),
+    textTheme:
+        TextTheme(titleSmall: TextStyle(color: AppPaintings.themeGreenColor)),
     primarySwatch: Colors.green,
   );
 
