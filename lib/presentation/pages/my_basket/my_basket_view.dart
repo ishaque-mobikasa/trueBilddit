@@ -19,8 +19,7 @@ class MyBasketView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: AppPaintings.scaffoldBackgroundDimmed,
+    return SingleChildScrollView(
       child: Column(
         children: [
           const CustomAppBar(

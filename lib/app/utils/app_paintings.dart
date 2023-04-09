@@ -18,6 +18,7 @@ class AppPaintings {
   static Color carousalImageStarColor = const Color(0xffB7B7B7);
   static Color pdpQuantityBorderColor = const Color(0xffDCDCDC);
   static Color pdpButtonBorderColor = const Color(0xffBABABA);
+  static Color productTileImgBckgrndClr = const Color(0xffF8F8F8);
   static ThemeData appTheme = ThemeData(
     dividerColor: Colors.transparent,
     scaffoldBackgroundColor: Colors.white,

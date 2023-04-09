@@ -59,4 +59,5 @@ class AssetStrings {
   static String inputOtp = "assets/images/input_otp.png";
   static String carouselImage = "assets/images/slider_image.png";
   static String orderConfirmedImage = "assets/images/order_confirmed.png";
+  static String dummyImage = "assets/images/wire.png";
 }

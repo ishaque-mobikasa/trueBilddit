@@ -22,6 +22,7 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    
     return SingleChildScrollView(
       physics: const NeverScrollableScrollPhysics(),
       child: Stack(
@@ -31,7 +32,7 @@ class HomeView extends GetView<HomeController> {
               ClipPath(
                 clipper: OvalShape(),
                 child: Container(
-                  height: 237.h,
+                  height: 200.h,
                   width: 375.w,
                   color: AppPaintings.themeGreenColor,
                   child: Column(
@@ -129,13 +130,13 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
               SizedBox(
-                height: Get.height * 0.56.h,
+                height: size.height * 0.57.h,
                 width: size.width * 0.9.w,
                 child: GridView.builder(
                   physics: const BouncingScrollPhysics(),
                   itemCount: homeItems.length,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      childAspectRatio: 0.93, crossAxisCount: 3),
+                      childAspectRatio: 0.83, crossAxisCount: 3),
                   itemBuilder: (context, index) => CircularCategoryItem(
                     circularItem: homeItems[index],
                     onTap: () => log("Clicked on circular item"),
@@ -146,7 +147,7 @@ class HomeView extends GetView<HomeController> {
             ],
           ),
           Positioned(
-              top: 193.h,
+              top: 170.h,
               left: 15.w,
               child: SizedBox(
                 height: 56.h,

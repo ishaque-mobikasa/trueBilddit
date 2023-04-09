@@ -54,6 +54,7 @@ class QuantityWidget extends StatelessWidget {
                         onPressed: onSubstractButtonPress,
                         child: Icon(
                           Icons.remove,
+                          size: 16.sp,
                           color: AppPaintings.kBlack,
                         )),
                   ),
@@ -74,6 +75,7 @@ class QuantityWidget extends StatelessWidget {
                         onPressed: onAddButtonPress,
                         child: Icon(
                           Icons.add,
+                          size: 16.sp,
                           color: AppPaintings.kBlack,
                         )),
                   ),

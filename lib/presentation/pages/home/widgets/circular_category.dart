@@ -37,8 +37,8 @@ class CircularCategoryItem extends StatelessWidget {
           ),
           Flexible(
             child: SizedBox(
-              height: 28.h,
-              width: 75.w,
+              height: 32.h,
+              width: 80.w,
               child: Text(
                 circularItem.title,
                 style: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),

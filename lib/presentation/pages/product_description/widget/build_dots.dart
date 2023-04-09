@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 
 class BuildDots extends StatelessWidget {
@@ -18,9 +19,9 @@ class BuildDots extends StatelessWidget {
       children: List.generate(
           dotsCount,
           (index) => Container(
-                height: 10,
-                width: 10,
-                margin: const EdgeInsets.only(right: 10),
+                height: 5,
+                width: 5,
+                margin: EdgeInsets.only(right: 3.w),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: currentIndex == index
