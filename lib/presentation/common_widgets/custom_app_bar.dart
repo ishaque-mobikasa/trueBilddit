@@ -27,6 +27,7 @@ class CustomAppBar extends StatelessWidget {
       child: AppBar(
         actions: actions,
         elevation: 0,
+        toolbarHeight: height ?? 90.h,
         backgroundColor: backGroundColor ?? AppPaintings.themeGreenColor,
         centerTitle: true,
         leading: isBackButtonAllowed!

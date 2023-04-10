@@ -14,6 +14,9 @@ class AppStrings {
   static String orderConfirmed = "Your order has been successfully placed";
   static String youCanTrackOrder =
       "You can track the delivery from the homepage.";
+  static String yourFeedBackWillbeShared =
+      "Your feedback will be shared with us \n and we will respond to you.";
+  static String howWasDelivery = "How was your delivery?";
 }
 
 class UrlStrings {}

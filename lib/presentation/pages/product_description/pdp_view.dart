@@ -30,10 +30,11 @@ class PDPview extends GetView<PDPcontroller> {
         price: 89.43,
         sku: "75387584",
         image: AssetStrings.dummyImage);
-    Get.lazyPut(() => PDPcontroller());
+
     return Stack(
       children: [
         SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               const SizedBox(
@@ -209,12 +210,13 @@ class PDPview extends GetView<PDPcontroller> {
                 ),
               ),
               SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: List.generate(
                       10,
-                      (index) => Padding(
-                            padding: EdgeInsets.only(
+                      (index) => Container(
+                            margin: EdgeInsets.only(
                                 right: 8.w, left: index == 0 ? 15.w : 0.w),
                             child: ProductTileCard(
                                 onAddButtonClick: (productModel) =>

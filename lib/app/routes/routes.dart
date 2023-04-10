@@ -7,6 +7,9 @@ import 'package:truebildit/presentation/pages/change_password/change_password_vi
 import 'package:truebildit/presentation/pages/change_password/controllers_binding/change_password_binding.dart';
 import 'package:truebildit/presentation/pages/dash_board/controllers_binding/dash_board_binding.dart';
 import 'package:truebildit/presentation/pages/dash_board/dash_board_view.dart';
+import 'package:truebildit/presentation/pages/feed_back/contrtoller_binding/feed_back_controller.dart';
+import 'package:truebildit/presentation/pages/feed_back/pages/feed_back_page1.dart';
+import 'package:truebildit/presentation/pages/feed_back/pages/feed_back_page2.dart';
 import 'package:truebildit/presentation/pages/forgot_password/controllers_binding/forgot_password_binding.dart';
 import 'package:truebildit/presentation/pages/forgot_password/forgot_password_view.dart';
 import 'package:truebildit/presentation/pages/home/controller_binding/home_binding.dart';
@@ -73,6 +76,8 @@ class Routes {
   static const shippingAddressView = "/shippingAddressView";
   static const orderSummaryView = "/orderSummaryView";
   static const pdpView = "/pdpView";
+  static const feedBackPageOneView = "/feedBackPageOneView";
+  static const feedBackPageTwo = "/feedBackPageTwoView";
 }
 
 class AppPages {
@@ -177,5 +182,13 @@ class AppPages {
         name: Routes.pdpView,
         page: () => const PDPview(),
         binding: PDPbinding()),
+    GetPage(
+        name: Routes.feedBackPageOneView,
+        page: () => const FeedBackPageOne(),
+        binding: FeedBackBinding()),
+    GetPage(
+        name: Routes.feedBackPageTwo,
+        page: () => const FeedBackPageTwo(),
+        binding: FeedBackBinding()),
   ];
 }

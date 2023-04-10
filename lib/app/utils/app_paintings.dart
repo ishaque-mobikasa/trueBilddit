@@ -19,6 +19,9 @@ class AppPaintings {
   static Color pdpQuantityBorderColor = const Color(0xffDCDCDC);
   static Color pdpButtonBorderColor = const Color(0xffBABABA);
   static Color productTileImgBckgrndClr = const Color(0xffF8F8F8);
+  static Color feedBackScreenBackgroundColor = const Color(0xffF5F5F5);
+
+  static Color starRatingEmptyColor = const Color(0xffBFBFBF);
   static ThemeData appTheme = ThemeData(
     dividerColor: Colors.transparent,
     scaffoldBackgroundColor: Colors.white,
