@@ -51,7 +51,7 @@ class LocationRequestView extends GetView<LocationRequestController> {
         SizedBox(height: 26.7.h),
         Container(
           alignment: Alignment.center,
-          constraints: BoxConstraints(maxWidth: 204.7.w, maxHeight: 204.7.w),
+          constraints: BoxConstraints(maxWidth: 204.7.w, maxHeight: 204.7.h),
           child: Image.asset(
             AssetStrings.circledLocation,
             fit: BoxFit.cover,

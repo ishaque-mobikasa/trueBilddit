@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/routes/routes.dart';
-import 'package:truebildit/app/utils/app_paintings.dart';
+import 'package:truebildit/presentation/common_widgets/custom_app_bar.dart';
 import 'package:truebildit/presentation/pages/my_account/widgets/my_account_item.dart';
 import 'package:truebildit/presentation/pages/sub_category_listing/controllers_bindings/sub_category_controller.dart';
 
@@ -42,20 +42,8 @@ class SubCategoryView extends GetView<SubCategoryController> {
                                   bottomRight: Radius.circular(10.r))
                               : null))),
         ),
-        SizedBox(
-          height: 90.h,
-          child: AppBar(
-            elevation: 0,
-            backgroundColor: AppPaintings.themeGreenColor,
-            centerTitle: true,
-            leading: IconButton(
-              icon: const Icon(Icons.arrow_back_ios),
-              onPressed: () => {},
-            ),
-            title: const Text(
-              'Plumbing & Heating',
-            ),
-          ),
+        const CustomAppBar(
+          title: 'Plumbing & Heating',
         ),
       ],
     );

@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:get/get.dart';
+import 'package:truebildit/data/models/product_model.dart';
 
 class FeedBackController extends GetxController {
   final Rx<bool> isRatingCompleted = false.obs;
@@ -18,5 +19,10 @@ class FeedBackController extends GetxController {
 
   void chooseButton(int index) {
     selectedIndex.value = index;
+  }
+
+  void onProductRated(ProductModel product, double rating) {
+    log("Product rated: ${product.title}");
+    log("Product rated: ${rating.toString()}");
   }
 }

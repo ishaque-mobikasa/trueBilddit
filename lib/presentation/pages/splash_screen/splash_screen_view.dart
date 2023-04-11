@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utility_functions/utilities.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
@@ -22,7 +23,8 @@ class SplashScreenView extends GetView<SplashScreenController> {
                 fit: BoxFit.cover)),
         child: Center(
             child: SizedBox(
-                width: size.width * 0.5,
+                width: 231.w,
+                height: 59.h,
                 child: Image.asset(AssetStrings.bildItLogo))),
       ),
     );

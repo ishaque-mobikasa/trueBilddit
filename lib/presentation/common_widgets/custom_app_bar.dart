@@ -27,19 +27,24 @@ class CustomAppBar extends StatelessWidget {
       child: AppBar(
         actions: actions,
         elevation: 0,
-        toolbarHeight: height ?? 90.h,
         backgroundColor: backGroundColor ?? AppPaintings.themeGreenColor,
         centerTitle: true,
         leading: isBackButtonAllowed!
             ? IconButton(
                 icon: Icon(
                   Icons.arrow_back_ios,
+                  size: 18.sp,
                   color: iconColor ?? AppPaintings.kWhite,
                 ),
                 onPressed: () => {Get.back()},
               )
             : const SizedBox.shrink(),
-        title: titleImage ?? Text(title!),
+        title: titleImage ??
+            Text(
+              title!,
+              style: AppPaintings.customLargeText
+                  .copyWith(color: AppPaintings.kWhite),
+            ),
       ),
     );
   }

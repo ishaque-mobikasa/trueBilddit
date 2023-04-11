@@ -37,8 +37,8 @@ class PDPview extends GetView<PDPcontroller> {
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              const SizedBox(
-                height: 90,
+              SizedBox(
+                height: 90.h,
               ),
               ColoredBox(
                 color: AppPaintings.scaffoldBackgroundDimmed,
@@ -163,7 +163,7 @@ class PDPview extends GetView<PDPcontroller> {
                       title: Text(
                         "Description",
                         style: AppPaintings.customLargeText.copyWith(
-                            fontSize: 16.sp, fontWeight: FontWeight.bold),
+                            fontSize: 16.sp, fontWeight: FontWeight.w500),
                       ),
                       iconColor: AppPaintings.themeBlack,
                       childrenPadding: EdgeInsets.only(

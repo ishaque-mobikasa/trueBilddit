@@ -207,10 +207,12 @@ class EmailLoginView extends GetView<EmailLoginController> {
             Text.rich(
               TextSpan(
                 text: 'Don’t have an account? ',
+                style: const TextStyle(fontWeight: FontWeight.w500),
                 children: [
                   TextSpan(
                     text: 'Sign Up ',
                     style: TextStyle(
+                      fontWeight: FontWeight.w400,
                       color: AppPaintings.themeGreenColor,
                     ),
                     recognizer: TapGestureRecognizer()

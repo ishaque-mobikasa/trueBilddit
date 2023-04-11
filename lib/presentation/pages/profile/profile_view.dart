@@ -15,75 +15,70 @@ class ProfileView extends GetView<ProfileController> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Material(
-        color: Colors.white,
-        child: SingleChildScrollView(
-          physics: const BouncingScrollPhysics(),
-          child: Stack(
-            children: [
-              SizedBox(
-                height: Get.height.h,
-                child: Column(
-                  children: [
-                    CustomAppBar(title: "My Profile", height: 130.h),
-                    SizedBox(height: 78.h),
-                    const CustomFormField(
-                        margin:
-                            EdgeInsets.only(left: 20, right: 20, bottom: 20),
-                        initialValue: "Richard George",
-                        hintText: "Full Name",
-                        type: FieldType.normalInputField),
-                    const CustomFormField(
-                        margin:
-                            EdgeInsets.only(left: 20, right: 20, bottom: 20),
-                        initialValue: "ABC Company",
-                        hintText: "Company Name (Optional)",
-                        type: FieldType.normalInputField),
-                    const CustomFormField(
-                        margin:
-                            EdgeInsets.only(left: 20, right: 20, bottom: 20),
-                        initialValue: "richard.george@gmail.com",
-                        hintText: "Email",
-                        type: FieldType.normalInputField),
-                    const CustomFormField(
-                        margin:
-                            EdgeInsets.only(left: 20, right: 20, bottom: 26.5),
-                        initialValue: "+44 7911 123456",
-                        hintText: "Mobile Number",
-                        type: FieldType.normalInputField),
-                    SizedBox(
-                      height: 42.h,
-                      width: 300.w,
-                      child: LongButton(
-                        buttonType: ButtonType.elevatedButton,
-                        buttonText: "EDIT",
-                        onPressed: () => log("Edit Button Pressed"),
-                      ),
+    return Material(
+      color: Colors.white,
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+        child: Stack(
+          children: [
+            SizedBox(
+              height: Get.height.h,
+              child: Column(
+                children: [
+                  CustomAppBar(title: "My Profile", height: 155.h),
+                  SizedBox(height: 78.h),
+                  const CustomFormField(
+                      margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                      initialValue: "Richard George",
+                      hintText: "Full Name",
+                      type: FieldType.normalInputField),
+                  const CustomFormField(
+                      margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                      initialValue: "ABC Company",
+                      hintText: "Company Name (Optional)",
+                      type: FieldType.normalInputField),
+                  const CustomFormField(
+                      margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                      initialValue: "richard.george@gmail.com",
+                      hintText: "Email",
+                      type: FieldType.normalInputField),
+                  const CustomFormField(
+                      margin:
+                          EdgeInsets.only(left: 20, right: 20, bottom: 26.5),
+                      initialValue: "+44 7911 123456",
+                      hintText: "Mobile Number",
+                      type: FieldType.normalInputField),
+                  SizedBox(
+                    height: 42.h,
+                    width: 300.w,
+                    child: LongButton(
+                      buttonType: ButtonType.elevatedButton,
+                      buttonText: "EDIT",
+                      onPressed: () => log("Edit Button Pressed"),
                     ),
+                  ),
+                ],
+              ),
+            ),
+            Positioned(
+              top: 100.h,
+              left: Get.width * 0.35.w,
+              child: GestureDetector(
+                onTap: controller.onImagePickButtonClick,
+                child: Stack(
+                  children: [
+                    Obx(
+                      () => CircledProfileImage(
+                        isCameraIconed: true,
+                        backGroundCameraAvatarColor: AppPaintings.kWhite,
+                        image: controller.pickedImage.value,
+                      ),
+                    )
                   ],
                 ),
               ),
-              Positioned(
-                top: 70.h,
-                left: Get.width * 0.35.w,
-                child: GestureDetector(
-                  onTap: controller.onImagePickButtonClick,
-                  child: Stack(
-                    children: [
-                      Obx(
-                        () => CircledProfileImage(
-                          isCameraIconed: true,
-                          backGroundCameraAvatarColor: AppPaintings.kWhite,
-                          image: controller.pickedImage.value,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
