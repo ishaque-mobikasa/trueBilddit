@@ -7,7 +7,7 @@ import 'package:truebildit/presentation/pages/change_password/change_password_vi
 import 'package:truebildit/presentation/pages/change_password/controllers_binding/change_password_binding.dart';
 import 'package:truebildit/presentation/pages/dash_board/controllers_binding/dash_board_binding.dart';
 import 'package:truebildit/presentation/pages/dash_board/dash_board_view.dart';
-import 'package:truebildit/presentation/pages/feed_back/contrtoller_binding/feed_back_controller.dart';
+import 'package:truebildit/presentation/pages/feed_back/contrtoller_binding/feed_back_binding.dart';
 import 'package:truebildit/presentation/pages/feed_back/pages/feed_back_page1.dart';
 import 'package:truebildit/presentation/pages/feed_back/pages/feed_back_page2.dart';
 import 'package:truebildit/presentation/pages/forgot_password/controllers_binding/forgot_password_binding.dart';

@@ -34,7 +34,7 @@ class DeliveryCard extends StatelessWidget {
                 offset: const Offset(0, 3)),
           ],
           color: AppPaintings.kWhite,
-          borderRadius: BorderRadius.only(
+          borderRadius: BorderRadius.only( 
             topLeft: Radius.circular(10.r),
             topRight: Radius.circular(10.r),
           )),
