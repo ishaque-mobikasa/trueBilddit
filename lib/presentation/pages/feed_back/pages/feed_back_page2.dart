@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,6 +10,7 @@ import 'package:truebildit/data/enums.dart';
 import 'package:truebildit/data/models/order_model.dart';
 import 'package:truebildit/data/models/product_model.dart';
 import 'package:truebildit/presentation/common_widgets/custom_app_bar.dart';
+import 'package:truebildit/presentation/common_widgets/long_button.dart';
 import 'package:truebildit/presentation/pages/feed_back/contrtoller_binding/feed_back_controller.dart';
 import 'package:truebildit/presentation/pages/feed_back/widgets/delivery_card.dart';
 import 'package:truebildit/presentation/pages/feed_back/widgets/product_rating_card.dart';
@@ -27,6 +30,7 @@ class FeedBackPageTwo extends GetView<FeedBackController> {
           physics: const BouncingScrollPhysics(),
           padding: EdgeInsets.only(top: 90.h),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               DeliveryCard(
                 order: OrderModel(
@@ -59,6 +63,33 @@ class FeedBackPageTwo extends GetView<FeedBackController> {
                       fontWeight: FontWeight.w300),
                 ),
               ),
+              SizedBox(
+                height: 24.h,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 31.w),
+                child: Divider(
+                  height: 1.h,
+                  thickness: 1.sp,
+                  color: AppPaintings.dimWhite,
+                ),
+              ),
+              ProductRatingCard(
+                moreFeedback: true,
+                onMoreFeedBackClick: (product) {
+                  log(product.title);
+                },
+                onProductRated: (productModel, rating) =>
+                    controller.onProductRated(productModel, rating),
+                margin: EdgeInsets.symmetric(horizontal: 31.w),
+                product: ProductModel(
+                    sku: "75387584",
+                    id: "1",
+                    title: "Brass Basin Mixer Tap  Aquant",
+                    description: "Raaja",
+                    price: 89.43,
+                    image: "assets/images/wire.png"),
+              ),
               ProductRatingCard(
                 onProductRated: (productModel, rating) =>
                     controller.onProductRated(productModel, rating),
@@ -72,6 +103,7 @@ class FeedBackPageTwo extends GetView<FeedBackController> {
                     image: "assets/images/wire.png"),
               ),
               ProductRatingCard(
+                moreFeedback: false,
                 onProductRated: (product, rating) =>
                     controller.onProductRated(product, rating),
                 margin: EdgeInsets.symmetric(horizontal: 31.w),
@@ -83,6 +115,15 @@ class FeedBackPageTwo extends GetView<FeedBackController> {
                     price: 89.43,
                     image: "assets/images/wire.png"),
               ),
+              SizedBox(height: 32.h),
+              SizedBox(
+                width: 345.w,
+                height: 42.h,
+                child: LongButton(
+                    buttonType: ButtonType.elevatedButton,
+                    buttonText: "SUBMIT",
+                    onPressed: () {}),
+              )
             ],
           ),
         ),
