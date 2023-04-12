@@ -1,3 +1,4 @@
+
 extension ValidationString on String {
   bool get isValidEmail {
     var emailRegExp = RegExp(r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+");
@@ -16,3 +17,5 @@ extension ValidationString on String {
     return passwordRegExp.hasMatch(this);
   }
 }
+
+

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
-import 'package:truebildit/presentation/pages/feed_back/pages/feed_back_page2.dart';
 import 'package:truebildit/presentation/pages/home/home_view.dart';
 import 'package:truebildit/presentation/pages/my_account/my_account_view.dart';
+import 'package:truebildit/presentation/pages/payments/payment_view.dart';
 import 'package:truebildit/presentation/pages/sub_category_listing/sub_category_view.dart';
 
 class DashBoardController extends GetxController {
@@ -13,7 +13,7 @@ class DashBoardController extends GetxController {
     const HomeView(),
     const SubCategoryView(),
     const MyAccountView(),
-    const FeedBackPageTwo()
+    const PaymentView()
   ];
   Color getScaffoldColor() => _scaffoldBackground.value;
 

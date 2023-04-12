@@ -34,6 +34,8 @@ import 'package:truebildit/presentation/pages/orders/order_history/order_history
 import 'package:truebildit/presentation/pages/orders/order_history/order_history_view.dart';
 import 'package:truebildit/presentation/pages/orders/order_summary/controller_binding/order_summary_binding.dart';
 import 'package:truebildit/presentation/pages/orders/order_summary/order_summary_view.dart';
+import 'package:truebildit/presentation/pages/payments/controller_binding/payment_binding.dart';
+import 'package:truebildit/presentation/pages/payments/payment_view.dart';
 import 'package:truebildit/presentation/pages/product_description/controller_binding/pdp_binding.dart';
 import 'package:truebildit/presentation/pages/product_description/pdp_view.dart';
 import 'package:truebildit/presentation/pages/profile/controllers_bindings/profile_binding.dart';
@@ -78,6 +80,7 @@ class Routes {
   static const pdpView = "/pdpView";
   static const feedBackPageOneView = "/feedBackPageOneView";
   static const feedBackPageTwo = "/feedBackPageTwoView";
+  static const paymentView = "/paymentView";
 }
 
 class AppPages {
@@ -190,5 +193,9 @@ class AppPages {
         name: Routes.feedBackPageTwo,
         page: () => const FeedBackPageTwo(),
         binding: FeedBackBinding()),
+    GetPage(
+        name: Routes.paymentView,
+        page: () => const PaymentView(),
+        binding: PaymentBinding()),
   ];
 }
