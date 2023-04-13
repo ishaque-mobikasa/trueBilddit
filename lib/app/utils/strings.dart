@@ -63,4 +63,11 @@ class AssetStrings {
   static String carouselImage = "assets/images/slider_image.png";
   static String orderConfirmedImage = "assets/images/order_confirmed.png";
   static String dummyImage = "assets/images/wire.png";
+  static String visaImage = "assets/images/visa.svg";
+  static String masterCardImage = "assets/images/master_card.svg";
+  static String discoverCardImage = "assets/images/discover_network.svg";
+  static String americanExpressImage = "assets/images/american_express.svg";
+  static String applePayImage = "assets/images/apple_pay.svg";
+  static String googlePayImage = "assets/images/google_pay.svg";
+  
 }

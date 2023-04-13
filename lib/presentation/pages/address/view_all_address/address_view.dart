@@ -3,11 +3,11 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:truebildit/app/utility_functions/dummy_list.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/presentation/common_widgets/long_button.dart';
 import 'package:truebildit/presentation/common_widgets/short_button.dart';
 import 'package:truebildit/presentation/pages/address/view_all_address/controllers_binding/address_controller.dart';
-import 'package:truebildit/presentation/pages/address/view_all_address/dummy_address_list.dart';
 import 'package:truebildit/presentation/pages/address/view_all_address/widgets/address_card.dart';
 
 class ViewAllAddressView extends GetView<ViewAllAddressController> {

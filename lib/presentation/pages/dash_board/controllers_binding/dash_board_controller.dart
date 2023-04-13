@@ -12,8 +12,8 @@ class DashBoardController extends GetxController {
   List<Widget> pages = [
     const HomeView(),
     const SubCategoryView(),
+    const PaymentView(),
     const MyAccountView(),
-    const PaymentView()
   ];
   Color getScaffoldColor() => _scaffoldBackground.value;
 

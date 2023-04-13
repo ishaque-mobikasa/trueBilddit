@@ -157,18 +157,18 @@ class SignUpView extends GetView<SignUpController> {
                         TextSpan(
                           text: "Privacy Policy",
                           style: TextStyle(
-                              fontSize: 12.sp,
-                              color: AppPaintings.themeGreenColor,
-                              decoration: TextDecoration.underline),
+                            fontSize: 12.sp,
+                            color: AppPaintings.themeGreenColor,
+                          ),
                           recognizer: TapGestureRecognizer()..onTap = () {},
                         ),
                         const TextSpan(text: ' and '),
                         TextSpan(
                           text: "Terms of Use",
                           style: TextStyle(
-                              fontSize: 12.sp,
-                              color: AppPaintings.themeGreenColor,
-                              decoration: TextDecoration.underline),
+                            fontSize: 12.sp,
+                            color: AppPaintings.themeGreenColor,
+                          ),
                           recognizer: TapGestureRecognizer()..onTap = () {},
                         ),
                       ],
@@ -193,12 +193,18 @@ class SignUpView extends GetView<SignUpController> {
               Text.rich(
                 TextSpan(
                   text: 'Already have an account? ',
+                  style: AppPaintings.customSmallText.copyWith(
+                    color: AppPaintings.themeBlack,
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.w500,
+                  ),
                   children: [
                     TextSpan(
                       text: 'Sign In',
-                      style: TextStyle(
+                      style: AppPaintings.customSmallText.copyWith(
                         color: AppPaintings.themeGreenColor,
-                        decoration: TextDecoration.underline,
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w400,
                       ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {

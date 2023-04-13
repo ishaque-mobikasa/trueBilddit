@@ -37,8 +37,13 @@ class ShortButton extends StatelessWidget {
         maxWidth: maxWidth ?? size.width * 0.2.w,
         maxHeight: maxheight ?? size.height * 0.04.h,
       ),
-      decoration: BoxDecoration(
-          color: backGroundColor, borderRadius: BorderRadius.circular(10)),
+      decoration: BoxDecoration(boxShadow: const [
+        BoxShadow(
+          color: Color.fromRGBO(31, 31, 31, 0.04),
+          blurRadius: 20,
+          offset: Offset(0, 0),
+        ),
+      ], color: backGroundColor, borderRadius: BorderRadius.circular(10)),
       child: buttonType == ButtonType.elevatedButton
           ? ElevatedButton(
               style: buttonStyle ??

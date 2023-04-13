@@ -1,3 +1,5 @@
+import 'package:truebildit/app/utils/strings.dart';
+
 enum DeliveryStatus {
   pending,
   delivered,
@@ -31,6 +33,29 @@ extension PaymentMethodExtension on PaymentMethod {
         return "Mobile Money";
       case PaymentMethod.paypal:
         return "PayPal";
+      default:
+        return "UnPaid";
+    }
+  }
+}
+
+enum CardType { visa, mastercard, amex, discover, googlepay, applepay }
+
+extension GetCardType on CardType {
+  String get getCardName {
+    switch (this) {
+      case CardType.visa:
+        return AssetStrings.visaImage;
+      case CardType.mastercard:
+        return AssetStrings.masterCardImage;
+      case CardType.amex:
+        return AssetStrings.americanExpressImage;
+      case CardType.discover:
+        return AssetStrings.discoverCardImage;
+      case CardType.googlepay:
+        return AssetStrings.googlePayImage;
+      case CardType.applepay:
+        return AssetStrings.applePayImage;
       default:
         return "UnPaid";
     }

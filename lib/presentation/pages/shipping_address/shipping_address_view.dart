@@ -3,10 +3,10 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:truebildit/app/utility_functions/dummy_list.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/presentation/common_widgets/long_button.dart';
 import 'package:truebildit/presentation/common_widgets/short_button.dart';
-import 'package:truebildit/presentation/pages/address/view_all_address/dummy_address_list.dart';
 import 'package:truebildit/presentation/pages/shipping_address/controllers_binding/shipping_address_controllers.dart';
 
 import 'widgets/shipping_address_card.dart';
