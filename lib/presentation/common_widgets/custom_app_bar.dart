@@ -12,14 +12,18 @@ class CustomAppBar extends StatelessWidget {
       this.titleImage,
       this.iconColor,
       this.isBackButtonAllowed = true,
-      this.height});
+      this.height,
+      this.paddingForTitleFromBottom = 0.0,
+      this.onBackButtonPressed});
   final String? title;
+  final double? paddingForTitleFromBottom;
   final double? height;
   final bool? isBackButtonAllowed;
   final Widget? titleImage;
   final List<Widget>? actions;
   final Color? backGroundColor;
   final Color? iconColor;
+  final void Function()? onBackButtonPressed;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -30,21 +34,23 @@ class CustomAppBar extends StatelessWidget {
         backgroundColor: backGroundColor ?? AppPaintings.themeGreenColor,
         centerTitle: true,
         leading: isBackButtonAllowed!
-            ? IconButton(
-                icon: Icon(
-                  Icons.arrow_back_ios,
-                  size: 18.sp,
-                  color: iconColor ?? AppPaintings.kWhite,
-                ),
-                onPressed: () => {Get.back()},
-              )
+            ? Padding(
+                padding: EdgeInsets.only(bottom: paddingForTitleFromBottom!),
+                child: GestureDetector(
+                  onTap: onBackButtonPressed ?? () => Get.back(),
+                  child: Icon(Icons.arrow_back_ios,
+                      size: 18.sp, color: iconColor ?? AppPaintings.kWhite),
+                ))
             : const SizedBox.shrink(),
-        title: titleImage ??
-            Text(
-              title!,
-              style: AppPaintings.customLargeText
-                  .copyWith(color: AppPaintings.kWhite),
-            ),
+        title: Padding(
+          padding: EdgeInsets.only(bottom: paddingForTitleFromBottom!),
+          child: titleImage ??
+              Text(
+                title!,
+                style: AppPaintings.customLargeText
+                    .copyWith(color: AppPaintings.kWhite),
+              ),
+        ),
       ),
     );
   }

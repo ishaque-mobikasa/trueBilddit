@@ -7,6 +7,8 @@ import 'package:truebildit/presentation/pages/change_password/change_password_vi
 import 'package:truebildit/presentation/pages/change_password/controllers_binding/change_password_binding.dart';
 import 'package:truebildit/presentation/pages/dash_board/controllers_binding/dash_board_binding.dart';
 import 'package:truebildit/presentation/pages/dash_board/dash_board_view.dart';
+import 'package:truebildit/presentation/pages/delivery_scheduler/controller_binding/delivery_scheduler_binding.dart';
+import 'package:truebildit/presentation/pages/delivery_scheduler/delivery_scheduler_view.dart';
 import 'package:truebildit/presentation/pages/feed_back/contrtoller_binding/feed_back_binding.dart';
 import 'package:truebildit/presentation/pages/feed_back/pages/feed_back_page1.dart';
 import 'package:truebildit/presentation/pages/feed_back/pages/feed_back_page2.dart';
@@ -81,6 +83,7 @@ class Routes {
   static const feedBackPageOneView = "/feedBackPageOneView";
   static const feedBackPageTwo = "/feedBackPageTwoView";
   static const paymentView = "/paymentView";
+  static const deliverySchedulerView = "/deliverySchedulerView";
 }
 
 class AppPages {
@@ -197,5 +200,9 @@ class AppPages {
         name: Routes.paymentView,
         page: () => const PaymentView(),
         binding: PaymentBinding()),
+    GetPage(
+        name: Routes.deliverySchedulerView,
+        page: () => const DeliverySchedulerView(),
+        binding: DeliverySchedulerBinding()),
   ];
 }

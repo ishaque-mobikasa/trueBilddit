@@ -33,7 +33,7 @@ class AddSubstractButton extends StatelessWidget {
                     child: Icon(
                       Icons.remove,
                       color: AppPaintings.themeBlack,
-                      size: 20.sp,
+                      size: 15.sp,
                     ))),
           ),
           Flexible(
@@ -63,7 +63,7 @@ class AddSubstractButton extends StatelessWidget {
                         BoxDecoration(border: Border.all(color: borderColor)),
                     child: Icon(
                       Icons.add,
-                      size: 20.sp,
+                      size: 15.sp,
                       color: AppPaintings.themeBlack,
                     ))),
           ),

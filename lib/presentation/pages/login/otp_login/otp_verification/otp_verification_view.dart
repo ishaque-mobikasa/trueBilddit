@@ -69,10 +69,22 @@ class OTPverificationView extends GetView<OTPverificationController> {
               ),
               SizedBox(
                 height: 19.h,
-                child: Text(
-                  "Enter the OTP send to +44 7911 123456",
+                child: RichText(
+                  text: TextSpan(
+                      text: "Enter the OTP send to ",
+                      style: AppPaintings.customSmallText.copyWith(
+                        color: AppPaintings.themeBlack,
+                        fontSize: 12.sp,
+                      ),
+                      children: [
+                        TextSpan(
+                            text: "+44 7911 123456",
+                            style: AppPaintings.customSmallText.copyWith(
+                                color: AppPaintings.themeBlack,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 12.sp))
+                      ]),
                   textAlign: TextAlign.center,
-                  style: AppPaintings.customSmallText,
                 ),
               ),
               SizedBox(

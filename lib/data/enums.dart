@@ -61,3 +61,5 @@ extension GetCardType on CardType {
     }
   }
 }
+
+enum DeliveryScheduleType { normal, scheduled }

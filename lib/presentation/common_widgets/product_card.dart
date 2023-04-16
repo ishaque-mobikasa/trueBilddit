@@ -68,7 +68,7 @@ class ProductCard extends StatelessWidget {
                       style: TextStyle(
                           color: AppPaintings.themeBlack,
                           fontSize: 12.sp,
-                          fontWeight: FontWeight.w400),
+                          fontWeight: FontWeight.w300),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
@@ -116,7 +116,7 @@ class ProductCard extends StatelessWidget {
           ),
           Expanded(
             child: Container(
-              padding: EdgeInsets.only(right: 12.w, bottom: 15.h, top: 14.h),
+              padding: EdgeInsets.only(right: 10.w, bottom: 15.h, top: 14.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -139,14 +139,14 @@ class ProductCard extends StatelessWidget {
                           style: TextStyle(
                               color: AppPaintings.themeBlack,
                               fontSize: 12.sp,
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.w500),
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
                       SizedBox(
                         height: 10.h,
                         child: Text(
-                          "ex.VAT \u00A34.9",
+                          "ex. VAT \u00A34.9",
                           style: TextStyle(fontSize: 10.sp),
                           overflow: TextOverflow.ellipsis,
                         ),

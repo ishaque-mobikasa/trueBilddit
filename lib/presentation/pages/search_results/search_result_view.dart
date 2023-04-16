@@ -133,6 +133,7 @@ class SearchResultsView extends GetView<SearchController> {
               ],
             )),
         CustomAppBar(
+            paddingForTitleFromBottom: 21.h,
             title: Get.arguments ?? "",
             height: 120.h,
             titleImage: Image.asset(
@@ -141,7 +142,7 @@ class SearchResultsView extends GetView<SearchController> {
               width: 94.w,
             )),
         Container(
-          margin: EdgeInsets.only(top: 90.h),
+          margin: EdgeInsets.only(top: 94.h),
           height: 50.h,
           child: const CustomSearchField(
             hintText: "Search",

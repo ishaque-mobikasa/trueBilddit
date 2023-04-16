@@ -115,8 +115,8 @@ class PDPview extends GetView<PDPcontroller> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         productModel.title,
-                        style: AppPaintings.customLargeText
-                            .copyWith(fontSize: 20.sp),
+                        style: AppPaintings.customLargeText.copyWith(
+                            fontSize: 20.sp, fontWeight: FontWeight.w400),
                       ),
                     ),
                     SizedBox(
@@ -139,8 +139,7 @@ class PDPview extends GetView<PDPcontroller> {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         '£ ${productModel.price.toString()}',
-                        style: AppPaintings.customLargeText
-                            .copyWith(fontWeight: FontWeight.bold),
+                        style: AppPaintings.customLargeText,
                         maxLines: 1,
                       ),
                     ),
@@ -185,7 +184,7 @@ class PDPview extends GetView<PDPcontroller> {
                       title: Text(
                         "Technical Specifications",
                         style: AppPaintings.customLargeText.copyWith(
-                            fontSize: 16.sp, fontWeight: FontWeight.bold),
+                            fontSize: 16.sp, fontWeight: FontWeight.w500),
                       ),
                       iconColor: AppPaintings.themeBlack,
                       childrenPadding: EdgeInsets.symmetric(horizontal: 15.w),

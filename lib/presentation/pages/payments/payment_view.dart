@@ -34,7 +34,7 @@ class PaymentView extends GetView<PaymentController> {
                   height: 50.h,
                   child: ShortButton(
                       buttonTextStyle: TextStyle(
-                          fontSize: 14,
+                          fontSize: 14.sp,
                           color: AppPaintings.themeGreenColor,
                           fontWeight: FontWeight.w500),
                       backGroundColor: const Color.fromARGB(255, 255, 255, 255),
@@ -63,7 +63,7 @@ class PaymentView extends GetView<PaymentController> {
                 ),
               ),
               SizedBox(
-                height: 25.h,
+                height: 15.h,
               ),
               Container(
                 width: Get.width.w,
