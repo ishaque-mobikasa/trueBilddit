@@ -12,6 +12,7 @@ import 'package:truebildit/presentation/common_widgets/custom_app_bar.dart';
 import 'package:truebildit/presentation/common_widgets/long_button.dart';
 import 'package:truebildit/presentation/common_widgets/short_button.dart';
 import 'package:truebildit/presentation/pages/payments/controller_binding/payment_controller.dart';
+import 'package:truebildit/presentation/pages/payments/widgets/add_new_card_modal.dart';
 import 'package:truebildit/presentation/pages/payments/widgets/bank_card.dart';
 
 class PaymentView extends GetView<PaymentController> {
@@ -42,23 +43,27 @@ class PaymentView extends GetView<PaymentController> {
                       buttonType: ButtonType.outLinedButton,
                       outlineButtonBorderColor: AppPaintings.kWhite,
                       buttonText: "+ Add New DEBIT/CREDIT CARD",
-                      onPressed: () {}),
+                      onPressed: () {
+                        Get.bottomSheet(const AddNewBankCardModal());
+                      }),
                 ),
               ),
               SizedBox(
                 height: 11.h,
               ),
-              Column(
-                children: List.generate(
-                  4,
-                  (index) => BankCardTile(
-                    margin:
-                        EdgeInsets.only(bottom: 10.h, left: 15.w, right: 15.w),
-                    onTap: (bankCard) => log(bankCard.cardHolderName),
-                    bankCard: dummyCards[index],
-                    autovalidateMode: AutovalidateMode.always,
-                    cardNumber: "1234567890123456",
-                    isSelected: index == 2,
+              Obx(
+                () => Column(
+                  children: List.generate(
+                    4,
+                    (index) => BankCardTile(
+                      margin: EdgeInsets.only(
+                          bottom: 10.h, left: 15.w, right: 15.w),
+                      onTap: (bankCard) => controller.onCardSelected(index),
+                      bankCard: dummyCards[index],
+                      autovalidateMode: AutovalidateMode.always,
+                      cardNumber: "1234567890123456",
+                      isSelected: controller.selectedCardIndex.value == index,
+                    ),
                   ),
                 ),
               ),

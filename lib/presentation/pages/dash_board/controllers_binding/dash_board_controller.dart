@@ -3,16 +3,16 @@ import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/presentation/pages/delivery_scheduler/delivery_scheduler_view.dart';
 import 'package:truebildit/presentation/pages/home/home_view.dart';
-import 'package:truebildit/presentation/pages/search_results/search_result_view.dart';
-import 'package:truebildit/presentation/pages/sub_category_listing/sub_category_view.dart';
+import 'package:truebildit/presentation/pages/my_list/all_lists_view/my_list_view.dart';
+import 'package:truebildit/presentation/pages/payments/payment_view.dart';
 
 class DashBoardController extends GetxController {
   final Rx<Color> _scaffoldBackground = Colors.white.withAlpha(245).obs;
   RxInt selectedIndex = 0.obs;
   List<Widget> pages = [
     const HomeView(),
-    const SubCategoryView(),
-    const SearchResultsView(),
+    const MyListView(),
+    const PaymentView(),
     const DeliverySchedulerView()
   ];
   Color getScaffoldColor() => _scaffoldBackground.value;

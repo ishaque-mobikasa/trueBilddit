@@ -18,7 +18,7 @@ extension DeliveryStatusExtension on DeliveryStatus {
   }
 }
 
-enum PaymentMethod { cash, debitCard, creditCard, mobileMoney, paypal }
+enum PaymentMethod { cash, debitCard, creditCard, mobileMoney, paypal,verve }
 
 extension PaymentMethodExtension on PaymentMethod {
   String get getName {
@@ -33,13 +33,15 @@ extension PaymentMethodExtension on PaymentMethod {
         return "Mobile Money";
       case PaymentMethod.paypal:
         return "PayPal";
+        case PaymentMethod.verve:
+        return "Verve";
       default:
         return "UnPaid";
     }
   }
 }
 
-enum CardType { visa, mastercard, amex, discover, googlepay, applepay }
+enum CardType { visa, mastercard, amex, discover, googlepay, applepay ,verve,others}
 
 extension GetCardType on CardType {
   String get getCardName {
@@ -57,7 +59,7 @@ extension GetCardType on CardType {
       case CardType.applepay:
         return AssetStrings.applePayImage;
       default:
-        return "UnPaid";
+        return AssetStrings.googlePayImage;
     }
   }
 }

@@ -17,102 +17,100 @@ class SelectedListView extends GetView<SelectedListController> {
   @override
   Widget build(BuildContext context) {
     final args = Get.arguments;
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: AppPaintings.scaffoldBackgroundDimmed,
-        appBar: AppBar(
-          backgroundColor: AppPaintings.themeGreenColor,
-          elevation: 0,
-          toolbarHeight: 62.h,
-          centerTitle: true,
-          leading: IconButton(
-            icon: const Icon(
-              Icons.arrow_back_ios,
-            ),
-            onPressed: () => Get.back(),
+    return Scaffold(
+      backgroundColor: AppPaintings.scaffoldBackgroundDimmed,
+      appBar: AppBar(
+        backgroundColor: AppPaintings.themeGreenColor,
+        elevation: 0,
+        centerTitle: true,
+        toolbarHeight: 46.h,
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back_ios,
+            size: 18.sp,
           ),
-          title: Text(
-            args.toString(),
-            overflow: TextOverflow.ellipsis,
-          ),
-          actions: [
-            GestureDetector(
-              onTap: () => log("Clicked on edit icon"),
-              child: ImageIcon(
-                AssetImage(AssetStrings.editIcon),
-                color: AppPaintings.kWhite,
-                size: 16,
-              ),
-            ),
-            SizedBox(width: 20.w),
-            GestureDetector(
-              onTap: () => log("Clicked on delete icon"),
-              child: ImageIcon(
-                AssetImage(AssetStrings.deleteIcon),
-                color: AppPaintings.kWhite,
-                size: 19.sp,
-              ),
-            ),
-            SizedBox(width: 19.w),
-          ],
+          onPressed: () => Get.back(),
         ),
-        body: Column(
-          children: [
-            SizedBox(height: 15.h),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                SizedBox(width: 15.w),
-                Expanded(
-                    flex: 2,
-                    child: Text(
-                      "10 items Available",
-                      style: AppPaintings.customSmallText
-                          .copyWith(fontSize: 14, fontWeight: FontWeight.w500),
-                    )),
-                Flexible(
-                  child: CupertinoButton(
-                      child: Text(
-                        "CLEAR ALL",
-                        style: TextStyle(
-                            color: AppPaintings.appRedColor,
-                            fontSize: 12,
-                            fontFamily: GoogleFonts.montserrat().fontFamily,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      onPressed: () {
-                        log("Cleared all items");
-                      }),
-                )
-              ],
+        title: Text(
+          args.toString(),
+          overflow: TextOverflow.ellipsis,
+        ),
+        actions: [
+          GestureDetector(
+            onTap: () => log("Clicked on edit icon"),
+            child: ImageIcon(
+              AssetImage(AssetStrings.editIcon),
+              color: AppPaintings.kWhite,
+              size: 16,
             ),
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.only(top: 15.h),
-                child: SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Column(
-                      children: List.generate(
-                    10,
-                    (index) => ProductCard(
-                        
-                        iconColor: const Color(0xffB7B7B7),
-                        icon: CupertinoIcons.delete,
-                        onStarButtonClick: () =>
-                            log("Clicked on Right icon button"),
-                        product: ProductModel(
-                        sku: "75387584",
-                            id: "1",
-                            title: "Yellow Armoured Cable MC Wire",
-                            description: "Raaja",
-                            price: 89.43,
-                            image: "assets/images/wire.png")),
+          ),
+          SizedBox(width: 20.w),
+          GestureDetector(
+            onTap: () => log("Clicked on delete icon"),
+            child: ImageIcon(
+              AssetImage(AssetStrings.deleteIcon),
+              color: AppPaintings.kWhite,
+              size: 19.sp,
+            ),
+          ),
+          SizedBox(width: 19.w),
+        ],
+      ),
+      body: Column(
+        children: [
+          SizedBox(height: 15.h),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(width: 15.w),
+              Expanded(
+                  flex: 2,
+                  child: Text(
+                    "10 items Available",
+                    style: AppPaintings.customSmallText
+                        .copyWith(fontSize: 14, fontWeight: FontWeight.w500),
                   )),
-                ),
+              Flexible(
+                child: CupertinoButton(
+                    child: Text(
+                      "CLEAR ALL",
+                      style: TextStyle(
+                          color: AppPaintings.appRedColor,
+                          fontSize: 12,
+                          fontFamily: GoogleFonts.montserrat().fontFamily,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    onPressed: () {
+                      log("Cleared all items");
+                    }),
+              )
+            ],
+          ),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.only(top: 15.h),
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                    children: List.generate(
+                  10,
+                  (index) => ProductCard(
+                      iconColor: const Color(0xffB7B7B7),
+                      icon: CupertinoIcons.delete,
+                      onStarButtonClick: () =>
+                          log("Clicked on Right icon button"),
+                      product: ProductModel(
+                          sku: "75387584",
+                          id: "1",
+                          title: "Yellow Armoured Cable MC Wire",
+                          description: "Raaja",
+                          price: 89.43,
+                          image: "assets/images/wire.png")),
+                )),
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }
