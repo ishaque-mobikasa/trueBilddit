@@ -46,88 +46,39 @@ class DeliveryDatePicker extends StatelessWidget {
                   )),
                   height: 54.h,
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      GestureDetector(
-                        onTap: onDateSlotClick != null
-                            ? () => onDateSlotClick!(0)
-                            : null,
-                        child: Container(
-                          alignment: Alignment.center,
-                          height: 32.h,
-                          width: 83.w,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(3.r),
-                            color: selectedDateSlot == 0
-                                ? AppPaintings.themeGreenColor
-                                : AppPaintings.feedBackScreenBackgroundColor,
-                          ),
-                          child: Text(
-                            "Tomorrow",
-                            style: AppPaintings.customSmallText.copyWith(
-                                color: selectedDateSlot == 0
-                                    ? AppPaintings.kWhite
-                                    : AppPaintings.hintTextColor,
-                                fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: onDateSlotClick != null
-                            ? () => onDateSlotClick!(1)
-                            : null,
-                        child: Container(
-                          alignment: Alignment.center,
-                          height: 32.h,
-                          width: 83.w,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(3.r),
-                            color: selectedDateSlot == 1
-                                ? AppPaintings.themeGreenColor
-                                : AppPaintings.feedBackScreenBackgroundColor,
-                          ),
-                          child: Text(
-                            DateFormat('dd/MM/yyyy')
-                                .format(
-                                    DateTime.now().add(const Duration(days: 2)))
-                                .toString(),
-                            style: AppPaintings.customSmallText.copyWith(
-                                color: selectedDateSlot == 1
-                                    ? AppPaintings.kWhite
-                                    : AppPaintings.hintTextColor,
-                                fontWeight: FontWeight.w500),
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: List.generate(
+                        3,
+                        (index) => GestureDetector(
+                          onTap: onDateSlotClick != null
+                              ? () => onDateSlotClick!(index)
+                              : null,
+                          child: Container(
+                            alignment: Alignment.center,
+                            height: 32.h,
+                            width: 83.w,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(3.r),
+                              color: selectedDateSlot == index
+                                  ? AppPaintings.themeGreenColor
+                                  : AppPaintings.feedBackScreenBackgroundColor,
+                            ),
+                            child: Text(
+                              index == 0
+                                  ? "Tomorrow"
+                                  : DateFormat('dd/MM/yyyy')
+                                      .format(DateTime.now()
+                                          .add(Duration(days: index + 1)))
+                                      .toString(),
+                              style: AppPaintings.customSmallText.copyWith(
+                                  color: selectedDateSlot == index
+                                      ? AppPaintings.kWhite
+                                      : AppPaintings.hintTextColor,
+                                  fontWeight: FontWeight.w500),
+                            ),
                           ),
                         ),
-                      ),
-                      GestureDetector(
-                        onTap: onDateSlotClick != null
-                            ? () => onDateSlotClick!(2)
-                            : null,
-                        child: Container(
-                          alignment: Alignment.center,
-                          height: 32.h,
-                          width: 83.w,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(3.r),
-                            color: selectedDateSlot == 2
-                                ? AppPaintings.themeGreenColor
-                                : AppPaintings.feedBackScreenBackgroundColor,
-                          ),
-                          child: Text(
-                            DateFormat('dd/MM/yyyy')
-                                .format(
-                                    DateTime.now().add(const Duration(days: 3)))
-                                .toString(),
-                            style: AppPaintings.customSmallText.copyWith(
-                                color: selectedDateSlot == 2
-                                    ? AppPaintings.kWhite
-                                    : AppPaintings.hintTextColor,
-                                fontWeight: FontWeight.w500),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                      )),
                 )
               ],
             ))

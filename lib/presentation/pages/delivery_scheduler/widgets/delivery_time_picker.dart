@@ -3,8 +3,15 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 
 List<String> timeSlots = [
-
-
+  "09-10",
+  "10-11",
+  "11-12",
+  "12-13",
+  "13-14",
+  "14-15",
+  "15-16",
+  "16-17",
+  "17-18",
 ];
 
 class DeliveryTimePicker extends StatelessWidget {
@@ -50,195 +57,97 @@ class DeliveryTimePicker extends StatelessWidget {
                   height: 54.h,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        alignment: Alignment.center,
-                        height: 32.h,
-                        width: 60.w,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(3.r),
-                          color: selectedTimeSlot == 0
-                              ? AppPaintings.themeGreenColor
-                              : AppPaintings.feedBackScreenBackgroundColor,
-                        ),
-                        child: Text(
-                          "09-10",
-                          style: AppPaintings.customSmallText.copyWith(
-                              color: selectedTimeSlot == 0
-                                  ? AppPaintings.kWhite
-                                  : AppPaintings.hintTextColor,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        height: 32.h,
-                        width: 60.w,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(3.r),
-                          color: selectedTimeSlot == 1
-                              ? AppPaintings.themeGreenColor
-                              : AppPaintings.feedBackScreenBackgroundColor,
-                        ),
-                        child: Text(
-                          "10-11",
-                          style: AppPaintings.customSmallText.copyWith(
-                              color: selectedTimeSlot == 1
-                                  ? AppPaintings.kWhite
-                                  : AppPaintings.hintTextColor,
-                              fontWeight: FontWeight.w500),
+                    children: List.generate(
+                      4,
+                      (index) => GestureDetector(
+                        onTap: onTimeSlotClick != null
+                            ? () => onTimeSlotClick!(index)
+                            : null,
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: 32.h,
+                          width: 60.w,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(3.r),
+                            color: selectedTimeSlot == index
+                                ? AppPaintings.themeGreenColor
+                                : AppPaintings.feedBackScreenBackgroundColor,
+                          ),
+                          child: Text(
+                            timeSlots[index],
+                            style: AppPaintings.customSmallText.copyWith(
+                                color: selectedTimeSlot == index
+                                    ? AppPaintings.kWhite
+                                    : AppPaintings.hintTextColor,
+                                fontWeight: FontWeight.w500),
+                          ),
                         ),
                       ),
-                      Container(
-                        alignment: Alignment.center,
-                        height: 32.h,
-                        width: 60.w,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(3.r),
-                          color: selectedTimeSlot == 2
-                              ? AppPaintings.themeGreenColor
-                              : AppPaintings.feedBackScreenBackgroundColor,
-                        ),
-                        child: Text(
-                          "11-12",
-                          style: AppPaintings.customSmallText.copyWith(
-                              color: selectedTimeSlot == 2
-                                  ? AppPaintings.kWhite
-                                  : AppPaintings.hintTextColor,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        height: 32.h,
-                        width: 60.w,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(3.r),
-                          color: selectedTimeSlot == 3
-                              ? AppPaintings.themeGreenColor
-                              : AppPaintings.feedBackScreenBackgroundColor,
-                        ),
-                        child: Text(
-                          "12-13",
-                          style: AppPaintings.customSmallText.copyWith(
-                              color: selectedTimeSlot == 3
-                                  ? AppPaintings.kWhite
-                                  : AppPaintings.hintTextColor,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
-                SizedBox(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: List.generate(
+                    4,
+                    (index) => GestureDetector(
+                      onTap: onTimeSlotClick != null
+                          ? () => onTimeSlotClick!(index + 4)
+                          : null,
+                      child: Container(
                         alignment: Alignment.center,
                         height: 32.h,
                         width: 60.w,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(3.r),
-                          color: selectedTimeSlot == 4
+                          color: selectedTimeSlot == index + 4
                               ? AppPaintings.themeGreenColor
                               : AppPaintings.feedBackScreenBackgroundColor,
                         ),
                         child: Text(
-                          "13-14",
+                          timeSlots[index + 4],
                           style: AppPaintings.customSmallText.copyWith(
-                              color: selectedTimeSlot == 4
+                              color: selectedTimeSlot == index + 4
                                   ? AppPaintings.kWhite
                                   : AppPaintings.hintTextColor,
                               fontWeight: FontWeight.w500),
                         ),
                       ),
-                      Container(
-                        alignment: Alignment.center,
-                        height: 32.h,
-                        width: 60.w,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(3.r),
-                          color: selectedTimeSlot == 5
-                              ? AppPaintings.themeGreenColor
-                              : AppPaintings.feedBackScreenBackgroundColor,
-                        ),
-                        child: Text(
-                          "14-15",
-                          style: AppPaintings.customSmallText.copyWith(
-                              color: selectedTimeSlot == 5
-                                  ? AppPaintings.kWhite
-                                  : AppPaintings.hintTextColor,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        height: 32.h,
-                        width: 60.w,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(3.r),
-                          color: selectedTimeSlot == 6
-                              ? AppPaintings.themeGreenColor
-                              : AppPaintings.feedBackScreenBackgroundColor,
-                        ),
-                        child: Text(
-                          "15-16",
-                          style: AppPaintings.customSmallText.copyWith(
-                              color: selectedTimeSlot == 6
-                                  ? AppPaintings.kWhite
-                                  : AppPaintings.hintTextColor,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        height: 32.h,
-                        width: 60.w,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(3.r),
-                          color: selectedTimeSlot == 7
-                              ? AppPaintings.themeGreenColor
-                              : AppPaintings.feedBackScreenBackgroundColor,
-                        ),
-                        child: Text(
-                          "16-17",
-                          style: AppPaintings.customSmallText.copyWith(
-                              color: selectedTimeSlot == 7
-                                  ? AppPaintings.kWhite
-                                  : AppPaintings.hintTextColor,
-                              fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
                 Row(
                   children: [
-                    Container(
-                      margin:
-                          EdgeInsets.only(left: 8.w, top: 8.h, bottom: 11.h),
-                      alignment: Alignment.center,
-                      height: 32.h,
-                      width: 60.w,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(3.r),
-                        color: AppPaintings.feedBackScreenBackgroundColor,
-                      ),
-                      child: Text(
-                        "17-18",
-                        style: AppPaintings.customSmallText.copyWith(
-                            color: selectedTimeSlot == 8
-                                ? AppPaintings.kWhite
-                                : AppPaintings.hintTextColor,
-                            fontWeight: FontWeight.w500),
+                    GestureDetector(
+                      onTap: onTimeSlotClick != null
+                          ? () => onTimeSlotClick!(8)
+                          : null,
+                      child: Container(
+                        margin:
+                            EdgeInsets.only(left: 8.w, top: 8.h, bottom: 11.h),
+                        alignment: Alignment.center,
+                        height: 32.h,
+                        width: 60.w,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(3.r),
+                          color: selectedTimeSlot == 8
+                              ? AppPaintings.themeGreenColor
+                              : AppPaintings.feedBackScreenBackgroundColor,
+                        ),
+                        child: Text(
+                          timeSlots[8],
+                          style: AppPaintings.customSmallText.copyWith(
+                              color: selectedTimeSlot == 8
+                                  ? AppPaintings.kWhite
+                                  : AppPaintings.hintTextColor,
+                              fontWeight: FontWeight.w500),
+                        ),
                       ),
                     ),
                   ],
                 ),
               ],
-            )
-            )
+            ))
         : const SizedBox.shrink();
   }
 }

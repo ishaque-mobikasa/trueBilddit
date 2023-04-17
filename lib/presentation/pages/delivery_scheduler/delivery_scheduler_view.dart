@@ -30,10 +30,12 @@ class DeliverySchedulerView extends GetView<DeliverySchedulerController> {
         ),
         Obx(
           () => SchedulerCard(
-            onDateSlotClick: (value) => {
-             
-              controller.onDeliveryDateSlotClick(value),
+            onTimeSlotClick: (value) {
+              log("value: $value");
+              controller.onDeliveryTimeSlotClick(value);
             },
+            onDateSlotClick: (value) =>
+                controller.onDeliveryDateSlotClick(value),
             onRadioButtonClick: (value) {
               log("value: $value");
               controller.setDeliveryType(value == false
@@ -42,7 +44,7 @@ class DeliverySchedulerView extends GetView<DeliverySchedulerController> {
             },
             deliveryScheduleType: controller.deliveryScheduleType.value,
             selectedDateSlot: controller.selectedDateSlot.value,
-            selectedTimeSlot: 1,
+            selectedTimeSlot: controller.selectedTimeSlot.value,
             padding: EdgeInsets.only(
               bottom: controller.deliveryScheduleType.value ==
                       DeliveryScheduleType.normal
@@ -60,8 +62,8 @@ class DeliverySchedulerView extends GetView<DeliverySchedulerController> {
               child: LongButton(
                   buttonType: ButtonType.elevatedButton,
                   buttonText: "PROCEED TO PAY - £369.00",
-                  onPressed: () async {
-                    await Get.to(() {});
+                  onPressed: () {
+                    log("Proceed to pay");
                   })),
         ),
       ],

@@ -15,4 +15,8 @@ class DeliverySchedulerController extends GetxController {
   onDeliveryDateSlotClick(int value) {
     value != selectedDateSlot.value ? selectedDateSlot.value = value : null;
   }
+
+  onDeliveryTimeSlotClick(int value) {
+    value != selectedTimeSlot.value ? selectedTimeSlot.value = value : null;
+  }
 }

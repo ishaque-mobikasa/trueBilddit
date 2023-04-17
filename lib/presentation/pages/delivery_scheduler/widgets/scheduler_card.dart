@@ -15,10 +15,11 @@ class SchedulerCard extends StatelessWidget {
       this.selectedTimeSlot,
       this.onRadioButtonClick,
       this.deliveryScheduleType = DeliveryScheduleType.normal,
-      this.onDateSlotClick});
+      this.onDateSlotClick, this.onTimeSlotClick});
   final EdgeInsets? margin;
   final EdgeInsets? padding;
   final void Function(int value)? onDateSlotClick;
+  final void Function(int value)? onTimeSlotClick;
   final int? selectedDateSlot;
   final int? selectedTimeSlot;
   final DeliveryScheduleType? deliveryScheduleType;
@@ -66,7 +67,10 @@ class SchedulerCard extends StatelessWidget {
                     child: Radio<bool>(
                       activeColor: AppPaintings.themeGreenColor,
                       fillColor: MaterialStateProperty.all(
-                          AppPaintings.themeGreenColor),
+                        deliveryScheduleType == DeliveryScheduleType.normal
+                            ? AppPaintings.themeGreenColor
+                            : const Color(0xffE0E0E0),
+                      ),
                       value:
                           deliveryScheduleType == DeliveryScheduleType.normal,
                       groupValue: true,
@@ -95,8 +99,11 @@ class SchedulerCard extends StatelessWidget {
                   height: 23.sp,
                   width: 23.sp,
                   child: Radio<bool>(
-                    fillColor:
-                        MaterialStateProperty.all(AppPaintings.themeGreenColor),
+                    fillColor: MaterialStateProperty.all(
+                      deliveryScheduleType == DeliveryScheduleType.scheduled
+                          ? AppPaintings.themeGreenColor
+                          : const Color(0xffE0E0E0),
+                    ),
                     value:
                         deliveryScheduleType == DeliveryScheduleType.scheduled,
                     groupValue: true,
@@ -137,6 +144,7 @@ class SchedulerCard extends StatelessWidget {
               left: 49.w,
             ),
             child: DeliveryTimePicker(
+              onTimeSlotClick: onTimeSlotClick,
               selectedTimeSlot: selectedTimeSlot,
               isShown: deliveryScheduleType == DeliveryScheduleType.scheduled,
             ),
