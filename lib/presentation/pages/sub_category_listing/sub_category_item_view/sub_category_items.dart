@@ -37,7 +37,7 @@ class SubCategoryItemsView extends GetView<SubcategoryItemsController> {
                           "10 Items Available",
                           style: TextStyle(
                               fontSize: 12.sp,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.bold,
                               color: AppPaintings.themeBlack),
                         )),
                         SizedBox(

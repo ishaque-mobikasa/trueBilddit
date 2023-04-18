@@ -57,7 +57,7 @@ class CustomFormField extends StatelessWidget {
             type == FieldType.eMail
                 ? LengthLimitingTextInputFormatter(30)
                 : type == FieldType.normalInputField
-                    ? LengthLimitingTextInputFormatter(15)
+                    ? LengthLimitingTextInputFormatter(25)
                     : type == FieldType.phoneNumber
                         ? LengthLimitingTextInputFormatter(10)
                         : LengthLimitingTextInputFormatter(20),
@@ -96,7 +96,8 @@ class CustomFormField extends StatelessWidget {
               focusedBorder: UnderlineInputBorder(
                   borderSide: BorderSide(color: AppPaintings.themeGreenColor)),
               enabledBorder: const OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.transparent))),
+                  borderSide: BorderSide(color: Colors.transparent))
+                  ),
           validator: autovalidateMode != AutovalidateMode.disabled
               ? (type == FieldType.eMail
                   ? (value) {

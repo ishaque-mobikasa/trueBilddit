@@ -73,7 +73,7 @@ class OTPverificationView extends GetView<OTPverificationController> {
                   text: TextSpan(
                       text: "Enter the OTP send to ",
                       style: AppPaintings.customSmallText.copyWith(
-                        color: AppPaintings.themeBlack,
+                        color: AppPaintings.themeLightBlack,
                         fontSize: 12.sp,
                       ),
                       children: [

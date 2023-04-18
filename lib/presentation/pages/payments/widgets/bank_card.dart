@@ -11,7 +11,6 @@ class BankCardTile extends StatelessWidget {
   final EdgeInsets? padding;
   final bool isSelected;
   final BankCardModel bankCard;
-  final String cardNumber;
 
   final void Function(BankCardModel bankCard)? onTap;
   final AutovalidateMode? autovalidateMode;
@@ -21,7 +20,6 @@ class BankCardTile extends StatelessWidget {
       this.autovalidateMode = AutovalidateMode.always,
       this.padding,
       required this.isSelected,
-      required this.cardNumber,
       this.onTap,
       required this.bankCard});
 
@@ -62,11 +60,19 @@ class BankCardTile extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(left: 14.w, right: 13.w),
                     child: SvgPicture.asset(
-                     bankCard.cardType.getCardName,
-                      width: 32.5.w,
+                      bankCard.cardType.getCardName,
+                      width: bankCard.cardType == CardType.googlepay ||
+                              bankCard.cardType == CardType.applepay
+                          ? 24.sp
+                          : 32.5.w,
                     ),
                   ),
-                  Text("**** **** ****  ${cardNumber.substring(12)}",
+                  Text(
+                      bankCard.cardType == CardType.applepay
+                          ? "Apple Pay"
+                          : bankCard.cardType == CardType.googlepay
+                              ? "Google Pay"
+                              : "**** **** ****  ${bankCard.cardNumber.substring(12)}",
                       style: AppPaintings.customSmallText.copyWith(
                           color: AppPaintings.themeBlack,
                           fontSize: 14.sp,

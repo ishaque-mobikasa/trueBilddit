@@ -61,7 +61,6 @@ class PaymentView extends GetView<PaymentController> {
                       onTap: (bankCard) => controller.onCardSelected(index),
                       bankCard: dummyCards[index],
                       autovalidateMode: AutovalidateMode.always,
-                      cardNumber: "1234567890123456",
                       isSelected: controller.selectedCardIndex.value == index,
                     ),
                   ),
@@ -100,7 +99,6 @@ class PaymentView extends GetView<PaymentController> {
                     cvvCode: "123",
                   ),
                   autovalidateMode: AutovalidateMode.always,
-                  cardNumber: "1234567890123456",
                   isSelected: false),
               Platform.isIOS
                   ? BankCardTile(
@@ -115,7 +113,6 @@ class PaymentView extends GetView<PaymentController> {
                         cvvCode: "123",
                       ),
                       autovalidateMode: AutovalidateMode.always,
-                      cardNumber: "1234567890123456",
                       isSelected: false)
                   : const SizedBox.shrink(),
               SizedBox(
