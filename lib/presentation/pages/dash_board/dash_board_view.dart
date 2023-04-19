@@ -1,6 +1,7 @@
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/strings.dart';
@@ -19,12 +20,26 @@ class DashBoardView extends GetView<DashBoardController> {
         backgroundColor: controller.getScaffoldColor(),
         body: Obx(() => controller.currentPage),
         bottomNavigationBar: Obx(
-          () => ClipRRect(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(15),
-              topRight: Radius.circular(15),
+          () => Container(
+            clipBehavior: Clip.hardEdge,
+            height: 63.h,
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+              ),
+              color: AppPaintings.kWhite,
+              boxShadow: const [
+                BoxShadow(
+                  color: Color.fromRGBO(31, 31, 31, 0.1),
+                  spreadRadius: 0,
+                  blurRadius: 15,
+                  offset: Offset(0, 0),
+                ),
+              ],
             ),
             child: CustomNavigationBar(
+                backgroundColor: AppPaintings.kWhite,
                 strokeColor: AppPaintings.themeGreenColor,
                 selectedColor: AppPaintings.themeGreenColor,
                 onTap: (index) {

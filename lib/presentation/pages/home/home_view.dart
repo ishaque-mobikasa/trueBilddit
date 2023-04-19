@@ -22,7 +22,7 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    
+
     return SingleChildScrollView(
       physics: const NeverScrollableScrollPhysics(),
       child: Stack(
