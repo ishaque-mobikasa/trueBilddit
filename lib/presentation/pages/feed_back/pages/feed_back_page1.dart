@@ -196,7 +196,7 @@ class FeedBackPageOne extends GetView<FeedBackController> {
         ),
         CustomAppBar(
           height: 90.h,
-          title: 'FeedBack',
+          title: 'Feedback',
         ),
       ],
     );

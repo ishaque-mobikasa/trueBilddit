@@ -133,13 +133,13 @@ class ProductCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       SizedBox(
-                        height: 18.h,
+                        height: 16.h,
                         child: Text(
-                          "\u00A3 ${product.price.toStringAsFixed(2).toString()}",
+                          "\u00A3${product.price.toStringAsFixed(2).toString()}",
                           style: TextStyle(
                               color: AppPaintings.themeBlack,
                               fontSize: 12.sp,
-                              fontWeight: FontWeight.w500),
+                              fontWeight: FontWeight.bold),
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),

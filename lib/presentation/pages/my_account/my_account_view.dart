@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
@@ -20,55 +21,83 @@ class MyAccountView extends GetView<MyAccountController> {
     return Stack(
       children: [
         SingleChildScrollView(
-          padding: EdgeInsets.only(top: 88.h),
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
-              Container(
-                constraints:
-                    BoxConstraints(maxHeight: 213.h, minWidth: Get.width),
-                decoration: BoxDecoration(color: AppPaintings.themeGreenColor),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    const CircledProfileImage(
-                      isCameraIconed: false,
-                    ),
-                    Column(
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                              style: const TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 20),
-                              text: "Hello, ",
-                              children: [
-                                TextSpan(
-                                    text: "Richard George",
+              Stack(
+                children: [
+                  SvgPicture.asset(
+                    AssetStrings.myAccountGreen,
+                  ),
+                  Positioned(
+                    top: 80.h,
+                    child: Container(
+                      constraints:
+                          BoxConstraints(maxHeight: 213.h, minWidth: Get.width),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          const CircledProfileImage(
+                            isCameraIconed: false,
+                          ),
+                          Column(
+                            children: [
+                              RichText(
+                                text: TextSpan(
                                     style: TextStyle(
                                         color: Colors.white,
-                                        fontWeight: FontWeight.w600,
+                                        fontWeight: FontWeight.w400,
                                         fontFamily:
                                             GoogleFonts.montserrat().fontFamily,
-                                        fontSize: 20))
-                              ]),
-                        ),
-                        SizedBox(height: 5.h),
-                        Text(
-                          "richard.george@gmail.com",
-                          overflow: TextOverflow.ellipsis,
-                          maxLines: 1,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: GoogleFonts.montserrat().fontFamily,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 12),
-                        )
-                      ],
-                    )
-                  ],
-                ),
+                                        fontSize: 20),
+                                    text: "Hello, ",
+                                    children: [
+                                      TextSpan(
+                                          text: "Richard George",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w600,
+                                              fontFamily:
+                                                  GoogleFonts.montserrat()
+                                                      .fontFamily,
+                                              fontSize: 20))
+                                    ]),
+                              ),
+                              SizedBox(height: 5.h),
+                              Text(
+                                "richard.george@gmail.com",
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontFamily:
+                                        GoogleFonts.montserrat().fontFamily,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 12),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  CustomAppBar(
+                    height: 70,
+                    backGroundColor:
+                        AppPaintings.themeGreenColor.withOpacity(0.07),
+                    isBackButtonAllowed: false,
+                    actions: [
+                      IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.close,
+                            color: Colors.white,
+                          ))
+                    ],
+                    titleImage: Image.asset(AssetStrings.bildItLogo,
+                        width: 94.w, height: 24.h),
+                  ),
+                ],
               ),
               SingleChildScrollView(
                 padding: EdgeInsets.only(left: 15.w, right: 15.w, top: 12.h),
@@ -91,19 +120,6 @@ class MyAccountView extends GetView<MyAccountController> {
               ),
             ],
           ),
-        ),
-        CustomAppBar(
-          isBackButtonAllowed: false,
-          actions: [
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.close,
-                  color: Colors.white,
-                ))
-          ],
-          titleImage:
-              Image.asset(AssetStrings.bildItLogo, width: 94.w, height: 24.h),
         ),
       ],
     );

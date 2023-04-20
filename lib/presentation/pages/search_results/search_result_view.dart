@@ -37,7 +37,7 @@ class SearchResultsView extends GetView<SearchController> {
                         "5234 Items found",
                         style: TextStyle(
                             fontSize: 12.sp,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.bold,
                             color: AppPaintings.themeBlack),
                       )),
                       SizedBox(
@@ -144,9 +144,10 @@ class SearchResultsView extends GetView<SearchController> {
         Container(
           margin: EdgeInsets.only(top: 94.h),
           height: 50.h,
-          child: const CustomSearchField(
+          child: CustomSearchField(
+            iconColor: AppPaintings.themeBlack,
+            hintStyle: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w400),
             hintText: "Search",
-            initialValue: "Cable MC Wire",
           ),
         ),
       ],

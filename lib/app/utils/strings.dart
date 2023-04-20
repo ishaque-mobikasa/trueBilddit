@@ -58,6 +58,7 @@ class AssetStrings {
   static String editIcon = "assets/images/edit_icon.png";
   static String deleteIcon = "assets/images/delete_icon.png";
   static String searchIcon = "assets/images/search_icon.png";
+  static String searchIconSvg = "assets/images/search_icon.svg";
   static String personIcon = "assets/images/person_icon.png";
   static String inputOtp = "assets/images/input_otp.png";
   static String carouselImage = "assets/images/slider_image.png";
@@ -69,5 +70,6 @@ class AssetStrings {
   static String americanExpressImage = "assets/images/american_express.svg";
   static String applePayImage = "assets/images/apple_pay.svg";
   static String googlePayImage = "assets/images/google_pay.svg";
-  
+  static String homeScreenGreen = "assets/images/home_green_background.svg";
+  static String myAccountGreen = "assets/images/my_account_green.svg";
 }

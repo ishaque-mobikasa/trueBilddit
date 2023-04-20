@@ -10,16 +10,15 @@ import 'package:truebildit/presentation/common_widgets/short_button.dart';
 import 'package:truebildit/presentation/pages/payments/widgets/card_input_field.dart';
 
 class AddNewBankCardModal extends StatelessWidget {
-  const AddNewBankCardModal({super.key});
-
+  const AddNewBankCardModal({super.key, required this.formKey});
+  final GlobalKey<FormState> formKey;
   @override
   Widget build(BuildContext context) {
-    final key = GlobalKey<FormState>();
     final size = MediaQuery.of(context).size;
     return SingleChildScrollView(
       physics: const NeverScrollableScrollPhysics(),
       child: Form(
-        key: key,
+        key: formKey,
         child: ClipRRect(
           borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(25), topRight: Radius.circular(25)),
@@ -64,7 +63,8 @@ class AddNewBankCardModal extends StatelessWidget {
                 SizedBox(height: 28.h),
                 CardInputField(
                   cardFieldType: CardFileldType.cardNumber,
-                  hintText: "Card Number",
+                  hintText: "Card Number*",
+                  hintStyle: AppPaintings.customSmallText,
                 ),
                 SizedBox(height: 10.h),
                 SizedBox(
@@ -82,7 +82,7 @@ class AddNewBankCardModal extends StatelessWidget {
                 SizedBox(height: 10.h),
                 CardInputField(
                   cardFieldType: CardFileldType.cvv,
-                  hintText: "CVV",
+                  hintText: "CVV*",
                 ),
                 SizedBox(height: 21.h),
                 SizedBox(
@@ -97,7 +97,7 @@ class AddNewBankCardModal extends StatelessWidget {
                             buttonType: ButtonType.elevatedButton,
                             buttonText: "ADD CARD",
                             onPressed: () {
-                              log(key.currentState!.validate().toString());
+                              log(formKey.currentState!.validate().toString());
                             }),
                       ),
                       SizedBox(

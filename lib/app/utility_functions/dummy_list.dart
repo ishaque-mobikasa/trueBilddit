@@ -19,6 +19,12 @@ List<CircularItemModel> homeItems = [
       image: AssetStrings.fireAndSecurity, title: "Fire& \nSecurity"),
   CircularItemModel(
       image: AssetStrings.gardeningIcon, title: "Outdoor & Gardening"),
+  CircularItemModel(
+      image: AssetStrings.ironMongery, title: "General Construction"),
+  CircularItemModel(
+      image: AssetStrings.fireAndSecurity, title: "Fire& \nSecurity"),
+  CircularItemModel(
+      image: AssetStrings.gardeningIcon, title: "Outdoor & Gardening"),
 ];
 List<BankCardModel> dummyCards = [
   BankCardModel(
@@ -49,7 +55,7 @@ List<BankCardModel> dummyCards = [
     cardHolderName: "Ishaque K",
     cvvCode: "123",
   ),
-   BankCardModel(
+  BankCardModel(
     cardNumber: "1234567890123456",
     cardType: CardType.mastercard,
     expiryDate: "12/22",

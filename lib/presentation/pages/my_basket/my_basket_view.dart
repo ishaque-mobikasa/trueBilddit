@@ -42,6 +42,7 @@ class MyBasketView extends StatelessWidget {
             children: List.generate(
                 3,
                 (index) => ProductCard(
+                      showAddButton: false,
                       margin: EdgeInsets.only(
                           left: 15.w, right: 15.w, bottom: 10.h),
                       icon: CupertinoIcons.delete,

@@ -58,7 +58,12 @@ class ProductTileCard extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 height: 33.h,
                 padding: EdgeInsets.only(top: 6.h, left: 9.w, bottom: 12.h),
-                child: Text('£ ${productModel.price.toString()}'),
+                child: Text(
+                  '£ ${productModel.price.toString()}',
+                  style: AppPaintings.customSmallText.copyWith(
+                      color: AppPaintings.themeBlack,
+                      fontWeight: FontWeight.bold),
+                ),
               )
             ],
           ),

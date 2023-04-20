@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/utils/app_paintings.dart';
 import 'package:truebildit/app/utils/strings.dart';
@@ -10,7 +11,7 @@ class CustomSearchField extends StatelessWidget {
   final String? hintText;
   final IconData? icons;
   final IconData? postFixIcon;
-
+  final Color? iconColor;
   final EdgeInsetsGeometry padding;
   final TextEditingController? controller;
   final VoidCallback? toggleVisibility;
@@ -34,10 +35,21 @@ class CustomSearchField extends StatelessWidget {
       this.hintText,
       this.labelText,
       this.labelStyle,
-      this.hintStyle});
+      this.hintStyle,
+      this.iconColor});
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: const Color.fromRGBO(31, 31, 31, 0.13),
+            spreadRadius: 0,
+            blurRadius: 20.r,
+            offset: const Offset(0, 0),
+          ),
+        ],
+      ),
       padding: padding,
       child: TextFormField(
         initialValue: initialValue ?? "",
@@ -54,11 +66,11 @@ class CustomSearchField extends StatelessWidget {
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
           filled: true,
           prefixIcon: ImageIcon(
-              color: AppPaintings.hintTextColor,
+              color: iconColor ?? AppPaintings.hintTextColor,
               size: 15,
               AssetImage(
                 AssetStrings.searchIcon,
-              )).paddingOnly(right: 8, left: 12, top: 14, bottom: 15),
+              )).paddingOnly(right: 0.w, left: 12.w, top: 14.h, bottom: 15.h),
           enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(
               color: Colors.white,

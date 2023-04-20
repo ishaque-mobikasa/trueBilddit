@@ -44,7 +44,9 @@ class PaymentView extends GetView<PaymentController> {
                       outlineButtonBorderColor: AppPaintings.kWhite,
                       buttonText: "+ Add New DEBIT/CREDIT CARD",
                       onPressed: () {
-                        Get.bottomSheet(const AddNewBankCardModal());
+                        Get.bottomSheet(AddNewBankCardModal(
+                          formKey: GlobalKey<FormState>(),
+                        ));
                       }),
                 ),
               ),
@@ -125,7 +127,7 @@ class PaymentView extends GetView<PaymentController> {
                       buttonType: ButtonType.elevatedButton,
                       buttonText: "PLACE YOUR ORDER",
                       onPressed: () async {
-                        await Get.to(() {});
+                        log("place Order");
                       })),
             ],
           ),
