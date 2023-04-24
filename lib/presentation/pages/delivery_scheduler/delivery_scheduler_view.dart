@@ -15,8 +15,6 @@ class DeliverySchedulerView extends GetView<DeliverySchedulerController> {
 
   @override
   Widget build(BuildContext context) {
-    Get.lazyPut<DeliverySchedulerController>(
-        () => DeliverySchedulerController());
     return Column(
       children: [
         CustomAppBar(
@@ -55,17 +53,16 @@ class DeliverySchedulerView extends GetView<DeliverySchedulerController> {
           ),
         ),
         const Spacer(),
-        Flexible(
-          child: SizedBox(
-              height: 42.h,
-              width: 345.w,
-              child: LongButton(
-                  buttonType: ButtonType.elevatedButton,
-                  buttonText: "PROCEED TO PAY - £369.00",
-                  onPressed: () {
-                    log("Proceed to pay");
-                  })),
-        ),
+        Container(
+            margin: EdgeInsets.only(bottom: 10.h),
+            height: 42.h,
+            width: 345.w,
+            child: LongButton(
+                buttonType: ButtonType.elevatedButton,
+                buttonText: "PROCEED TO PAY - £369.00",
+                onPressed: () {
+                  log("Proceed to pay");
+                })),
       ],
     );
   }

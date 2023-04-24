@@ -43,7 +43,7 @@ class CustomAppBar extends StatelessWidget {
                 ))
             : const SizedBox.shrink(),
         title: Padding(
-          padding: EdgeInsets.only(bottom: paddingForTitleFromBottom!),
+          padding: EdgeInsets.only(bottom: paddingForTitleFromBottom!.h),
           child: titleImage ??
               Text(
                 title!,

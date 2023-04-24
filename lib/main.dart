@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:truebildit/app/routes/routes.dart';
-import 'package:truebildit/app/utils/app_paintings.dart';
+import 'app/routes/routes.dart';
+import 'app/utils/app_paintings.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
+      splitScreenMode: true,
       minTextAdapt: true,
       designSize: const Size(375, 812),
       builder: (context, child) => GetMaterialApp(
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: AppPaintings.appTheme,
           getPages: AppPages.pages,
-          initialRoute: Routes.dashBoardView),
+          initialRoute: Routes.splashScreenView),
     );
   }
 }

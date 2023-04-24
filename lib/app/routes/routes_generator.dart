@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:truebildit/app/routes/routes.dart';
@@ -12,6 +11,7 @@ import 'package:truebildit/presentation/pages/dash_board/dash_board_view.dart';
 import 'package:truebildit/presentation/pages/forgot_password/controllers_binding/forgot_password_binding.dart';
 import 'package:truebildit/presentation/pages/forgot_password/forgot_password_view.dart';
 import 'package:truebildit/presentation/pages/home/controller_binding/home_binding.dart';
+import 'package:truebildit/presentation/pages/home/home_view.dart';
 import 'package:truebildit/presentation/pages/location_request/controllers_bindings/location_request_binding.dart';
 import 'package:truebildit/presentation/pages/location_request/location_request_view.dart';
 import 'package:truebildit/presentation/pages/login/otp_login/controller_binding/otp_login_binding.dart';
@@ -25,7 +25,7 @@ import 'package:truebildit/presentation/pages/sign_up/sign_up_view.dart';
 import 'package:truebildit/presentation/pages/splash_screen/controllers_bindings/splash_screen_bindings.dart';
 import 'package:truebildit/presentation/pages/splash_screen/splash_screen_view.dart';
 
-import '../../presentation/pages/home/home_view.dart';
+
 
 class RoutesGenerator {
   static Route<dynamic>? generateRoute(RouteSettings settings) {

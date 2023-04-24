@@ -64,16 +64,16 @@ class MyBasketView extends StatelessWidget {
               children: [
                 CouponCodeField(
                   width: 265.w,
-                  height: 45,
+                  height: 45.h,
                 ),
                 SizedBox(
-                  height: 45,
+                  height: 45.h,
                   width: 72.w,
                   child: ShortButton(
                       buttonType: ButtonType.elevatedButton,
                       buttonText: "Apply",
                       buttonTextStyle: TextStyle(
-                          fontSize: 14.sp,
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.w500,
                           color: AppPaintings.kWhite),
                       buttonStyle: ElevatedButton.styleFrom(
@@ -103,6 +103,9 @@ class MyBasketView extends StatelessWidget {
               buttonText: "PROCEED TO CHECKOUT",
               onPressed: () {},
             ),
+          ),
+          SizedBox(
+            height: 11.h,
           )
         ],
       ),

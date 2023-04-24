@@ -64,14 +64,18 @@ class AddNewBankCardModal extends StatelessWidget {
                 CardInputField(
                   cardFieldType: CardFileldType.cardNumber,
                   hintText: "Card Number*",
-                  hintStyle: AppPaintings.customSmallText,
                 ),
                 SizedBox(height: 10.h),
                 SizedBox(
                   width: 300.w,
-                  child: const CustomFormField(
+                  child: CustomFormField(
                     hintText: "Card Holder Name*",
                     type: FieldType.normalInputField,
+                    hintStyle: TextStyle(
+                      color: AppPaintings.hintTextColor,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                 ),
                 SizedBox(height: 10.h),

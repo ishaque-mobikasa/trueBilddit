@@ -20,7 +20,7 @@ class CardInputField extends StatefulWidget {
       {super.key,
       this.cardType = CardType.others,
       required this.hintText,
-      this.hintStyle = const TextStyle(color: Colors.grey),
+      this.hintStyle,
       this.contentPadding,
       required this.cardFieldType,
       this.controller});
@@ -67,7 +67,12 @@ class _CardInputFieldState extends State<CardInputField> {
           ),
           contentPadding:
               widget.contentPadding ?? EdgeInsets.only(bottom: 10.h),
-          hintStyle: widget.hintStyle,
+          hintStyle: widget.hintStyle ??
+              TextStyle(
+                color: AppPaintings.hintTextColor,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w400,
+              ),
           labelText: widget.hintText,
           floatingLabelBehavior: FloatingLabelBehavior.auto,
           errorStyle: TextStyle(color: AppPaintings.appRedColor, height: 0.0),

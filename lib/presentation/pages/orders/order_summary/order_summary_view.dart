@@ -41,7 +41,7 @@ class OrderSummaryView extends GetView<OrderSummaryController> {
                       "Shipping Address",
                       style: AppPaintings.customSmallText.copyWith(
                           fontSize: 14.sp,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.bold,
                           color: AppPaintings.themeBlack),
                     ),
                   ),

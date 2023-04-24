@@ -29,7 +29,7 @@ class AddNewAddressView extends GetView<AddNewAddressController> {
                     "Contact Information",
                     style: AppPaintings.customLargeText.copyWith(
                         fontSize: 16,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.bold,
                         color: AppPaintings.themeBlack),
                   )),
               SizedBox(
@@ -73,7 +73,7 @@ class AddNewAddressView extends GetView<AddNewAddressController> {
                     "Address",
                     style: AppPaintings.customLargeText.copyWith(
                         fontSize: 16,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.bold,
                         color: AppPaintings.themeBlack),
                   )),
               CustomFormField(

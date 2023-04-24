@@ -8,7 +8,7 @@ class OrderSummaryAddressCard extends StatelessWidget {
     super.key,
     this.nameStyle = const TextStyle(
       fontSize: 14,
-      fontWeight: FontWeight.w500,
+      fontWeight: FontWeight.bold,
       color: Color(0xff252525),
     ),
     this.margin,
@@ -76,10 +76,13 @@ class OrderSummaryAddressCard extends StatelessWidget {
                 ],
               )),
               Expanded(
-                  child: Text(
-                '${addressData.streetAddress} ${addressData.city}, ${addressData.county} ${addressData.phoneNumber},',
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
+                  child: SizedBox(
+                child: Text(
+                  '${addressData.streetAddress} ${addressData.city}, ${addressData.county}\n${addressData.phoneNumber},',
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppPaintings.customSmallText.copyWith(height: 1.7),
+                ),
               )),
             ],
           ),

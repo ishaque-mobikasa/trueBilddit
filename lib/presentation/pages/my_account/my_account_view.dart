@@ -26,8 +26,13 @@ class MyAccountView extends GetView<MyAccountController> {
             children: [
               Stack(
                 children: [
-                  SvgPicture.asset(
-                    AssetStrings.myAccountGreen,
+                  SizedBox(
+                    height: 286.h,
+                    width: 375.w,
+                    child: SvgPicture.asset(
+                      AssetStrings.myAccountGreen,
+                      fit: BoxFit.fill,
+                    ),
                   ),
                   Positioned(
                     top: 80.h,

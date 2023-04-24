@@ -46,7 +46,7 @@ class ShippingAddressCard extends StatelessWidget {
                           '${addressData.firstName} ${addressData.lastName}',
                           style: TextStyle(
                             fontSize: 14.sp,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.bold,
                             color: const Color(0xff252525),
                           ),
                           maxLines: 1,
@@ -80,7 +80,7 @@ class ShippingAddressCard extends StatelessWidget {
                   child: Text(
                     '${addressData.streetAddress} ${addressData.city}, ${addressData.county} ${addressData.phoneNumber},',
                     maxLines: 2,
-                    style: AppPaintings.customSmallText.copyWith(height: 1.5),
+                    style: AppPaintings.customSmallText.copyWith(height: 1.7),
                     overflow: TextOverflow.ellipsis,
                   )),
             ],

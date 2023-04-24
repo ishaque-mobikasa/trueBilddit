@@ -24,9 +24,9 @@ class DashBoardView extends GetView<DashBoardController> {
             clipBehavior: Clip.hardEdge,
             height: 63.h,
             decoration: BoxDecoration(
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(20),
-                topRight: Radius.circular(20),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20.r),
+                topRight: Radius.circular(20.r),
               ),
               color: AppPaintings.kWhite,
               boxShadow: const [

@@ -19,12 +19,6 @@ List<CircularItemModel> homeItems = [
       image: AssetStrings.fireAndSecurity, title: "Fire& \nSecurity"),
   CircularItemModel(
       image: AssetStrings.gardeningIcon, title: "Outdoor & Gardening"),
-  CircularItemModel(
-      image: AssetStrings.ironMongery, title: "General Construction"),
-  CircularItemModel(
-      image: AssetStrings.fireAndSecurity, title: "Fire& \nSecurity"),
-  CircularItemModel(
-      image: AssetStrings.gardeningIcon, title: "Outdoor & Gardening"),
 ];
 List<BankCardModel> dummyCards = [
   BankCardModel(

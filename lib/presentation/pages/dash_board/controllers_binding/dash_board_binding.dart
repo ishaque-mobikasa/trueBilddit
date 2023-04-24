@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:truebildit/presentation/pages/address/add_address_page/controllers_binding/add_new_address_controller.dart';
 import 'package:truebildit/presentation/pages/change_password/controllers_binding/change_password_controller.dart';
 import 'package:truebildit/presentation/pages/dash_board/controllers_binding/dash_board_controller.dart';
+import 'package:truebildit/presentation/pages/delivery_scheduler/controller_binding/delivery_scheduler_controller.dart';
 import 'package:truebildit/presentation/pages/feed_back/contrtoller_binding/feed_back_controller.dart';
 import 'package:truebildit/presentation/pages/home/controller_binding/home_controller.dart';
 import 'package:truebildit/presentation/pages/login/otp_login/controller_binding/otp_login_controller.dart';
@@ -24,6 +25,7 @@ class DashBoardBinding extends Bindings {
     Get.lazyPut(() => PDPcontroller());
     Get.lazyPut(() => FeedBackController());
     Get.lazyPut(() => PaymentController());
+    Get.lazyPut(() => DeliverySchedulerController());
     Get.put(DashBoardController());
   }
 }
